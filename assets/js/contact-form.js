@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!forms.length) return;
 
   forms.forEach(function (form) {
+    if (window.PRMForm && window.PRMForm.applyAutofill) window.PRMForm.applyAutofill(form);
     var messageBox = form.querySelector('.nt-form-message');
     var submitBtn = form.querySelector('button[type="submit"]');
     var fileInput = form.querySelector('input[type="file"]');

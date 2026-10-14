@@ -47,7 +47,12 @@
 
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="tel:"]');
-    if (a) window.ntTrack('phone_click', { phone: a.getAttribute('href').replace('tel:', '') });
+    if (a) {
+      window.ntTrack('phone_click', {
+        phone: a.getAttribute('href').replace('tel:', ''),
+        source: a.closest('.nt-mobile-cta-bar') ? 'mobile_bar' : 'page_link',
+      });
+    }
   });
 
   function maybeLoadAnalytics(c) {

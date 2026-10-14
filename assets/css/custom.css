@@ -1375,3 +1375,67 @@ a:hover { color: var(--nt-orange-dark); }
   .nt-social-cta-btn { padding: 13px 22px; font-size: .92rem; gap: 8px; }
   .nt-social-cta-btn i { font-size: .95rem; }
 }
+
+/* ============================================================
+   Offert-sheet (modal.js): bottom sheet på mobil, modal på desktop
+   ============================================================ */
+.nt-sheet-handle { display: none; }
+.nt-step-hint { margin: 10px 0 0; font-size: .85rem; color: var(--nt-gray); text-align: center; }
+.nt-progress { height: 4px; background: #e3ebe8; border-radius: 99px; overflow: hidden; margin: 0 0 20px; }
+.nt-progress span { display: block; height: 100%; width: var(--p, 50%); background: var(--nt-orange); border-radius: 99px; transition: width .35s cubic-bezier(.2,.8,.2,1); }
+
+.nt-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nt-chip {
+  display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 10px 12px;
+  border: 2px solid #dde2ea; border-radius: 12px; background: #fff; color: var(--nt-navy);
+  font: inherit; font-weight: 600; font-size: .92rem; text-align: left; cursor: pointer;
+  transition: border-color .15s, background .15s, transform .15s; -webkit-tap-highlight-color: transparent;
+}
+.nt-chip__emoji { font-size: 1.35rem; line-height: 1; }
+.nt-chip:active { transform: scale(.97); }
+.nt-chip[aria-checked="true"] { border-color: var(--nt-orange); background: #e9f8f0; animation: ntPop .25s ease; }
+.nt-chips--error { animation: ntShake .35s; }
+.nt-chips--error .nt-chip { border-color: #e5484d; }
+.nt-select-hidden { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; padding: 0; border: 0; }
+.nt-step2--in { animation: ntStepIn .3s ease; }
+
+.nt-success { text-align: center; padding: 28px 0 8px; }
+.nt-success svg circle { stroke-dasharray: 151; stroke-dashoffset: 151; animation: ntDraw .5s ease forwards; }
+.nt-success svg path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: ntDraw .4s .35s ease forwards; }
+.nt-success h4 { color: var(--nt-navy); font-weight: 700; margin: 16px 0 6px; }
+.nt-success p { color: var(--nt-gray); margin: 0 0 6px; }
+.nt-success__hint a { color: var(--nt-navy); font-weight: 700; }
+
+@keyframes ntPop { 0% { transform: scale(.94); } 60% { transform: scale(1.04); } 100% { transform: scale(1); } }
+@keyframes ntShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+@keyframes ntStepIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes ntDraw { to { stroke-dashoffset: 0; } }
+@keyframes ntSheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes ntFade { from { opacity: 0; } to { opacity: 1; } }
+
+.nt-modal-overlay.nt-closing { opacity: 0; transition: opacity .26s ease; }
+
+@media (max-width: 767px) {
+  .nt-modal-overlay {
+    align-items: flex-end; padding: 0;
+    background: rgba(28, 46, 74, calc(.75 * (1 - var(--nt-drag, 0))));
+    animation: ntFade .25s ease;
+  }
+  .nt-modal {
+    max-width: none; border-radius: 22px 22px 0 0;
+    padding: 8px 20px calc(24px + env(safe-area-inset-bottom));
+    max-height: 92vh; max-height: 92dvh;
+    animation: ntSheetUp .34s cubic-bezier(.2,.8,.2,1);
+    transition: transform .26s cubic-bezier(.2,.8,.2,1);
+    overscroll-behavior: contain; will-change: transform;
+  }
+  .nt-modal.nt-dragging { transition: none; animation: none; }
+  .nt-sheet-handle { display: block; width: 44px; height: 5px; border-radius: 99px; background: #cfd8d4; margin: 6px auto 14px; }
+  .nt-modal__close { top: 14px; }
+  .nt-modal h3 { font-size: 1.4rem; padding-right: 32px; }
+  .nt-modal p.subtitle { margin-bottom: 14px; }
+  .nt-modal input, .nt-modal select, .nt-modal textarea { font-size: 16px; } /* hindrar iOS-zoom vid fokus */
+}
+@media (prefers-reduced-motion: reduce) {
+  .nt-modal, .nt-modal-overlay, .nt-chip, .nt-progress span, .nt-step2--in, .nt-chips--error { animation: none !important; transition: none !important; }
+}

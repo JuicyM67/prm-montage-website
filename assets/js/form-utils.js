@@ -21,6 +21,24 @@ window.PRMForm = {
     return window.PRMForm._uploadModulePromise;
   },
 
+  // Sätter standardiserade autocomplete-/inputmode-attribut så att iOS/Android/Chrome kan
+  // fylla i namn, telefon, e-post och adress med ett tryck från användarens egna kontaktkort.
+  applyAutofill: function (form) {
+    var map = {
+      name: { autocomplete: 'name', autocapitalize: 'words', enterkeyhint: 'next' },
+      phone: { autocomplete: 'tel', inputmode: 'tel', enterkeyhint: 'next' },
+      email: { autocomplete: 'email', inputmode: 'email', autocapitalize: 'off', enterkeyhint: 'next' },
+      address: { autocomplete: 'address-line1', enterkeyhint: 'next' },
+      postalCode: { autocomplete: 'postal-code', inputmode: 'numeric', enterkeyhint: 'next' },
+      city: { autocomplete: 'address-level2', enterkeyhint: 'next' },
+    };
+    Object.keys(map).forEach(function (field) {
+      var el = form.querySelector('[name="' + field + '"]');
+      if (!el) return;
+      Object.keys(map[field]).forEach(function (attr) { el.setAttribute(attr, map[field][attr]); });
+    });
+  },
+
   readAttachments: function (fileInput) {
     var PRMForm = window.PRMForm;
     return new Promise(function (resolve, reject) {
