@@ -18,7 +18,42 @@
     maybeLoadAnalytics(c);
   }
 
+  var GA_ID = 'G-XBBH6K74JE';
+
+  // GA4 med Consent Mode v2: laddas alltid men utan cookies tills besökaren godkänner statistik.
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500,
+  });
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(gaScript);
+
+  // Gemensam hjälpfunktion för konverteringshändelser (används av formulär-skripten).
+  window.ntTrack = function (name, params) {
+    try {
+      gtag('event', name, Object.assign({ page_path: location.pathname }, params || {}));
+    } catch (e) {}
+  };
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (a) window.ntTrack('phone_click', { phone: a.getAttribute('href').replace('tel:', '') });
+  });
+
   function maybeLoadAnalytics(c) {
+    gtag('consent', 'update', {
+      analytics_storage: c && c.statistics ? 'granted' : 'denied',
+    });
     if (c && c.statistics && !document.getElementById('nt-vercel-analytics')) {
       var s = document.createElement('script');
       s.id = 'nt-vercel-analytics';
@@ -83,7 +118,7 @@
           '<label class="nt-switch"><input type="checkbox" checked disabled><span class="nt-slider"></span></label>' +
         '</div>' +
         '<div class="nt-cookie-row">' +
-          '<div><h5>Statistik</h5><p>Anonymiserad besöksstatistik (Vercel Analytics) som hjälper oss förstå hur webbplatsen används.</p></div>' +
+          '<div><h5>Statistik</h5><p>Anonymiserad besöksstatistik (Vercel Analytics och Google Analytics) som hjälper oss förstå hur webbplatsen används.</p></div>' +
           '<label class="nt-switch"><input type="checkbox" id="nt-consent-stats"><span class="nt-slider"></span></label>' +
         '</div>' +
         '<div class="nt-cookie-save"><button type="button" class="nt-btn-accept" data-nt-action="save">Spara val</button></div>' +

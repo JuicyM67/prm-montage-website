@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         })
         .then(function () {
+          if (window.ntTrack) window.ntTrack('generate_lead', { form_type: data.type, service: data.service || '' });
           showMessage('Tack! Vi återkommer till dig så snart vi kan.', false);
           form.reset();
         })

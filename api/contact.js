@@ -79,6 +79,7 @@ module.exports = async (req, res) => {
     offert: 'Ny offertförfrågan',
     jour: 'AKUT — Jourförfrågan',
     contact: 'Nytt meddelande från kontaktformuläret',
+    hire: 'Ny offertförfrågan (popup)',
     area: 'Ny förfrågan från ortssida',
   };
   const heading = headings[type] || headings.contact;

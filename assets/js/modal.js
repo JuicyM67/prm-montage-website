@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         })
         .then(function () {
+          if (window.ntTrack) window.ntTrack('generate_lead', { form_type: 'hire', service: data.service || '' });
           form.innerHTML = '<div style="text-align:center;padding:40px 0"><i class="fas fa-check-circle" style="font-size:3rem;color:#1FA968;margin-bottom:16px;display:block"></i><h4 style="color:#1F5C50;font-weight:700">Tack för din förfrågan!</h4><p style="color:#63706D">Vi återkommer så snart vi kan.</p></div>';
         })
         .catch(function (err) {
