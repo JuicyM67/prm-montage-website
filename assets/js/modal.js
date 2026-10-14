@@ -38,9 +38,76 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
+  // Delar upp formuläret i två steg utan att ändra markupen på varje sida:
+  // steg 1 = namn, telefon, tjänst. Steg 2 = adress, e-post, beskrivning, bilder.
+  // Alla fält behålls (adress är fortsatt obligatorisk), bara ordningen/synligheten ändras.
+  function setupTwoSteps(form) {
+    const nameInput = form.querySelector('[name="name"]');
+    const phoneInput = form.querySelector('[name="phone"]');
+    const serviceInput = form.querySelector('[name="service"]');
+    const submitBtn = form.querySelector('.nt-submit-btn');
+    if (!nameInput || !phoneInput || !serviceInput || !submitBtn) return;
+
+    const nameRow = nameInput.closest('.row-2col');
+    const serviceGroup = serviceInput.closest('.form-group');
+    if (!nameRow || !serviceGroup || nameRow.contains(serviceInput)) return;
+
+    const step2 = document.createElement('div');
+    step2.className = 'nt-step2';
+    step2.style.display = 'none';
+    Array.from(form.children).forEach(function (child) {
+      if (child !== nameRow && child !== serviceGroup && child !== submitBtn) step2.appendChild(child);
+    });
+
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'nt-submit-btn';
+    nextBtn.textContent = 'Fortsätt →';
+
+    const hint = document.createElement('p');
+    hint.className = 'nt-step-hint';
+    hint.style.cssText = 'margin:10px 0 0;font-size:.85rem;color:#63706D;text-align:center;';
+    hint.textContent = 'Steg 1 av 2 — det tar under en minut';
+
+    form.insertBefore(step2, submitBtn);
+    form.insertBefore(nextBtn, step2);
+    form.insertBefore(hint, submitBtn);
+    submitBtn.style.display = 'none';
+
+    function goToStep2() {
+      const step1Fields = [nameInput, phoneInput, serviceInput];
+      for (let i = 0; i < step1Fields.length; i++) {
+        if (!step1Fields[i].checkValidity()) {
+          step1Fields[i].reportValidity();
+          return;
+        }
+      }
+      nextBtn.style.display = 'none';
+      step2.style.display = '';
+      submitBtn.style.display = '';
+      hint.textContent = 'Steg 2 av 2 — nästan klart';
+      if (window.ntTrack) window.ntTrack('form_step1', { form_type: 'hire', service: serviceInput.value });
+      const address = form.querySelector('[name="address"]');
+      if (address) address.focus();
+    }
+
+    nextBtn.addEventListener('click', goToStep2);
+
+    // Enter i steg 1 ska gå vidare till steg 2, inte försöka skicka formuläret
+    // (de dolda obligatoriska fälten skulle annars blockera det utan felmeddelande).
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && step2.style.display === 'none' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        goToStep2();
+      }
+    });
+  }
+
   // Formulär submit — skickas via /api/contact (Resend)
   const form = overlay.querySelector('#hire-form');
   if (form) {
+    setupTwoSteps(form);
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const submitBtn = form.querySelector('.nt-submit-btn');
