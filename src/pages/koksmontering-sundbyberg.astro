@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Köksmontering Sundbyberg — Fast pris | PRM Montage",
+  "description": "Köksmontering i Sundbyberg till fast pris. Kort startsträcka från vårt kontor i Solna — vi monterar kök i både nyproduktion och äldre fastigheter.",
+  "canonical": "https://prmmontage.se/koksmontering-sundbyberg",
+  "ogDescription": "Köksmontering i Sundbyberg till fast pris — kort startsträcka från vårt kontor i Solna.",
+  "ogImage": "https://prmmontage.se/assets/img/projekt/hero-kok.webp",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Köksmontering Sundbyberg"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Köksmontering",
+        "name": "Köksmontering Sundbyberg",
+        "description": "Montering av kök du redan köpt — stomme, luckor, bänkskiva och infästning, till fast pris i Sundbyberg.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Sundbyberg",
+        "url": "https://prmmontage.se/koksmontering-sundbyberg"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar det att montera ett kök i Sundbyberg?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det beror på kökets storlek och omfattning — antal skåp, om bänkskivan ska kapas till och om vitvaror ska kopplas in. Du får alltid ett fast pris innan vi bokar in monteringen, baserat på en kostnadsfri offert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur skiljer sig köksmontering från köksrenovering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vid köksmontering utgår vi från ett kök du redan har köpt och monterar stomme, luckor, bänkskiva och infästning. En köksrenovering är en bredare tjänst som även kan omfatta rivning, nya vatten- och avloppsledningar samt el — det hanterar vi via vår sida om köksrenovering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur snabbt kan ni montera kök i Sundbyberg?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sundbyberg gränsar direkt till Solna, där vårt kontor ligger, vilket ofta ger kort startsträcka. Vi bokar in en tid som passar dig utifrån projektets omfattning och vår aktuella beläggning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ger köksmontering rätt till ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arbetskostnaden vid köksmontering ger normalt rätt till ROT-avdrag, medan kök och material inte gör det. Vi hjälper dig räkna på avdraget i offerten."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} defaultService="Köksrenovering">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Köksmontering i Sundbyberg</h1>
+          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Fast pris, kort startsträcka från Solna och montering av nya och befintliga kök i Sundbyberg.</p>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Köksmontering Sundbyberg</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-100 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Sundbyberg</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Köksmontering nära till hands från Solna</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Sundbyberg gränsar direkt till Solna, där PRM Montage har sitt kontor på Industrivägen 19 — det ger oss ofta kort startsträcka till uppdrag i hela kommunen. Köksmontering är tjänsten du behöver när köket redan är köpt och bara ska på plats: stomme, luckor, bänkskiva, sockel och infästning — utan de ingrepp i vatten, avlopp och el som en full köksrenovering innebär.</p>
+
+          <div class="row g-4 mb-45">
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-building"></i></div>
+                <h4>Nyproduktion</h4>
+                <p>I Sundbybergs centrum, Rissne och Hallonbergen flyttar många in i nya bostadsrätter med kök som ska monteras innan man kan använda lägenheten.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-house"></i></div>
+                <h4>Äldre fastighet</h4>
+                <p>I andra delar av kommunen vill man byta ut ett slitet kök i en äldre lägenhet, utan att göra en hel renovering av VVS och el.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Många av de köksmonteringar vi utför i Sundbyberg handlar om att köket redan har beställts från en kökshandlare eller följer med ett nyproduktionsprojekt, och att kunden själv behöver ordna monteringen separat. Det är precis det gapet vi fyller: vi tar över där leveransen slutar och kökets snickeri, luckor och bänkskiva ska bli ett färdigt, användbart kök.</p>
+
+          <div class="nt-highlight mb-45">
+            <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris för monteringen</h5>
+            <p>Oavsett om köket ska monteras i en nyproducerad lägenhet eller i ett äldre bestånd får du ett fast pris innan vi bokar in tid.</p>
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Vad ingår i köksmonteringen?</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Montering av köksstommar och skåp</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Montering av luckor och lådfronter</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Montering och infästning av bänkskiva</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Sockel och avslutningslister</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Infästning i vägg enligt tillverkarens anvisningar</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Justering av luckor och lådor så allt sluter tätt</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Koppling av diskmaskin, blandare och spis vid behov</span></li>
+          </ul>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Så går det till</h4>
+          <div class="row g-4 gy-5 mb-45">
+            <div class="col-md-4">
+              <div class="nt-step h-100">
+                <span class="nt-step__num">01</span>
+                <h4>Kostnadsfri offert</h4>
+                <p>Berätta om ditt kök — mått, leverantör och önskemål — så får du ett fast pris för monteringen.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="nt-step h-100">
+                <span class="nt-step__num">02</span>
+                <h4>Montering bokas in</h4>
+                <p>Vi bokar en tid som passar dig, med kort startsträcka från vårt kontor i grannkommunen Solna.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="nt-step h-100">
+                <span class="nt-step__num">03</span>
+                <h4>Färdigt kök</h4>
+                <p>Vi monterar, justerar och kopplar in vid behov, och går igenom resultatet med dig innan vi lämnar platsen.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Behöver du en större renovering — med VVS, el eller rivning — se vår <a href="/koksrenovering-stockholm">Köksrenovering Stockholm</a>-sida. Har du köpt kök från IKEA? Se vår sida om <a href="/ikea-koksmontering-sundbyberg">IKEA-köksmontering i Sundbyberg</a>.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om köksmontering i Sundbyberg</h4>
+          <div class="accordion nt-accordion mb-45" id="faqKoksmSbg">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqKoksmSbg1">Vad kostar det att montera ett kök i Sundbyberg?</button></h2>
+              <div id="faqKoksmSbg1" class="accordion-collapse collapse show" data-bs-parent="#faqKoksmSbg"><div class="accordion-body">Det beror på kökets storlek och omfattning — antal skåp, om bänkskivan ska kapas till och om vitvaror ska kopplas in. Du får alltid ett fast pris innan vi bokar in monteringen, baserat på en kostnadsfri offert.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKoksmSbg2">Hur skiljer sig köksmontering från köksrenovering?</button></h2>
+              <div id="faqKoksmSbg2" class="accordion-collapse collapse" data-bs-parent="#faqKoksmSbg"><div class="accordion-body">Vid köksmontering utgår vi från ett kök du redan har köpt och monterar stomme, luckor, bänkskiva och infästning. En köksrenovering är en bredare tjänst som även kan omfatta rivning, nya vatten- och avloppsledningar samt el — det hanterar vi via vår <a href="/koksrenovering-stockholm">sida om köksrenovering</a>.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKoksmSbg3">Hur snabbt kan ni montera kök i Sundbyberg?</button></h2>
+              <div id="faqKoksmSbg3" class="accordion-collapse collapse" data-bs-parent="#faqKoksmSbg"><div class="accordion-body">Sundbyberg gränsar direkt till Solna, där vårt kontor ligger, vilket ofta ger kort startsträcka. Vi bokar in en tid som passar dig utifrån projektets omfattning och vår aktuella beläggning.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKoksmSbg4">Ger köksmontering rätt till ROT-avdrag?</button></h2>
+              <div id="faqKoksmSbg4" class="accordion-collapse collapse" data-bs-parent="#faqKoksmSbg"><div class="accordion-body">Arbetskostnaden vid köksmontering ger normalt rätt till ROT-avdrag, medan kök och material inte gör det. Vi hjälper dig räkna på avdraget i offerten. Läs mer på vår <a href="/rut-rot">sida om ROT-avdrag</a>.</div></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Relaterat</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/ikea-koksmontering-sundbyberg">IKEA-köksmontering Sundbyberg <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Fler områden</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksmontering-solna">Köksmontering Solna <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksmontering-danderyd">Köksmontering Danderyd <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksmontering-bromma">Köksmontering Bromma <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksmontering-tacby">Köksmontering Täby <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksmontering-uppsala">Köksmontering Uppsala <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksmontering-lidingo">Köksmontering Lidingö <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/koksmontering-sodermalm">Köksmontering Södermalm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/sundbyberg">Alla tjänster i Sundbyberg <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/upplands-vasby">Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Dags att förverkliga ditt drömkök?</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

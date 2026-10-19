@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "ROT-avdrag — Så fungerar det | PRM Montage",
+  "description": "Så fungerar ROT-avdraget när du anlitar PRM Montage AB. Vi hjälper dig räkna på och ansöka om avdraget enligt Skatteverkets regler.",
+  "canonical": "https://prmmontage.se/rut-rot",
+  "ogDescription": "Så fungerar ROT-avdraget när du anlitar PRM Montage AB. Vi hjälper dig räkna på och ansöka om avdraget.",
+  "ogImage": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+  "twitterDescription": "Så fungerar ROT-avdraget när du anlitar PRM Montage AB.",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "ROT-avdrag"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Gäller ROT-avdrag på material?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Enligt Skatteverkets regler ger endast arbetskostnaden rätt till ROT-avdrag. Material och övriga kostnader, såsom resekostnader, ger inte rätt till avdrag."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vilka av PRM Montages tjänster ger ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De flesta bygg-, VVS-, el- och snickeriarbeten vi utför ger rätt till ROT-avdrag på arbetskostnaden. Kontakta oss så stämmer vi av vad som gäller för just ditt projekt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur mycket kan jag få i ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ROT-avdraget och rutavdraget räknas ihop och är högst 75 000 kronor per person och år. Rotavdraget får dock högst vara 50 000 kronor per år."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">ROT-avdrag</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>ROT-avdrag</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <!-- =============== /BREADCRUMB =============== -->
+
+  <div class="pt-100 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Vad är ROT-avdrag?</span>
+          <h2 class="mb-25 fs-xl-36 fs-sm-30">Så fungerar ROT-avdraget hos PRM Montage</h2>
+          <p class="mb-45" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">När du anlitar ett företag för reparation, underhåll samt ombyggnad och tillbyggnad kan du få rotavdrag för delar av arbetskostnaden. Du kan också få rutavdrag för hushållsnära tjänster. Material och övriga kostnader, såsom resekostnader, ger däremot inte rätt till avdrag. Detta enligt Skatteverkets regler.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Vilka arbeten omfattas?</h4>
+          <p class="mb-40" style="color:var(--nt-gray);line-height:1.8;">PRM Montages egna arbetskostnader inom bygg, VVS, el och snickeri kvalificerar normalt för ROT-avdrag, eftersom de räknas som reparation, underhåll, ombyggnad eller tillbyggnad. Material — till exempel kakel, blandare, köksluckor eller virke — ger däremot inte rätt till avdrag, oavsett vilken tjänst det gäller.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Hur mycket kan jag få i avdrag?</h4>
+          <p class="mb-40" style="color:var(--nt-gray);line-height:1.8;">Rotavdraget och rutavdraget räknas ihop och är högst 75 000 kronor per person och år. Rotavdraget får dock högst vara 50 000 kronor per år. Hur mycket du kan få i just ditt projekt beror på arbetskostnadens storlek och hur mycket avdragsutrymme du har kvar för året.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Hur går det till hos PRM Montage?</h4>
+          <p class="mb-45" style="color:var(--nt-gray);line-height:1.8;">Vi hjälper dig räkna på och ansöka om ROT-avdraget i samband med offerten, så att du redan från start ser vad projektet kostar efter avdrag. I praktiken innebär det att du bara betalar nettobeloppet till oss — vi sköter sedan begäran om utbetalning från Skatteverket för din räkning, precis som lagen kräver.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om ROT-avdrag</h4>
+          <div class="accordion nt-accordion mb-20" id="faqRot">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqRot1">Gäller ROT-avdrag på material?</button></h2>
+              <div id="faqRot1" class="accordion-collapse collapse show" data-bs-parent="#faqRot"><div class="accordion-body">Nej. Enligt Skatteverkets regler ger endast arbetskostnaden rätt till ROT-avdrag. Material och övriga kostnader, såsom resekostnader, ger inte rätt till avdrag.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqRot2">Vilka av PRM Montages tjänster ger ROT-avdrag?</button></h2>
+              <div id="faqRot2" class="accordion-collapse collapse" data-bs-parent="#faqRot"><div class="accordion-body">De flesta bygg-, VVS-, el- och snickeriarbeten vi utför ger rätt till ROT-avdrag på arbetskostnaden. Kontakta oss så stämmer vi av vad som gäller för just ditt projekt.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqRot3">Hur mycket kan jag få i ROT-avdrag?</button></h2>
+              <div id="faqRot3" class="accordion-collapse collapse" data-bs-parent="#faqRot"><div class="accordion-body">ROT-avdraget och rutavdraget räknas ihop och är högst 75 000 kronor per person och år. Rotavdraget får dock högst vara 50 000 kronor per år.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Snabbfakta</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Max 75 000 kr/person/år (ROT + RUT)</span></li><li><i class="fas fa-check"></i><span>Max 50 000 kr/år för ROT</span></li><li><i class="fas fa-check"></i><span>Gäller endast arbetskostnad</span></li><li><i class="fas fa-check"></i><span>Vi sköter ansökan åt dig</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Läs även</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/garanti">Garanti, ansvar &amp; trygghet <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/sa-har-gar-det-till">Så här går det till <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/tjanster">Alla tjänster <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== CTA =============== -->
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Vi hjälper dig räkna på ditt ROT-avdrag</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag för en kostnadsfri offert — vi räknar på avdraget åt dig direkt i offerten.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+  <!-- =============== /CTA =============== -->
+
+  <!-- =============== FOOTER =============== -->
+</BaseLayout>

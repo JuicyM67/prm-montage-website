@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Bygg & Renovering Stockholm — Fast pris | PRM Montage",
+  "description": "Bygg och renovering i Stockholm till fast pris. Helrenovering av lägenhet och villa, tvättstugor, snickeri och ombyggnation. Kostnadsfri offert.",
+  "canonical": "https://prmmontage.se/bygg-renovering",
+  "ogDescription": "Bygg och renovering i Stockholm till fast pris — helrenovering, tvättstugor, snickeri och ombyggnation.",
+  "ogImage": "https://prmmontage.se/assets/img/projekt/hero-bygg.webp",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tjänster",
+            "item": "https://prmmontage.se/tjanster"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Bygg & renovering"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Bygg och renovering",
+        "name": "Bygg & renovering Stockholm",
+        "description": "Bygg och renovering i Stockholm till fast pris — helrenovering, tvättstugor, snickeri och ombyggnation.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Stockholm",
+        "url": "https://prmmontage.se/bygg-renovering"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar en helrenovering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Priset beror på projektets omfattning — om det gäller en mindre uppdatering eller en total helrenovering av lägenhet eller villa. Efter en kostnadsfri besiktning och offert lämnar vi alltid ett fast pris innan arbetet påbörjas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur lång tid tar en bygg- eller renoveringsprojekt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tidsåtgången beror helt på projektets storlek — allt från några dagars snickeriarbete till flera veckor för en helrenovering. Du får en tydlig tidsplan i samband med offerten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad ingår i en bygg- och renoveringstjänst?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vi hanterar hela processen från rivning till finish — inklusive snickeri, ytskikt och slutstädning. Vid behov hjälper vi också till med bygglovsfrågor så att projektet sköts korrekt från start."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ger bygg- och renoveringsarbete rätt till ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arbetskostnaden vid bygg- och renoveringsarbete ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår ROT-avdragssida."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="tjanster" defaultService="Bygg & renovering">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Bygg &amp; renovering Stockholm</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Bygg &amp; renovering</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-thumb pt-80" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="nt-media wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s" style="height:360px;">
+        <img src="assets/img/projekt/hero-bygg.webp" width="1400" height="560" alt="Bygg- och renoveringsprojekt utfört av PRM Montage i Stockholm" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-70 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Tjänst</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Bygg &amp; renovering i Stockholm — till fast pris</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Ska du helrenovera lägenheten, bygga om villan eller behöver hjälp med snickeriarbeten? PRM Montage tar hand om hela projektet — från rivning och stomarbete till ytskikt och finish. Vi har egna hantverkare inom bygg, VVS, el och snickeri, vilket gör att vi kan driva hela renoveringen som ett samlat projekt utan att du behöver koordinera flera olika entreprenörer.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Oavsett om det handlar om en tvättstuga som ska rustas upp, ett källar- eller vindsutrymme som ska byggas om, byte av dörrar och fönster eller en total helrenovering — du får alltid ett fast pris innan arbetet påbörjas, baserat på en kostnadsfri besiktning och offert.</p>
+
+          <div class="row g-4 mt-10 mb-45">
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-orange);">
+                <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris</h5>
+                <p>Du får en tydlig, fast prisbild innan vi sätter igång — inga överraskningar.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-navy);">
+                <h5><i class="fas fa-user-group" style="color:#1FA968;margin-right:8px;"></i>Allt under ett tak</h5>
+                <p>Bygg, snickeri, VVS och el i samma projekt — med egna hantverkare.</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Vad ingår i bygg &amp; renovering?</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Helrenovering av lägenhet eller villa</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Upprustning av tvättstugor</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Snickeriarbeten och specialsnickerier</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Ombyggnation av källare och vind</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Byte av dörrar och fönster</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Slutstädning och besiktning</span></li>
+          </ul>
+
+          <div class="mb-45">
+            <img src="assets/img/projekt/bygg-03.webp" width="900" height="675" loading="lazy" alt="Ny tvättstuga med maskiner installerade av PRM Montage" class="w-100" style="border-radius:12px;aspect-ratio:16/9;height:auto;object-fit:cover;">
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om bygg &amp; renovering</h4>
+          <div class="accordion nt-accordion mb-45" id="faqBygg">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqBygg1">Vad kostar en helrenovering?</button></h2>
+              <div id="faqBygg1" class="accordion-collapse collapse show" data-bs-parent="#faqBygg"><div class="accordion-body">Priset beror på projektets omfattning — om det gäller en mindre uppdatering eller en total helrenovering av lägenhet eller villa. Efter en kostnadsfri besiktning och offert lämnar vi alltid ett fast pris innan arbetet påbörjas.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBygg2">Hur lång tid tar ett bygg- eller renoveringsprojekt?</button></h2>
+              <div id="faqBygg2" class="accordion-collapse collapse" data-bs-parent="#faqBygg"><div class="accordion-body">Tidsåtgången beror helt på projektets storlek — allt från några dagars snickeriarbete till flera veckor för en helrenovering. Du får en tydlig tidsplan i samband med offerten.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBygg3">Vad ingår i en bygg- och renoveringstjänst?</button></h2>
+              <div id="faqBygg3" class="accordion-collapse collapse" data-bs-parent="#faqBygg"><div class="accordion-body">Vi hanterar hela processen från rivning till finish — inklusive snickeri, ytskikt och slutstädning. Vid behov hjälper vi också till med bygglovsfrågor så att projektet sköts korrekt från start.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBygg4">Ger bygg- och renoveringsarbete rätt till ROT-avdrag?</button></h2>
+              <div id="faqBygg4" class="accordion-collapse collapse" data-bs-parent="#faqBygg"><div class="accordion-body">Arbetskostnaden vid bygg- och renoveringsarbete ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår <a href="/rut-rot">ROT-avdragssida</a>.</div></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Varför PRM Montage?</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Alla tjänster</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li class="is-active"><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Snickeri</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/snickeri-stockholm">Snickeri Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/snickeri-upplands-vasby">Snickeri Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Dags att förverkliga ditt bygg- eller renoveringsprojekt?</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,338 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Montera IKEA-kök Stockholm — Fast pris | PRM Montage",
+  "description": "Montera IKEA-kök i Stockholm till fast pris. METOD-stommar, luckor, MAXIMERA och bänkskiva. 4,9 på Google (100+ omdömen) — begär kostnadsfri offert.",
+  "canonical": "https://prmmontage.se/ikea-koksmontering-stockholm",
+  "ogDescription": "Montering av IKEA METOD-kök i Stockholm till fast pris — stommar, luckor, lådor och bänkskiva.",
+  "ogImage": "https://prmmontage.se/assets/img/projekt/hero-kok.webp",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tjänster",
+            "item": "https://prmmontage.se/tjanster"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Montera IKEA-kök Stockholm"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "IKEA-köksmontering",
+        "name": "Montera IKEA-kök i Stockholm",
+        "description": "Montering av IKEA:s METOD-köksystem i Stockholm — stommar, luckor, MAXIMERA-lådor, bänkskiva och inkoppling av vitvaror, till fast pris.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Stockholm",
+        "url": "https://prmmontage.se/ikea-koksmontering-stockholm"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar det att montera ett IKEA-kök i Stockholm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Priset är fast och beror på kökets storlek — antal stommar, luckor och lådor, om bänkskivan behöver kapas och anpassas, och om vitvaror ska byggas in och kopplas. Du får en kostnadsfri offert med ett fast pris innan monteringen bokas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Är ni certifierade av IKEA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vi är inte en officiell IKEA-partner, men våra snickare har gedigen erfarenhet av METOD-systemet och monterar enligt IKEA:s egna monteringsanvisningar. Skillnaden mot IKEA:s egen monteringstjänst är att du får en fast prisbild direkt av oss och samma hantverkare även för VVS och el."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur lång tid tar monteringen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ett normalstort IKEA-kök monteras oftast på ett till två arbetsdagar när rivning och installationer är klara. Ska det gamla köket rivas, bänkskivan specialkapas eller vitvaror kopplas in tillkommer tid — det ser vi redan när vi räknar på jobbet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kopplar ni in diskmaskin, häll och fläkt också?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Vi har egna VVS-montörer och behöriga elektriker, så vi kan koppla vatten och avlopp till diskbänk och diskmaskin och installera häll, ugn och fläkt i samma besök. Det är arbete som annars kräver att du bokar in separata firmor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ger IKEA-köksmontering rätt till ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arbetskostnaden för monteringen ger normalt rätt till ROT-avdrag, medan själva köket och materialet inte gör det. Vi räknar av avdraget på fakturan och visar det i offerten."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="tjanster" defaultService="VVS & Badrum">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Montera IKEA-kök i Stockholm</h1>
+          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Vi monterar ditt METOD-kök enligt IKEA:s egna anvisningar — stommar, luckor, lådor och bänkskiva, till fast pris.</p>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Montera IKEA-kök Stockholm</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-thumb pt-80" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="nt-media wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s" style="height:360px;">
+        <img src="assets/img/projekt/hero-kok.webp" width="1400" height="560" alt="Monterat IKEA-kök av PRM Montage i Stockholm" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-70 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Tjänst</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Montera IKEA-kök i Stockholm — fast pris på monteringen</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Har du köpt ett IKEA-kök och vill slippa montera det själv? PRM Montage monterar METOD-kök i hela Stockholmsområdet — stommar, luckor, MAXIMERA-lådor, bänkskiva, sockel och lister — enligt IKEA:s egna monteringsanvisningar och till fast pris.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">IKEA:s köksystem är genomtänkt, men det förutsätter att skenan sitter i våg, att väggen tål infästningen och att bänkskivan kapas rätt. I äldre lägenheter i Stockholm är väggarna sällan raka och golven sällan i nivå — det är där erfarenheten gör skillnad mellan ett kök som ser platsbyggt ut och ett som glipar i skarvarna.</p>
+          <div class="row g-4 mt-10 mb-45">
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-orange);">
+                <h5><i class="fas fa-toolbox" style="color:#1FA968;margin-right:8px;"></i>Monterat enligt IKEA:s anvisningar</h5>
+                <p>Stommar, luckor, MAXIMERA och bänkskiva — med rätt infästning i rätt vägg.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-navy);">
+                <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris på monteringen</h5>
+                <p>Kostnadsfri offert först, fast pris sedan. Inga överraskningar på fakturan.</p>
+              </div>
+            </div>
+          </div>
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Vad som ingår i monteringen</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Uppmätning och kontroll mot din IKEA-planritning</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Montering av METOD-stommar och infästning i vägg</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Luckor, lådfronter, MAXIMERA-lådor och justering av gångjärn</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Kapning, montering och tätning av bänkskiva</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Sockel, täcksidor, lister och passbitar</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Inbyggnad av vitvaror samt inkoppling av el och VVS</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Bortforsling av emballage och det gamla köket vid behov</span></li>
+          </ul>
+          <div class="mb-45">
+            <img src="assets/img/projekt/kok-03.webp" width="900" height="675" loading="lazy" alt="Monterat IKEA METOD-kök utfört av PRM Montage i Stockholm" class="w-100" style="border-radius:12px;aspect-ratio:16/9;height:auto;object-fit:cover;">
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Montering, eller hela köket?</h4>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Ska bara köket monteras är det den här tjänsten du vill ha. Ska det gamla köket rivas, väggar flyttas, el dras om och vatten flyttas är det snarare en <a href="/koksrenovering-stockholm">köksrenovering</a> — då tar vi hela projektet med snickare, VVS-montörer och elektriker i samma offert.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vi monterar förstås även kök från andra leverantörer. Har du köpt kök hos en annan kedja fungerar samma upplägg: vi mäter upp, lämnar fast pris och monterar. Har du dessutom behov av <a href="/snickeri-stockholm">platsbyggt snickeri</a> kring köket löser vi det i samma vända.</p>
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">IKEA-köksmontering i ditt område</h4>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vi utgår från Industrivägen 19 i Solna och monterar kök i hela Stockholmsområdet. På områdessidorna nedan hittar du vad som är särskilt att tänka på just där du bor.</p>
+          <div class="row g-4 mb-50">
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-solna">IKEA-köksmontering Solna</a></h4>
+                <p>Kort startsträcka från vårt eget kontor på Industrivägen 19.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-solna">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-sundbyberg">IKEA-köksmontering Sundbyberg</a></h4>
+                <p>Både nyproduktion och äldre fastigheter i grannkommunen.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-sundbyberg">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-upplands-vasby">IKEA-köksmontering Upplands Väsby</a></h4>
+                <p>Villor och radhus norrut längs E4 — och nära IKEA Barkarby.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-upplands-vasby">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-danderyd">IKEA-köksmontering Danderyd</a></h4>
+                <p>METOD-kök i villa i bland annat Djursholm och Stocksund.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-danderyd">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-bromma">IKEA-köksmontering Bromma</a></h4>
+                <p>Lägenhet, radhus eller villa i Alvik, Åkeshov och Riksby.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-bromma">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-tacby">IKEA-köksmontering Täby</a></h4>
+                <p>Snabb och störningsfri montering i villa och radhus.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-tacby">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-lidingo">IKEA-köksmontering Lidingö</a></h4>
+                <p>En kort bilresa över bron från vårt kontor i Solna.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-lidingo">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-sodermalm">IKEA-köksmontering Södermalm</a></h4>
+                <p>METOD-kök anpassat efter äldre lägenheters sneda väggar.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-sodermalm">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om att montera IKEA-kök</h4>
+<div class="accordion nt-accordion mb-45" id="faqIkeaSthlm">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqIkeaSthlm1">Vad kostar det att montera ett IKEA-kök i Stockholm?</button></h2>
+              <div id="faqIkeaSthlm1" class="accordion-collapse collapse show" data-bs-parent="#faqIkeaSthlm"><div class="accordion-body">Priset är fast och beror på kökets storlek — antal stommar, luckor och lådor, om bänkskivan behöver kapas och anpassas, och om vitvaror ska byggas in och kopplas. Du får en kostnadsfri offert med ett fast pris innan monteringen bokas.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqIkeaSthlm2">Är ni certifierade av IKEA?</button></h2>
+              <div id="faqIkeaSthlm2" class="accordion-collapse collapse" data-bs-parent="#faqIkeaSthlm"><div class="accordion-body">Vi är inte en officiell IKEA-partner, men våra snickare har gedigen erfarenhet av METOD-systemet och monterar enligt IKEA:s egna monteringsanvisningar. Skillnaden mot IKEA:s egen monteringstjänst är att du får en fast prisbild direkt av oss och samma hantverkare även för VVS och el.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqIkeaSthlm3">Hur lång tid tar monteringen?</button></h2>
+              <div id="faqIkeaSthlm3" class="accordion-collapse collapse" data-bs-parent="#faqIkeaSthlm"><div class="accordion-body">Ett normalstort IKEA-kök monteras oftast på ett till två arbetsdagar när rivning och installationer är klara. Ska det gamla köket rivas, bänkskivan specialkapas eller vitvaror kopplas in tillkommer tid — det ser vi redan när vi räknar på jobbet.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqIkeaSthlm4">Kopplar ni in diskmaskin, häll och fläkt också?</button></h2>
+              <div id="faqIkeaSthlm4" class="accordion-collapse collapse" data-bs-parent="#faqIkeaSthlm"><div class="accordion-body">Ja. Vi har egna <a href="/rormokare-stockholm">VVS-montörer</a> och behöriga <a href="/elektriker-stockholm">elektriker</a>, så vi kan koppla vatten och avlopp till diskbänk och <a href="/installera-diskmaskin">diskmaskin</a> och installera häll, ugn och fläkt i samma besök. Det är arbete som annars kräver att du bokar in separata firmor.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqIkeaSthlm5">Ger IKEA-köksmontering rätt till ROT-avdrag?</button></h2>
+              <div id="faqIkeaSthlm5" class="accordion-collapse collapse" data-bs-parent="#faqIkeaSthlm"><div class="accordion-body">Arbetskostnaden för monteringen ger normalt rätt till ROT-avdrag, medan själva köket och materialet inte gör det. Vi räknar av avdraget på fakturan och visar det i offerten. Läs mer på vår <a href="/rut-rot">sida om ROT-avdrag</a>.</div></div>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Varför PRM Montage?</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Alla tjänster</h5>
+            <ul class="nt-side-nav">
+              <li class="is-active"><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>IKEA-köksmontering per område</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/ikea-koksmontering-solna">IKEA-köksmontering Solna <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-sundbyberg">IKEA-köksmontering Sundbyberg <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-upplands-vasby">IKEA-köksmontering Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-danderyd">IKEA-köksmontering Danderyd <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-bromma">IKEA-köksmontering Bromma <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-tacby">IKEA-köksmontering Täby <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-lidingo">IKEA-köksmontering Lidingö <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-sodermalm">IKEA-köksmontering Södermalm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/ikea-koksmontering-uppsala">IKEA-köksmontering Uppsala <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Relaterat</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/snickeri-stockholm">Snickeri Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/installera-diskmaskin">Installera diskmaskin <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/byta-blandare">Byta blandare <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Dags att montera IKEA-köket?</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Så går det till — Från offert till klart | PRM Montage",
+  "description": "Så går det till att anlita PRM Montage — från första kontakt och kostnadsfri offert till utfört arbete, besiktning och garanti på jobbet.",
+  "canonical": "https://prmmontage.se/sa-har-gar-det-till",
+  "ogDescription": "Från första kontakt och kostnadsfri offert till utfört arbete, besiktning och garanti.",
+  "ogImage": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Så här går det till"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kostar offerten något?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej, offerten är alltid kostnadsfri och utan förpliktelser. Du bestämmer själv om du vill gå vidare med projektet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur snabbt kan ni börja?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det beror på projektets omfattning och vår aktuella beläggning — vi ger dig alltid en tydlig tidsplan i offerten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Behöver jag vara hemma när ni arbetar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det beror på projektet. Vi kommer överens om praktiska detaljer, till exempel nyckelhantering och tillträde, innan arbetet påbörjas."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Så här går det till</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Så här går det till</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <!-- =============== /BREADCRUMB =============== -->
+
+  <!-- =============== PROCESS =============== -->
+  <div class="pt-100 pb-100" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row justify-content-center mb-60">
+        <div class="col-xl-8 text-center">
+          <p style="color:var(--nt-gray);line-height:1.85;font-size:1.05rem;">Oavsett om det gäller en mindre installation eller en total renovering går vi igenom samma fyra steg med dig — så att du alltid vet vad som händer och vad det kostar.</p>
+        </div>
+      </div>
+      <div class="row g-4 gy-5">
+        <div class="col-lg-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".1s" data-wow-duration=".9s">
+            <span class="nt-step__num">01</span>
+            <h4>Du hör av dig</h4>
+            <p>Ring, mejla eller fyll i formuläret på webbplatsen. Berätta kort vad du behöver hjälp med — det räcker med några rader eller ett telefonsamtal så tar vi det vidare därifrån.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <span class="nt-step__num">02</span>
+            <h4>Kostnadsfri offert</h4>
+            <p>Vi går igenom projektet tillsammans med dig, vid större jobb gärna med ett hembesök. Du får därefter ett fast pris skriftligt, helt utan kostnad och utan att du förbinder dig till något.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">
+            <span class="nt-step__num">03</span>
+            <h4>Vi utför jobbet</h4>
+            <p>När du tackat ja planerar vi in arbetet och håller dig löpande uppdaterad. Våra egna hantverkare inom bygg, VVS, el och snickeri genomför arbetet enligt den tidsplan och det pris vi kommit överens om.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">
+            <span class="nt-step__num">04</span>
+            <h4>Besiktning &amp; garanti</h4>
+            <p>Vi går igenom det färdiga resultatet tillsammans med dig, svarar på frågor och lämnar garanti på arbetet. Behöver något justeras i efterhand är du alltid välkommen att höra av dig.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-60">
+        <div class="col-xl-8">
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;text-align:center;">Vanliga frågor om processen</h4>
+          <div class="accordion nt-accordion" id="faqProcess">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqProcess1">Kostar offerten något?</button></h2>
+              <div id="faqProcess1" class="accordion-collapse collapse show" data-bs-parent="#faqProcess"><div class="accordion-body">Nej, offerten är alltid kostnadsfri och utan förpliktelser. Du bestämmer själv om du vill gå vidare med projektet.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqProcess2">Hur snabbt kan ni börja?</button></h2>
+              <div id="faqProcess2" class="accordion-collapse collapse" data-bs-parent="#faqProcess"><div class="accordion-body">Det beror på projektets omfattning och vår aktuella beläggning — vi ger dig alltid en tydlig tidsplan i offerten.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqProcess3">Behöver jag vara hemma när ni arbetar?</button></h2>
+              <div id="faqProcess3" class="accordion-collapse collapse" data-bs-parent="#faqProcess"><div class="accordion-body">Det beror på projektet. Vi kommer överens om praktiska detaljer, till exempel nyckelhantering och tillträde, innan arbetet påbörjas.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /PROCESS =============== -->
+
+  <!-- =============== CTA =============== -->
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Låt oss ta första steget tillsammans</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag för en kostnadsfri offert — snabbt svar, fast pris, inga överraskningar.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+  <!-- =============== /CTA =============== -->
+
+  <!-- =============== FOOTER =============== -->
+</BaseLayout>

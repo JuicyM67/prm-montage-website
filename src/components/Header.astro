@@ -1,0 +1,40 @@
+---
+interface Props {
+  activeNav?: 'hem' | 'tjanster' | 'omraden' | 'projekt' | 'om-oss' | 'kontakt' | null;
+}
+const { activeNav = null } = Astro.props;
+---
+  <header class="tpheader tp-header-height" id="header-sticky">
+    <div class="container-fluid px-40">
+      <div class="row align-items-center">
+        <div class="col-xl-2 col-lg-3 col-6"><div class="tplogo"><a href="/"><img src="assets/img/logo/logo-color.png" alt="PRM Montage" width="90" height="44" style="height:44px;width:auto;"></a></div></div>
+        <div class="col-xl-7 col-lg-7 d-none d-lg-block">
+          <div class="tp-main-menu main-menu d-flex justify-content-center">
+            <nav class="tp-mobile-menu-active">
+              <ul>
+                <li class={activeNav === 'hem' ? 'active' : undefined}><a href="/">Hem</a></li>
+                <li class={activeNav === 'tjanster' ? 'has-dropdown active' : 'has-dropdown'}><a href="/tjanster">Tjänster</a>
+                  <ul class="submenu tp-submenu d-lg-none"><li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm</a></li><li><a href="/bygg-renovering">Bygg &amp; renovering</a></li><li><a href="/vvs-badrum">VVS &amp; Badrum</a></li><li><a href="/elektriker-stockholm">Elektriker Stockholm</a></li><li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm</a></li><li><a href="/jour">Jour</a></li></ul>
+                  <div class="nt-megamenu d-none d-lg-block">
+                    <div class="nt-megamenu__inner">
+                      <div class="nt-megamenu__cols"><div class="nt-megamenu__col"><span class="nt-megamenu__heading">Renovering &amp; Bygg</span><a href="/koksrenovering-stockholm"><i class="fas fa-utensils"></i><span>Köksrenovering Stockholm</span></a><a href="/bygg-renovering"><i class="fas fa-hammer"></i><span>Bygg &amp; renovering</span></a><a href="/vvs-badrum"><i class="fas fa-shower"></i><span>VVS &amp; Badrum</span></a></div><div class="nt-megamenu__col"><span class="nt-megamenu__heading">Installation &amp; Service</span><a href="/elektriker-stockholm"><i class="fas fa-bolt"></i><span>Elektriker Stockholm</span></a><a href="/altanbygge-i-stockholm"><i class="fas fa-sun"></i><span>Altanbygge i Stockholm</span></a><a href="/jour"><i class="fas fa-triangle-exclamation"></i><span>Jour — akut hjälp</span></a></div></div>
+                      <div class="nt-megamenu__promo" style="background-image:url('assets/img/projekt/badrum-05.webp')"><div class="nt-megamenu__promo-content"><span>Fast pris</span><h4>Kostnadsfri offert inom kort</h4><a href="/kontakt" class="nt-megamenu__promo-btn">Begär offert <i class="fa-sharp fa-regular fa-arrow-right"></i></a></div></div>
+                    </div>
+                  </div>
+                </li>
+                <li class={activeNav === 'omraden' ? 'nt-simple-dropdown-wrap active' : 'nt-simple-dropdown-wrap'}><a href="/solna">Områden</a><ul class="nt-simple-dropdown"><li><a href="/solna">Solna</a></li><li><a href="/sundbyberg">Sundbyberg</a></li><li><a href="/upplands-vasby">Upplands Väsby</a></li><li><a href="/danderyd">Danderyd</a></li><li><a href="/bromma">Bromma</a></li><li><a href="/tacby">Täby</a></li><li><a href="/uppsala">Uppsala</a></li><li><a href="/lidingo">Lidingö</a></li><li><a href="/sodermalm">Södermalm</a></li></ul></li>
+                <li class={activeNav === 'projekt' ? 'active' : undefined}><a href="/projekt">Projekt</a></li>
+                <li class={activeNav === 'om-oss' ? 'active' : undefined}><a href="/om-oss">Om oss</a></li>
+                <li class={activeNav === 'kontakt' ? 'active' : undefined}><a href="/kontakt">Kontakt</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-2 col-6 d-flex justify-content-end align-items-center gap-3">
+          <div class="nt-nav-social d-none d-xxl-flex"><a href="https://www.instagram.com/prmmontageab/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/prmmontageab/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></div><a href="tel:+46852027977" class="d-none d-xxl-flex align-items-center gap-2" style="text-decoration:none;color:var(--nt-navy);font-weight:700;font-size:.9rem;white-space:nowrap;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i>08-520 279 77</a>
+          <a href="#" class="tp-btn hire-btn d-none d-lg-inline-flex">Begär offert</a>
+          <button class="tp-offcanvas-open-btn tp-menu-bar d-lg-none" aria-label="Öppna meny"><i class="fas fa-bars" style="font-size:1.4rem;color:#1F5C50;"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Rörjour Stockholm — Akut rörmokare dygnet runt | PRM Montage",
+  "description": "Rörjour i Stockholm dygnet runt. Vattenläcka, rörbrott eller stopp i avloppet? Ring 08-520 279 77 — fast pris på åtgärden, även akut.",
+  "canonical": "https://prmmontage.se/akut-rormokare-stockholm",
+  "ogDescription": "Akut rörmokare i Stockholm — jour dygnet runt vid vattenläcka, rörbrott och stopp i avloppet. Fast pris på åtgärden.",
+  "ogImage": "https://prmmontage.se/assets/img/projekt/hero-badrum.webp",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tjänster",
+            "item": "https://prmmontage.se/tjanster"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Akut rörmokare Stockholm"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Akut VVS-jour",
+        "name": "Akut rörmokare i Stockholm",
+        "description": "Akut rörmokare med jour dygnet runt i Stockholm — vattenläcka, rörbrott, stopp i avlopp och trasig varmvattenberedare, med fast pris på åtgärden.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Stockholm",
+        "url": "https://prmmontage.se/akut-rormokare-stockholm"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar en jourrörmokare i Stockholm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ett akutbesök kostar mer än ett planerat besök, eftersom vi omprioriterar dagen eller rycker ut på kväll, natt eller helg. Vi ger dig en prisbild redan i telefon utifrån vad du beskriver, och ett fast pris på åtgärden när vi väl har sett skadan på plats. Ingen öppen timdebitering — du ska veta vad det landar på."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad räknas som ett akut VVS-ärende?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vatten som rinner och inte går att stänga av, en synlig vattenläcka, fukt som sprider sig i vägg eller golv, stopp i avloppet som gör toaletten obrukbar, eller en trasig varmvattenberedare mitt i vintern. Är du osäker — ring, så gör vi bedömningen tillsammans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur snabbt är ni på plats?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vi utgår från Solna och har normalt kort inställelsetid i Stockholms närförorter. Exakt hur snabbt vi är framme beror på var du bor och hur läget ser ut just då — det beskedet får du direkt i telefon, inte som ett vagt löfte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Täcker hemförsäkringen en akut vattenskada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ofta ja — de flesta hemförsäkringar täcker plötsliga och oförutsedda vattenskador, men inte skador som beror på eftersatt underhåll. Anmäl skadan till ditt försäkringsbolag så snart du kan. Vi dokumenterar med bilder och skriver ett underlag på vad som var trasigt och vad vi åtgärdade, så att du har det till skaderegleringen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Gäller ROT-avdrag även vid akuta jobb?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Arbetskostnaden ger normalt rätt till ROT-avdrag även vid akuta åtgärder i bostaden, medan material inte gör det. Vi drar av det direkt på fakturan."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="tjanster" defaultService="VVS & Badrum">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Akut rörmokare i Stockholm</h1>
+          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Jour dygnet runt vid vattenläcka, rörbrott och stopp i avloppet. Ring 08-520 279 77 — du får prata med en människa direkt.</p>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Akut rörmokare Stockholm</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-thumb pt-80" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="nt-media wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s" style="height:360px;">
+        <img src="assets/img/projekt/hero-badrum.webp" width="1400" height="560" alt="Akut VVS-utryckning av PRM Montage i Stockholm" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-70 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Jour</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Akut rörmokare och jour i Stockholm — dygnet runt</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">En vattenläcka väntar inte på kontorstid. PRM Montage har jour dygnet runt i Stockholm — ring <a href="tel:+46852027977">08-520 279 77</a> så får du prata med någon direkt, inte en telefonsvarare. Vi utgår från Industrivägen 19 i Solna och åker på akuta VVS-ärenden i hela Stockholmsområdet.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Våra auktoriserade VVS-installatörer stoppar läckan först och åtgärdar orsaken sedan. Du får en prisbild redan i telefon och ett fast pris på åtgärden när vi har sett skadan — även när vi kommer ut mitt i natten.</p>
+          <div class="row g-4 mt-10 mb-45">
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-orange);">
+                <h5><i class="fas fa-clock" style="color:#1FA968;margin-right:8px;"></i>Jour dygnet runt</h5>
+                <p>Kväll, natt, helg och röd dag — samma nummer, 08-520 279 77.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-navy);">
+                <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris även akut</h5>
+                <p>Prisbild i telefon, fast pris på plats. Ingen öppen timdebitering.</p>
+              </div>
+            </div>
+          </div>
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Detta rycker vi ut på</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Vattenläcka i kök, badrum eller tvättstuga</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Rörbrott och läckande kopplingar bakom vägg eller under golv</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Blandare eller ventil som inte går att stänga av</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Stopp i avlopp, golvbrunn eller toalett</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Läckande toalettstol eller trasig spolcistern</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Trasig varmvattenberedare och uteblivet varmvatten</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Fuktskador där orsaken behöver hittas snabbt</span></li>
+          </ul>
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Gör så här medan du väntar</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Stäng huvudkranen — oftast i badrummet, köksskåpet eller undercentralen.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Bryt strömmen till området om vatten är i närheten av eluttag eller elcentral.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Torka upp och flytta undan det som kan ta skada.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Fotografera skadan innan du städar — bilderna behövs vid försäkringsärendet.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Bor du i lägenhet: larma fastighetsägaren eller föreningen så att grannarna kan kontrolleras.</span></li>
+          </ul>
+          <div class="mb-45">
+            <img src="assets/img/projekt/badrum-06.webp" width="900" height="675" loading="lazy" alt="Badrum där PRM Montage åtgärdat en akut vattenskada i Stockholm" class="w-100" style="border-radius:12px;aspect-ratio:16/9;height:auto;object-fit:cover;">
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Vad ett akut besök kostar</h4>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Jourpriser ligger högre än ordinarie priser — det är inget vi döljer. Skillnaden beror på när på dygnet vi rycker ut och hur omfattande åtgärden blir. Det du får av oss är ett besked i telefon om ungefär vad du kan räkna med, och ett fast pris på själva åtgärden innan vi sätter igång på plats. Handlar det om ett jobb som kan vänta till nästa vardag säger vi det också — då blir det billigare för dig, och vi bokar in ett vanligt besök via <a href="/rormokare-stockholm">vår ordinarie VVS-service</a> i stället.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Efter att den akuta läckan är stoppad tar vi gärna hand om återställningen också — <a href="/vvs-badrum">badrumsrenovering</a>, <a href="/bygg-renovering">bygg och snickeri</a> och <a href="/elektriker-stockholm">el</a> med egna hantverkare, i ett samlat projekt med fast pris.</p>
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om akut rörmokare och jour</h4>
+<div class="accordion nt-accordion mb-45" id="faqAkutRor">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqAkutRor1">Vad kostar en jourrörmokare i Stockholm?</button></h2>
+              <div id="faqAkutRor1" class="accordion-collapse collapse show" data-bs-parent="#faqAkutRor"><div class="accordion-body">Ett akutbesök kostar mer än ett planerat besök, eftersom vi omprioriterar dagen eller rycker ut på kväll, natt eller helg. Vi ger dig en prisbild redan i telefon utifrån vad du beskriver, och ett fast pris på åtgärden när vi väl har sett skadan på plats. Ingen öppen timdebitering — du ska veta vad det landar på.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAkutRor2">Vad räknas som ett akut VVS-ärende?</button></h2>
+              <div id="faqAkutRor2" class="accordion-collapse collapse" data-bs-parent="#faqAkutRor"><div class="accordion-body">Vatten som rinner och inte går att stänga av, en synlig <a href="/vattenlacka-stockholm">vattenläcka</a>, fukt som sprider sig i vägg eller golv, stopp i avloppet som gör toaletten obrukbar, eller en trasig varmvattenberedare mitt i vintern. Är du osäker — ring, så gör vi bedömningen tillsammans.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAkutRor3">Hur snabbt är ni på plats?</button></h2>
+              <div id="faqAkutRor3" class="accordion-collapse collapse" data-bs-parent="#faqAkutRor"><div class="accordion-body">Vi utgår från Solna och har normalt kort inställelsetid i Stockholms närförorter. Exakt hur snabbt vi är framme beror på var du bor och hur läget ser ut just då — det beskedet får du direkt i telefon, inte som ett vagt löfte.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAkutRor4">Täcker hemförsäkringen en akut vattenskada?</button></h2>
+              <div id="faqAkutRor4" class="accordion-collapse collapse" data-bs-parent="#faqAkutRor"><div class="accordion-body">Ofta ja — de flesta hemförsäkringar täcker plötsliga och oförutsedda vattenskador, men inte skador som beror på eftersatt underhåll. Anmäl skadan till ditt försäkringsbolag så snart du kan. Vi dokumenterar med bilder och skriver ett underlag på vad som var trasigt och vad vi åtgärdade, så att du har det till skaderegleringen.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAkutRor5">Gäller ROT-avdrag även vid akuta jobb?</button></h2>
+              <div id="faqAkutRor5" class="accordion-collapse collapse" data-bs-parent="#faqAkutRor"><div class="accordion-body">Ja. Arbetskostnaden ger normalt rätt till ROT-avdrag även vid akuta åtgärder i bostaden, medan material inte gör det. Vi drar av det direkt på fakturan — läs mer på vår <a href="/rut-rot">sida om ROT-avdrag</a>.</div></div>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Varför PRM Montage?</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Akut hjälp</h5>
+            <ul class="nt-side-nav">
+              <li class="is-active"><a href="/akut-rormokare-stockholm">Akut rörmokare Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vattenlacka-stockholm">Vattenläcka Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/rormokare-stockholm">Rörmokare Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Alla tjänster</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li class="is-active"><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>VVS-jobb till fast pris</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/byta-blandare">Byta blandare <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/laga-lackande-blandare">Laga läckande blandare <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/byta-toalettstol">Byta toalettstol <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/installera-diskmaskin">Installera diskmaskin <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/installera-tvattmaskin">Installera tvättmaskin <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Akut vattenläcka? Ring oss nu.</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Vi har jour dygnet runt i hela Stockholmsområdet — 08-520 279 77.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

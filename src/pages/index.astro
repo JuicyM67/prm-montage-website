@@ -1,0 +1,1029 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Köksrenovering Stockholm — Bygg, VVS & El | PRM Montage",
+  "description": "Köksrenovering, bygg, VVS och el i Stockholm till fast pris. Egna hantverkare, 4,9 på Google (100+ omdömen). Begär kostnadsfri offert.",
+  "canonical": "https://prmmontage.se/",
+  "ogDescription": "Köksrenovering, bygg & renovering, VVS, el och altanbygge i Stockholm — till fast pris. Egna hantverkare, F-skatt och försäkring. Kostnadsfri offert.",
+  "ogImage": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+  "twitterTitle": "PRM Montage — Bygg, Renovering, VVS & El i Stockholm",
+  "twitterDescription": "Köksrenovering, bygg & renovering, VVS, el och altanbygge i Stockholm — till fast pris. Kostnadsfri offert.",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://prmmontage.se/#organization",
+        "name": "PRM Montage",
+        "legalName": "PRM MONTAGE AB",
+        "url": "https://prmmontage.se/",
+        "logo": "https://prmmontage.se/assets/img/logo/logo-color.png",
+        "image": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+        "description": "PRM Montage AB är ett bygg- och hantverksföretag i Solna som hjälper privatpersoner och företag i Stockholmsområdet med köksrenovering, bygg & renovering, VVS, el och altanbygge — till fast pris.",
+        "telephone": "+46852027977",
+        "email": "info@pro-montage.se",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Industrivägen 19",
+          "postalCode": "171 48",
+          "addressLocality": "Solna",
+          "addressCountry": "SE"
+        },
+        "areaServed": [
+          "Solna",
+          "Sundbyberg",
+          "Stockholm",
+          "Danderyd",
+          "Bromma",
+          "Täby",
+          "Södermalm",
+          "Lidingö",
+          "Uppsala"
+        ],
+        "priceRange": "$$",
+        "foundingDate": "2022",
+        "taxID": "559377-9621",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "07:00",
+            "closes": "17:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "reviewCount": "100"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "PRM Montage",
+        "url": "https://prmmontage.se/",
+        "inLanguage": "sv-SE"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          }
+        ]
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Marie Chenik"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Jag är mycket nöjd med installationen av blandaren i mitt badrum av en duktig och vänlig hantverkare."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Melina Sandström"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Kom i tid. Gjorde ett mkt bra jobb."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Michael Bärlin"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Great service!"
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Thomas Durrani"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Helped us with installation of faucet. Very professional! The job was very well done! Can strongly recommend!"
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Gisela Fondberg"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Verkligen bra service. Lyhörd och trevlig personal, snabba åtgärder och bra information. Montering av badrumsutrustning gjordes utomordentligt noggrant och med perfekt resultat."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Staffan Karlsson"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Bra arbete av trevlig och hjälpsam installatör."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Daniel Hermansson"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Ringde PRM Montage och fick snabb hjälp — proffsigt utfört arbete."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Magnus Påhlsson"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Riktigt bra bemötande och kompetent hantverkare. Rekommenderas!"
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Fredrik Österholm"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Snabbt, tydligt och prisvärt utfört. Mycket nöjd."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Margaretha Lindh"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Professionellt bemötande — kom snabbt och gjorde ett bra jobb."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Johanna S"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Bra kommunikation genom hela projektet. Rekommenderas!"
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Daniel Skötlund"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Löste jobbet snabbt med ett väldigt trevligt bemötande."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Georgia B"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Snabb och professionell installation, prydligt utfört."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Cecilia Lind"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Riktigt bra hantverkare som höll vad de lovade."
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@id": "https://prmmontage.se/#organization"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Tomas Paulsson"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Mycket bra installation, effektivt och prydligt."
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="hem">
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="assets/img/hero/hero-home.webp" media="(min-width: 768px)">
+    <link rel="preload" as="image" href="assets/img/hero/hero-home-mobile.webp" media="(max-width: 767.98px)">
+  </Fragment>
+
+  <!-- =============== /NAVBAR =============== -->
+
+  <!-- =============== HERO (statisk, formulär above the fold) =============== -->
+  <section class="nt-hero-static">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="nt-hero-social">
+            <a href="https://www.instagram.com/prmmontageab/" target="_blank" rel="noopener" aria-label="PRM Montage på Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/prmmontageab/" target="_blank" rel="noopener" aria-label="PRM Montage på Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+          <div class="nt-rating-badge">
+            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+            <span class="txt">4,9 i betyg på Google &middot; Över 100 recensioner</span>
+          </div>
+          <h1>Bygg, renovering, VVS &amp; el i Stockholm — <span>till fast pris</span></h1>
+          <p class="nt-hero-lead">PRM Montage AB är din lokala hantverksfirma i Solna. Vi hjälper dig med kök, badrum, bygg &amp; renovering, el och altan — med egna hantverkare, F-skatt, försäkring och alltid ett fast pris innan vi börjar.</p>
+          <div class="nt-trust-row mb-10">
+            <span><i class="fas fa-shield-check"></i> F-skatt &amp; försäkrat</span>
+            <span><i class="fas fa-tags"></i> Alltid fast pris</span>
+            <span><i class="fas fa-user-group"></i> Egna hantverkare</span>
+            <span><i class="fas fa-clock"></i> Jour dygnet runt</span>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="nt-hero-form-card">
+            <h3>Kostnadsfri offert</h3>
+            <p class="nt-form-sub">Fyll i formuläret så återkommer vi till dig — helt utan kostnad eller förpliktelser.</p>
+            <div class="nt-form-message"></div>
+            <form class="nt-ajax-form" data-form-type="offert">
+              <div class="nt-form-field">
+                <label>Namn *</label>
+                <input type="text" name="name" required placeholder="Förnamn Efternamn">
+              </div>
+              <div class="nt-form-row2">
+                <div class="nt-form-field">
+                  <label>Telefon *</label>
+                  <input type="tel" name="phone" required placeholder="070-123 45 67">
+                </div>
+                <div class="nt-form-field">
+                  <label>E-post</label>
+                  <input type="email" name="email" placeholder="valfritt">
+                </div>
+              </div>
+              <div class="nt-form-row3">
+                <div class="nt-form-field">
+                  <label>Adress *</label>
+                  <input type="text" name="address" required placeholder="Gatuadress">
+                </div>
+                <div class="nt-form-field">
+                  <label>Postnummer *</label>
+                  <input type="text" name="postalCode" required inputmode="numeric" placeholder="123 45">
+                </div>
+                <div class="nt-form-field">
+                  <label>Stad *</label>
+                  <input type="text" name="city" required placeholder="T.ex. Solna">
+                </div>
+              </div>
+              <div class="nt-form-field">
+                <label>Vad vill du ha hjälp med? *</label>
+                <select name="service" required>
+                  <option value="">— Välj tjänst —</option>
+                  <option>Köksrenovering</option>
+                  <option>Bygg &amp; renovering</option>
+                  <option>VVS &amp; Badrum</option>
+                  <option>Elektriker</option>
+                  <option>Altanbygge</option>
+                  <option>Jour / akut</option>
+                  <option>Annat</option>
+                </select>
+              </div>
+              <div class="nt-form-field">
+                <label>Kort beskrivning</label>
+                <textarea name="message" placeholder="Berätta gärna lite om projektet..."></textarea>
+              </div>
+              <div class="nt-form-field">
+                <label>Bifoga bilder (valfritt)</label>
+                <div class="nt-file-field"><input type="file" name="files" accept="image/*,.pdf" multiple>
+                  <p class="nt-file-hint">Max 3 filer, totalt 10 MB.</p>
+                </div>
+              </div>
+              <button type="submit" class="nt-form-submit">Skicka förfrågan &rarr;</button>
+              <p class="nt-form-fineprint">Inget köptvång. Vi återkommer till dig personligen.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =============== /HERO =============== -->
+
+  <!-- =============== TRYGGHETSPUNKTER =============== -->
+  <div class="tp-feature-area tp-feature-4-wrap pt-90 pb-60 fix" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="tp-border-bottom pb-30">
+        <div class="row gx-60">
+          <div class="col-lg-4 col-md-6 tp-counter-3-border">
+            <div class="tp-feature-3-wrap tpshake-wrap d-flex md-space wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+              <span class="mr-25 nt-icon-card__icon" style="margin-bottom:0;flex-shrink:0;"><i class="fas fa-file-invoice-dollar"></i></span>
+              <div>
+                <h3 class="fs-24 fw-600 mb-10" style="color:var(--nt-navy);">Alltid fast pris</h3>
+                <p style="color:var(--nt-gray);margin:0;">Du får en tydlig prisbild innan vi sätter igång — inga överraskningar på fakturan.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 tp-counter-3-border">
+            <div class="tp-feature-3-wrap tpshake-wrap d-flex md-space wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">
+              <span class="mr-25 nt-icon-card__icon" style="margin-bottom:0;flex-shrink:0;"><i class="fas fa-user-group"></i></span>
+              <div>
+                <h3 class="fs-24 fw-600 mb-10" style="color:var(--nt-navy);">Allt under ett tak</h3>
+                <p style="color:var(--nt-gray);margin:0;">Egna hantverkare inom bygg, VVS, el och snickeri — du slipper samordna flera företag.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="tp-feature-3-wrap tpshake-wrap d-flex md-space wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">
+              <span class="mr-25 nt-icon-card__icon" style="margin-bottom:0;flex-shrink:0;"><i class="fas fa-shield-check"></i></span>
+              <div>
+                <h3 class="fs-24 fw-600 mb-10" style="color:var(--nt-navy);">Försäkrat &amp; F-skatt</h3>
+                <p style="color:var(--nt-gray);margin:0;">PRM Montage AB innehar F-skatt och är fullt försäkrat under varje uppdrag.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /TRYGGHETSPUNKTER =============== -->
+
+  <!-- =============== OM OSS =============== -->
+  <div class="tp-about-area pt-130 pb-110">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-40">
+          <div class="tp-benifits-4-thumb p-relative mr-50">
+            <div class="nt-media wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s">
+              <img src="assets/img/projekt/kok-03.webp" width="900" height="675" loading="lazy" alt="Köksrenovering utförd av PRM Montage i Stockholm">
+            </div>
+            <div class="p-absolute text-center" style="top:-26px;left:-18px;background:var(--nt-orange);color:#fff;border-radius:14px;padding:20px 24px;box-shadow:0 16px 34px rgba(31,169,104,.35);">
+              <h4 style="color:#fff;font-size:2rem;font-weight:700;margin:0;line-height:1;">2022</h4>
+              <span style="font-size:.82rem;opacity:.9;">Grundades i Solna</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-40">
+          <div class="tp-about-2-content tp-about-4-content ml-30">
+            <span class="nt-eyebrow">Om PRM Montage</span>
+            <h2 class="mb-25 fs-xl-40 fs-sm-36 wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s">Din moderna hantverkare i Stockholm</h2>
+            <p class="mb-20" style="color:var(--nt-gray);line-height:1.8;">PRM Montage AB är ett väletablerat bygg- och hantverksföretag med säte på Industrivägen 19 i Solna. Vi gör det enklare att ta hand om både stora och små jobb — till fast pris, med certifierade hantverkare och korta väntetider.</p><p class="mb-20" style="color:var(--nt-gray);line-height:1.8;">Vi samlar kompetens inom bygg, snickeri, VVS och el under ett och samma tak, vilket gör att du som kund slipper anlita och samordna flera olika företag för ditt projekt.</p>
+            <div class="tp-about-bottom-feature mb-40 mt-30"><ul><li><i class="fa-sharp fa-solid fa-check"></i> Egna hantverkare inom bygg, VVS, el och snickeri</li><li><i class="fa-sharp fa-solid fa-check"></i> F-skatt, försäkring och fasta priser på alla jobb</li><li><i class="fa-sharp fa-solid fa-check"></i> Baserade i Solna — arbetar i hela Stockholm, från norr till söder</li></ul></div>
+            <a href="/om-oss" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center">
+                <span class="btn-text">Läs mer om oss</span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /OM OSS =============== -->
+
+  <!-- =============== TJÄNSTER =============== -->
+  <div class="tp-service-area pt-130 pb-100" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row align-items-end mb-60">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Våra tjänster</span>
+          <h2 class="fs-xl-40 fs-sm-36 wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s">Hjälp med hela hemmet — från kök till altan</h2>
+        </div>
+        <div class="col-lg-4">
+          <div class="text-lg-end mt-25">
+            <a href="/tjanster" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center">
+                <span class="btn-text">Se alla tjänster</span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-xl-4 col-md-6">
+          <div class="nt-icon-card position-relative wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <span class="nt-badge-popular">Populär</span>
+            <div class="nt-icon-card__icon"><i class="fas fa-utensils"></i></div>
+            <h4><a href="/koksrenovering-stockholm">Köksrenovering Stockholm</a></h4>
+            <p>Nytt kök från idé till färdig helhet — snickeri, VVS och el i samma projekt.</p>
+            <a class="nt-icon-card__link" href="/koksrenovering-stockholm">Läs mer <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="nt-icon-card position-relative wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <span class="nt-badge-popular">Populär</span>
+            <div class="nt-icon-card__icon"><i class="fas fa-shower"></i></div>
+            <h4><a href="/vvs-badrum">VVS &amp; Badrum</a></h4>
+            <p>Badrumsrenovering, duschväggar, blandare och behöriga VVS-installationer.</p>
+            <a class="nt-icon-card__link" href="/vvs-badrum">Läs mer <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="nt-icon-card position-relative wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <div class="nt-icon-card__icon"><i class="fas fa-hammer"></i></div>
+            <h4><a href="/bygg-renovering">Bygg &amp; renovering</a></h4>
+            <p>Helrenoveringar, tvättstugor, snickeri och ombyggnationer i hela bostaden.</p>
+            <a class="nt-icon-card__link" href="/bygg-renovering">Läs mer <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="nt-icon-card position-relative wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <div class="nt-icon-card__icon"><i class="fas fa-bolt"></i></div>
+            <h4><a href="/elektriker-stockholm">Elektriker Stockholm</a></h4>
+            <p>Behörig elinstallation — vägguttag, belysning och elcentraler till fast pris.</p>
+            <a class="nt-icon-card__link" href="/elektriker-stockholm">Läs mer <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="nt-icon-card position-relative wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <div class="nt-icon-card__icon"><i class="fas fa-sun"></i></div>
+            <h4><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm</a></h4>
+            <p>Skräddarsydda altaner och uteplatser — från ritning till färdig altan.</p>
+            <a class="nt-icon-card__link" href="/altanbygge-i-stockholm">Läs mer <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="nt-icon-card position-relative wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <div class="nt-icon-card__icon"><i class="fas fa-triangle-exclamation"></i></div>
+            <h4><a href="/jour">Jour — akut hjälp</a></h4>
+            <p>Akut läckage eller elfel? Vi rycker ut när det verkligen behövs.</p>
+            <a class="nt-icon-card__link" href="/jour">Läs mer <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /TJÄNSTER =============== -->
+
+  <!-- =============== SÅ GÅR DET TILL =============== -->
+  <div class="tp-process-area pt-130 pb-130" style="background-color:#EFF7F4;">
+    <div class="container">
+      <div class="row justify-content-center mb-70">
+        <div class="col-xl-7 text-center">
+          <span class="nt-eyebrow">Så går det till</span>
+          <h2 class="fs-xl-40 fs-sm-36 wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s">Från förfrågan till färdigt jobb — till fast pris</h2>
+        </div>
+      </div>
+      <div class="row g-4 gy-5">
+        <div class="col-xl-3 col-md-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".1s" data-wow-duration=".9s">
+            <span class="nt-step__num">01</span>
+            <h4>Du hör av dig</h4>
+            <p>Ring, mejla eller fyll i formuläret. Berätta vad du behöver hjälp med.</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <span class="nt-step__num">02</span>
+            <h4>Kostnadsfri offert</h4>
+            <p>Vi går igenom ditt projekt och tar fram ett tydligt, fast pris — utan bindningstid.</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">
+            <span class="nt-step__num">03</span>
+            <h4>Vi utför jobbet</h4>
+            <p>Våra egna hantverkare inom bygg, VVS, el och snickeri genomför arbetet.</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="nt-step h-100 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">
+            <span class="nt-step__num">04</span>
+            <h4>Besiktning &amp; garanti</h4>
+            <p>Vi går igenom resultatet tillsammans med dig och lämnar garanti på arbetet.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-50">
+        <div class="col-auto">
+          <a href="/sa-har-gar-det-till" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+            <span class="d-flex align-items-center justify-content-center">
+              <span class="btn-text">Läs mer om processen</span>
+              <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+              <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /SÅ GÅR DET TILL =============== -->
+
+  <!-- =============== VARFÖR PRM MONTAGE =============== -->
+  <div class="tp-chose-area p-relative">
+    <div class="container-fluid p-0">
+      <div class="row gx-0 align-items-stretch">
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="tp-chose-thumb h-100" style="min-height:100%;background:url('assets/img/projekt/badrum-10.webp') center/cover no-repeat;"></div>
+        </div>
+        <div class="col-lg-7">
+          <div class="p-relative" style="background:var(--nt-navy);padding:100px 8% 90px;">
+            <span class="nt-eyebrow nt-eyebrow-light">Varför PRM Montage</span>
+            <h2 class="mb-20 fs-xl-40 fs-sm-36 tp-text-common-white wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s">Trygg hantverksfirma, samlad på ett ställe</h2>
+            <p class="mb-45" style="color:rgba(255,255,255,0.75);max-width:560px;">Vi är inte en förmedlare — vi är hantverkarna. Det gör oss snabbare, billigare och lättare att ha kontakt med genom hela projektet.</p>
+
+            <div class="nt-usp-item">
+              <div class="nt-usp-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+              <div class="nt-usp-text">
+                <h5>Fast pris, alltid</h5>
+                <p>Du vet exakt vad projektet kostar innan vi sätter igång — inga dolda avgifter.</p>
+              </div>
+            </div>
+            <div class="nt-usp-item">
+              <div class="nt-usp-icon"><i class="fas fa-shield-check"></i></div>
+              <div class="nt-usp-text">
+                <h5>F-skatt &amp; fullt försäkrade</h5>
+                <p>PRM Montage AB (org.nr 559377-9621) innehar F-skatt och är försäkrat under varje uppdrag.</p>
+              </div>
+            </div>
+            <div class="nt-usp-item">
+              <div class="nt-usp-icon"><i class="fas fa-user-group"></i></div>
+              <div class="nt-usp-text">
+                <h5>Egna hantverkare</h5>
+                <p>Bygg, snickeri, VVS och el under ett tak — du slipper samordna flera företag.</p>
+              </div>
+            </div>
+            <div class="nt-usp-item">
+              <div class="nt-usp-icon"><i class="fas fa-award"></i></div>
+              <div class="nt-usp-text">
+                <h5>Garanti på arbetet</h5>
+                <p>Vi står bakom vårt arbete och lämnar garanti — läs mer på vår garantisida.</p>
+              </div>
+            </div>
+            <div class="nt-usp-item">
+              <div class="nt-usp-icon"><i class="fas fa-percent"></i></div>
+              <div class="nt-usp-text">
+                <h5>ROT-avdrag</h5>
+                <p>De flesta av våra tjänster ger rätt till ROT-avdrag — vi hjälper dig räkna på det.</p>
+              </div>
+            </div>
+            <a href="/kontakt" class="tp-btn-xl hire-btn mt-20 d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center">
+                <span class="btn-text">Begär offert</span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /VARFÖR PRM MONTAGE =============== -->
+
+  <!-- =============== SENASTE PROJEKT =============== -->
+  <div class="pt-130 pb-100" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row align-items-end mb-50">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Nyligen utfört</span>
+          <h2 class="fs-xl-40 fs-sm-36 wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s">Ett urval av våra senaste projekt</h2>
+        </div>
+        <div class="col-lg-4">
+          <div class="text-lg-end mt-25">
+            <a href="/projekt" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center">
+                <span class="btn-text">Se hela galleriet</span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nt-gallery-grid">
+        <a class="nt-gallery-item" href="/projekt"><img src="assets/img/projekt/kok-02.webp" width="900" height="675" loading="lazy" alt="Köksrenovering, Stockholm"><span>Köksrenovering</span></a>
+        <a class="nt-gallery-item" href="/projekt"><img src="assets/img/projekt/badrum-04.webp" width="900" height="675" loading="lazy" alt="Badrumsrenovering, dusch med regnmunstycke"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" href="/projekt"><img src="assets/img/projekt/bygg-01.webp" width="900" height="675" loading="lazy" alt="Snickeri, ytterdörr"><span>Bygg &amp; snickeri</span></a>
+        <a class="nt-gallery-item" href="/projekt"><img src="assets/img/projekt/kok-04.webp" width="900" height="675" loading="lazy" alt="Köksrenovering med köksfläkt"><span>Köksrenovering</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /SENASTE PROJEKT =============== -->
+
+  <!-- =============== FÖLJ OSS PÅ INSTAGRAM =============== -->
+  <div class="pt-40 pb-130" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row justify-content-center mb-50 text-center">
+        <div class="col-xl-7">
+          <span class="nt-eyebrow">Följ oss på sociala medier</span>
+          <h2 class="fs-xl-40 fs-sm-36">Följ oss på Instagram</h2>
+          <p style="color:var(--nt-gray);">Fler bilder från våra projekt — och det senaste från PRM Montage.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-20">
+            <a href="https://www.instagram.com/prmmontageab/" target="_blank" rel="noopener" class="nt-social-cta-btn nt-social-cta-btn--solid">
+              <i class="fab fa-instagram"></i><span>@prmmontageab</span>
+            </a>
+            <a href="https://www.facebook.com/prmmontageab/" target="_blank" rel="noopener" class="nt-social-cta-btn nt-social-cta-btn--outline">
+              <i class="fab fa-facebook-f"></i><span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <div class="nt-instagram-embed">
+            <iframe onload="iFrameSetup(this)" src="https://app.mirror-app.com/feed-instagram/396b6905-7082-4386-9255-a62f9fcab5b5/preview" style="width:100%;border:none;overflow:hidden;" scrolling="no" title="PRM Montage Instagram-flöde" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/@mirrorapp/iframe-bridge@latest/dist/index.umd.js"></script>
+  <!-- =============== /FÖLJ OSS PÅ INSTAGRAM =============== -->
+
+  <!-- =============== SIFFROR =============== -->
+  <div class="tp-counter-area pt-90 pb-60" style="background:var(--nt-gray-light);">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-6 col-md-6">
+          <div class="tp-counter-wrap d-flex align-items-center mb-30 wow fadeInUp" data-wow-delay=".1s" data-wow-duration=".9s">
+            <span class="mr-25"><i class="fas fa-calendar" style="font-size:2.6rem;color:#1FA968;"></i></span>
+            <div class="nt-stat-light">
+              <h3>2022</h3>
+              <p>Grundades i Solna</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+          <div class="tp-counter-wrap d-flex align-items-center mb-30 wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".9s">
+            <span class="mr-25"><i class="fas fa-star" style="font-size:2.6rem;color:#1FA968;"></i></span>
+            <div class="nt-stat-light">
+              <h3>4,9</h3>
+              <p>Betyg på Google</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+          <div class="tp-counter-wrap d-flex align-items-center mb-30 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">
+            <span class="mr-25"><i class="fas fa-user-group" style="font-size:2.6rem;color:#1FA968;"></i></span>
+            <div class="nt-stat-light">
+              <h3>6</h3>
+              <p>Hantverkare i teamet</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+          <div class="tp-counter-wrap d-flex align-items-center mb-30 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">
+            <span class="mr-25"><i class="fas fa-file-invoice-dollar" style="font-size:2.6rem;color:#1FA968;"></i></span>
+            <div class="nt-stat-light">
+              <h3>100%</h3>
+              <p>Fasta priser</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /SIFFROR =============== -->
+
+  <!-- =============== TESTIMONIALS =============== -->
+  <div class="tp-testimonial-area pt-130 pb-130" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row justify-content-center mb-60">
+        <div class="col-xl-7 text-center">
+          <span class="nt-eyebrow">Recensioner</span>
+          <h2 class="fs-xl-40 fs-sm-36 wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s">Vad våra kunder säger om oss</h2>
+          <p style="color:var(--nt-gray);">Riktiga recensioner från Google, med ett snitt på 4,9 av 5 baserat på över 100 recensioner.</p>
+        </div>
+      </div>
+
+      <div class="swiper nt-testimonial-slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Jag är mycket nöjd med installationen av blandaren i mitt badrum av en duktig och vänlig hantverkare."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">MC</div>
+                <div><h6>Marie Chenik</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Kom i tid. Gjorde ett mkt bra jobb."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">MS</div>
+                <div><h6>Melina Sandström</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Great service!"</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">MB</div>
+                <div><h6>Michael Bärlin</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Helped us with installation of faucet. Very professional! The job was very well done! Can strongly recommend!"</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">TD</div>
+                <div><h6>Thomas Durrani</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Verkligen bra service. Lyhörd och trevlig personal, snabba åtgärder och bra information. Montering av badrumsutrustning gjordes utomordentligt noggrant och med perfekt resultat."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">GF</div>
+                <div><h6>Gisela Fondberg</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Bra arbete av trevlig och hjälpsam installatör."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">SK</div>
+                <div><h6>Staffan Karlsson</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Ringde PRM Montage och fick snabb hjälp — proffsigt utfört arbete."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">DH</div>
+                <div><h6>Daniel Hermansson</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Riktigt bra bemötande och kompetent hantverkare. Rekommenderas!"</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">MP</div>
+                <div><h6>Magnus Påhlsson</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Snabbt, tydligt och prisvärt utfört. Mycket nöjd."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">FÖ</div>
+                <div><h6>Fredrik Österholm</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Professionellt bemötande — kom snabbt och gjorde ett bra jobb."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">ML</div>
+                <div><h6>Margaretha Lindh</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Bra kommunikation genom hela projektet. Rekommenderas!"</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">JS</div>
+                <div><h6>Johanna S</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Löste jobbet snabbt med ett väldigt trevligt bemötande."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">DS</div>
+                <div><h6>Daniel Skötlund</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Snabb och professionell installation, prydligt utfört."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">GB</div>
+                <div><h6>Georgia B</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Riktigt bra hantverkare som höll vad de lovade."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">CL</div>
+                <div><h6>Cecilia Lind</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="nt-quote">
+              <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p>"Mycket bra installation, effektivt och prydligt."</p>
+              <div class="nt-quote__author">
+                <div class="nt-quote__avatar">TP</div>
+                <div><h6>Tomas Paulsson</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nt-testimonial-nav">
+        <button class="nt-testimonial-prev" aria-label="Föregående"><i class="fas fa-arrow-left"></i></button>
+        <a href="https://www.google.com/maps/search/?api=1&query=PRM+Montage+AB+Industriv%C3%A4gen+23+Solna" target="_blank" rel="noopener" style="color:var(--nt-navy);font-weight:600;font-size:.92rem;text-decoration:none;">Läs fler recensioner på Google <i class="fas fa-arrow-up-right-from-square" style="font-size:.78rem;"></i></a>
+        <button class="nt-testimonial-next" aria-label="Nästa"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /TESTIMONIALS =============== -->
+
+  <!-- =============== OMRÅDEN =============== -->
+  <div class="pt-100 pb-110" style="background:var(--nt-gray-light);">
+    <div class="container">
+      <div class="row justify-content-center mb-40">
+        <div class="col-xl-7 text-center">
+          <span class="nt-eyebrow">Vårt upptagningsområde</span>
+          <h2 class="fs-xl-40 fs-sm-36">Vi arbetar i hela Stockholm — och i Uppsala</h2>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="/solna" class="nt-area-chip"><i class="fas fa-location-dot"></i> Solna</a>
+        <a href="/sundbyberg" class="nt-area-chip"><i class="fas fa-location-dot"></i> Sundbyberg</a>
+        <a href="/upplands-vasby" class="nt-area-chip"><i class="fas fa-location-dot"></i> Upplands Väsby</a>
+        <a href="/danderyd" class="nt-area-chip"><i class="fas fa-location-dot"></i> Danderyd</a>
+        <a href="/bromma" class="nt-area-chip"><i class="fas fa-location-dot"></i> Bromma</a>
+        <a href="/tacby" class="nt-area-chip"><i class="fas fa-location-dot"></i> Täby</a>
+        <a href="/uppsala" class="nt-area-chip"><i class="fas fa-location-dot"></i> Uppsala</a>
+        <a href="/lidingo" class="nt-area-chip"><i class="fas fa-location-dot"></i> Lidingö</a>
+        <a href="/sodermalm" class="nt-area-chip"><i class="fas fa-location-dot"></i> Södermalm</a>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /OMRÅDEN =============== -->
+
+  <!-- =============== CTA =============== -->
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-10">
+          <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+          <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s">Låt oss ta hand om ditt nästa projekt</h2>
+          <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag för en kostnadsfri offert — snabbt svar, fast pris, inga överraskningar.</p>
+          <div class="d-flex flex-wrap align-items-center gap-4">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center">
+                <span class="btn-text">Begär offert</span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+              </span>
+            </a>
+            <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;">
+              <span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
+                <i class="fas fa-phone" style="color:#1FA968;"></i>
+              </span>
+              <span>
+                <span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span>
+                <span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /CTA =============== -->
+
+  <!-- =============== FOOTER =============== -->
+</BaseLayout>

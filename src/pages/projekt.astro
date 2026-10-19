@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Våra projekt — Referensgalleri | PRM Montage",
+  "description": "Se ett urval av PRM Montages genomförda projekt inom kök, VVS och badrum samt bygg och snickeri i Stockholmsområdet — utförda till fast pris.",
+  "canonical": "https://prmmontage.se/projekt",
+  "ogDescription": "Se ett urval av PRM Montages genomförda projekt inom kök, VVS & badrum samt bygg & snickeri.",
+  "ogImage": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projekt"
+          }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "url": "https://prmmontage.se/projekt",
+        "name": "Våra projekt",
+        "about": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        }
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="projekt">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Våra projekt</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Projekt</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <!-- =============== /BREADCRUMB =============== -->
+
+  <!-- =============== GALLERI =============== -->
+  <div class="pt-100 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row justify-content-center mb-40">
+        <div class="col-xl-8 text-center">
+          <p style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Ett urval av jobb vi genomfört i Solna, Sundbyberg och övriga Stockholmsområdet — kök, badrum, VVS, bygg och snickeri. Filtrera galleriet nedan för att se exempel inom respektive område.</p>
+        </div>
+      </div>
+
+      <div class="nt-gallery-filter">
+        <button type="button" class="is-active" data-filter="all">Alla</button>
+        <button type="button" data-filter="kok">Kök</button>
+        <button type="button" data-filter="badrum">VVS &amp; Badrum</button>
+        <button type="button" data-filter="bygg">Bygg &amp; snickeri</button>
+      </div>
+
+      <div class="nt-gallery-grid">
+        <a class="nt-gallery-item" data-category="kok" href="#"><img src="assets/img/projekt/kok-02.webp" width="900" height="675" loading="lazy" alt="Köksrenovering med integrerade vitvaror, Solna"><span>Köksrenovering</span></a>
+        <a class="nt-gallery-item" data-category="kok" href="#"><img src="assets/img/projekt/kok-03.webp" width="900" height="675" loading="lazy" alt="Nytt kök med bänkskiva i sten"><span>Köksrenovering</span></a>
+        <a class="nt-gallery-item" data-category="kok" href="#"><img src="assets/img/projekt/kok-04.webp" width="900" height="675" loading="lazy" alt="Kök med köksfläkt och öppen planlösning"><span>Köksrenovering</span></a>
+        <a class="nt-gallery-item" data-category="kok" href="#"><img src="assets/img/projekt/kok-05.webp" width="900" height="675" loading="lazy" alt="Kök med diskho och blandare i rostfritt"><span>Köksrenovering</span></a>
+
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-01.webp" width="900" height="675" loading="lazy" alt="Badrumsrenovering med kakel från golv till tak"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-02.webp" width="900" height="675" loading="lazy" alt="Nyrenoverat badrum med golvvärme"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-03.webp" width="900" height="675" loading="lazy" alt="Duschvägg i glas, badrumsrenovering Stockholm"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-04.webp" width="900" height="675" loading="lazy" alt="Dusch med regnmunstycke, badrumsrenovering"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-05.webp" width="900" height="675" loading="lazy" alt="Badrum med fristående badkar"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-06.webp" width="900" height="675" loading="lazy" alt="Handfat och blandare i modernt badrum"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-07.webp" width="900" height="675" loading="lazy" alt="Våtrumsrenovering med klinker"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-08.webp" width="900" height="675" loading="lazy" alt="Duschblandare i mässing, badrumsrenovering"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-09.webp" width="900" height="675" loading="lazy" alt="Badrum med kakel i mörk kulör"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-10.webp" width="900" height="675" loading="lazy" alt="Helrenoverat badrum, Solna"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-11.webp" width="900" height="675" loading="lazy" alt="Toalett och handfat, ny VVS-installation"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-12.webp" width="900" height="675" loading="lazy" alt="Badrum med förvaring och spegelskåp"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-13.webp" width="900" height="675" loading="lazy" alt="Dusch och kakelvägg, badrumsrenovering"><span>VVS &amp; Badrum</span></a>
+        <a class="nt-gallery-item" data-category="badrum" href="#"><img src="assets/img/projekt/badrum-14.webp" width="900" height="675" loading="lazy" alt="Färdigställt badrum efter totalrenovering"><span>VVS &amp; Badrum</span></a>
+
+        <a class="nt-gallery-item" data-category="bygg" href="#"><img src="assets/img/projekt/bygg-01.webp" width="900" height="675" loading="lazy" alt="Ny ytterdörr monterad av PRM Montage"><span>Bygg &amp; snickeri</span></a>
+        <a class="nt-gallery-item" data-category="bygg" href="#"><img src="assets/img/projekt/bygg-02.webp" width="900" height="675" loading="lazy" alt="Snickeriarbete i samband med renovering"><span>Bygg &amp; snickeri</span></a>
+        <a class="nt-gallery-item" data-category="bygg" href="#"><img src="assets/img/projekt/bygg-03.webp" width="900" height="675" loading="lazy" alt="Nybyggd tvättstuga med bänkskiva och förvaring"><span>Bygg &amp; snickeri</span></a>
+        <a class="nt-gallery-item" data-category="bygg" href="#"><img src="assets/img/projekt/bygg-04.webp" width="900" height="675" loading="lazy" alt="Renovering pågår i hallen"><span>Bygg &amp; snickeri</span></a>
+        <a class="nt-gallery-item" data-category="bygg" href="#"><img src="assets/img/projekt/bygg-05.webp" width="900" height="675" loading="lazy" alt="Nybyggd garderob och förvaringslösning"><span>Bygg &amp; snickeri</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /GALLERI =============== -->
+
+  <!-- =============== CTA =============== -->
+  <div class="tp-cta-area nt-dark-band pt-100 pb-100" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Gillar du det du ser?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Kontakta oss för ditt projekt</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Berätta vad du vill ha hjälp med — vi återkommer med en kostnadsfri offert till fast pris.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+  <!-- =============== /CTA =============== -->
+
+  <!-- =============== FOOTER =============== -->
+
+  <Fragment slot="before-modal">
+    <div class="nt-lightbox-overlay" id="nt-lightbox">
+        <button class="nt-lightbox-close" aria-label="Stäng"><i class="fas fa-xmark"></i></button>
+        <button class="nt-lightbox-prev" aria-label="Föregående bild"><i class="fas fa-arrow-left"></i></button>
+        <img src="" alt="">
+        <button class="nt-lightbox-next" aria-label="Nästa bild"><i class="fas fa-arrow-right"></i></button>
+        <div class="nt-lightbox-caption"></div>
+      </div>
+  </Fragment>
+
+  <Fragment slot="scripts">
+    <script is:inline src="assets/js/lightbox.js"></script>
+    <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      var filterButtons = document.querySelectorAll('.nt-gallery-filter button');
+      var galleryItems = document.querySelectorAll('.nt-gallery-grid .nt-gallery-item');
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+
+          var filter = btn.getAttribute('data-filter');
+
+          galleryItems.forEach(function (item) {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.removeAttribute('hidden');
+            } else {
+              item.setAttribute('hidden', '');
+            }
+          });
+        });
+      });
+    });
+  </script>
+  </Fragment>
+</BaseLayout>

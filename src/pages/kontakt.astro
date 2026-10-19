@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Kontakt — Begär offert | PRM Montage",
+  "description": "Kontakta PRM Montage AB i Solna för en kostnadsfri offert. Ring 08-520 279 77, mejla info@pro-montage.se eller fyll i formuläret så återkommer vi till dig.",
+  "canonical": "https://prmmontage.se/kontakt",
+  "ogDescription": "Kontakta PRM Montage AB i Solna för en kostnadsfri offert. Ring, mejla eller fyll i formuläret.",
+  "ogImage": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+  "twitterDescription": "Kontakta PRM Montage AB i Solna för en kostnadsfri offert.",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Kontakt"
+          }
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "url": "https://prmmontage.se/kontakt",
+        "about": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        }
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="kontakt">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Kontakta oss</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Kontakt</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <!-- =============== /BREADCRUMB =============== -->
+
+  <!-- =============== KONTAKT =============== -->
+  <div class="pt-100 pb-130" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontaktuppgifter</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-map-marker-alt" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Besöksadress</p><span style="color:#fff;font-weight:700;font-size:1.02rem;">Industrivägen 19, 171 48 Solna</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-clock" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Öppettider</p><span style="color:#fff;font-weight:700;font-size:1.02rem;">Mån–Fre 07:00–17:00</span><br><span style="color:rgba(255,255,255,.6);font-size:.82rem;">Jour dygnet runt på samma nummer</span></div>
+            </div>
+          </div>
+
+          <div class="mt-30">
+            <iframe class="nt-map-frame" src="https://www.google.com/maps?q=Industriv%C3%A4gen+23,+171+48+Solna&output=embed" loading="lazy" title="PRM Montage AB, Industrivägen 19, Solna"></iframe>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="nt-side-card" style="padding:44px 40px;">
+            <span class="nt-eyebrow">Begär offert</span>
+            <h2 class="mb-15 fs-xl-36 fs-sm-30">Berätta om ditt projekt</h2>
+            <p class="mb-30" style="color:var(--nt-gray);">Fyll i formuläret så återkommer vi till dig personligen — helt utan kostnad eller förpliktelser.</p>
+
+            <div class="nt-form-message"></div>
+            <form class="nt-ajax-form" data-form-type="contact">
+              <div class="nt-form-field">
+                <label>Namn *</label>
+                <input type="text" name="name" required placeholder="Förnamn Efternamn">
+              </div>
+              <div class="nt-form-row2">
+                <div class="nt-form-field">
+                  <label>Telefon *</label>
+                  <input type="tel" name="phone" required placeholder="070-123 45 67">
+                </div>
+                <div class="nt-form-field">
+                  <label>E-post</label>
+                  <input type="email" name="email" placeholder="valfritt">
+                </div>
+              </div>
+              <div class="nt-form-row2">
+                <div class="nt-form-field">
+                  <label>Adress *</label>
+                  <input type="text" name="address" required placeholder="Gatuadress">
+                </div>
+                <div class="nt-form-field">
+                  <label>Postnummer *</label>
+                  <input type="text" name="postalCode" required inputmode="numeric" placeholder="123 45">
+                </div>
+              </div>
+              <div class="nt-form-row2">
+                <div class="nt-form-field">
+                  <label>Stad *</label>
+                  <input type="text" name="city" required placeholder="T.ex. Solna">
+                </div>
+                <div class="nt-form-field">
+                  <label>Tjänst *</label>
+                  <select name="service" required>
+                    <option value="">— Välj tjänst —</option>
+                    <option>Köksrenovering</option>
+                    <option>Bygg &amp; renovering</option>
+                    <option>VVS &amp; Badrum</option>
+                    <option>Elektriker</option>
+                    <option>Altanbygge</option>
+                    <option>Jour</option>
+                    <option>Annat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="nt-form-field">
+                <label>Meddelande</label>
+                <textarea name="message" placeholder="Berätta gärna lite om ditt projekt..."></textarea>
+              </div>
+              <div class="nt-form-field">
+                <label>Bifoga bilder (valfritt)</label>
+                <div class="nt-file-field"><input type="file" name="files" accept="image/*,.pdf" multiple>
+                  <p class="nt-file-hint">Max 3 filer, totalt 10 MB. JPG, PNG, WEBP, HEIC eller PDF.</p>
+                </div>
+              </div>
+              <button type="submit" class="nt-form-submit">Skicka förfrågan &rarr;</button>
+              <p class="nt-form-fineprint">Inget köptvång. Vi återkommer till dig personligen.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== /KONTAKT =============== -->
+
+  <!-- =============== FOOTER =============== -->
+</BaseLayout>

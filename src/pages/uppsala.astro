@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Hantverkare i Uppsala — Bygg, VVS & El | PRM Montage",
+  "description": "Hantverkare i Uppsala — PRM Montage planerar och genomför köksrenovering, bygg, VVS och el till fast pris, bland annat i Sunnersta, Norby och Fålhagen.",
+  "canonical": "https://prmmontage.se/uppsala",
+  "ogDescription": "PRM Montage planerar och genomför köksrenovering, bygg, VVS och el till fast pris i Uppsala.",
+  "ogImage": "https://prmmontage.se/assets/img/projekt/hero-bygg.webp",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hantverkare i Uppsala"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Bygg och renovering",
+        "name": "Bygg & renovering i Uppsala",
+        "description": "Köksrenovering, badrumsrenovering och större ombyggnationer i Uppsala, planerade i förväg.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Uppsala",
+        "url": "https://prmmontage.se/bygg-renovering"
+      },
+      {
+        "@type": "Service",
+        "serviceType": "VVS och badrumsrenovering",
+        "name": "VVS & Badrum i Uppsala",
+        "description": "Badrumsrenovering och byte av VVS-installationer i villor och lägenheter i Uppsala.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Uppsala",
+        "url": "https://prmmontage.se/vvs-badrum"
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Köksrenovering",
+        "name": "Köksrenovering i Uppsala",
+        "description": "Köksrenovering i villor och lägenheter i Uppsala, till fast pris.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Uppsala",
+        "url": "https://prmmontage.se/koksrenovering-stockholm"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hur begär jag en offert för mitt projekt i Uppsala?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ring oss på 08-520 279 77 eller fyll i formuläret på sidan och berätta om projektet. Vi tar fram en kostnadsfri offert med ett fast pris innan arbetet påbörjas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur snabbt kan ni komma ut till Uppsala?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Uppsala ligger drygt sju mil från vårt kontor i Solna, så vi planerar in besök och projekt i Uppsala i förväg snarare än att rycka ut samma dag. För köks- och badrumsrenoveringar samt större ombyggnationer är det sällan ett problem, eftersom den typen av projekt ändå bokas med god framförhållning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ger renoveringen rätt till ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arbetskostnaden vid de flesta renoverings- och ombyggnadsprojekt ger normalt rätt till ROT-avdrag, medan material och produkter inte gör det. Vi hjälper dig räkna på avdraget i offerten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tar ni uppdrag i hela Uppsala, eller bara vissa delar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vi åtar oss projekt i Uppsala tätort och närliggande områden. Hör av dig med din adress så ger vi dig ett tydligt besked om vi kan ta uppdraget och hur vi lägger upp planeringen."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="omraden">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Hantverkare i Uppsala</h1>
+          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Bygg, renovering, VVS och el i Uppsala — planerade projekt till fast pris, utförda av samma hantverkare som arbetar i Stockholmsområdet.</p>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Hantverkare i Uppsala</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-100 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Uppsala</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Hantverkare som planerar större projekt i Uppsala</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Uppsala ligger drygt sju mil från vårt kontor i Solna, vilket gör oss ärliga med hur vi jobbar där: vi rycker inte ut samma dag för mindre ärenden, men vi åtar oss regelbundet köksrenoveringar, badrumsrenoveringar och andra planerade projekt i Uppsala. Eftersom den typen av renovering ändå bokas in med god framförhållning passar avståndet sällan dåligt i praktiken — vi lägger upp en tydlig tidsplan tillsammans med dig redan i offertskedet.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Som universitetsstad har Uppsala ett brett spann i sitt fastighetsbestånd. I centrala delar och kring Kungsängen finns mycket lägenheter, ofta i äldre fastigheter där kök och badrum inte renoverats på länge. I områden som Sunnersta, Norby och Gottsunda dominerar villor och radhus från olika decennier, medan delar av Fålhagen och Luthagen har ett äldre bestånd av flerbostadshus där VVS- och elinstallationer med jämna mellanrum behöver bytas ut. Vi möter alla dessa förutsättningar och planerar renoveringen utifrån vad just din bostad kräver.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Eftersom vi har egna hantverkare inom bygg, VVS och el kan vi ta ett samlat grepp om ditt projekt i Uppsala även om det kräver flera hantverkare på plats — allt samordnas av oss, med ett fast pris framförhandlat innan arbetet påbörjas.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;margin-top:10px;">Våra tjänster i Uppsala</h4>
+          <div class="row g-4 mb-50">
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-utensils"></i></div>
+                <h4><a href="/koksrenovering-stockholm">Köksrenovering Stockholm</a></h4>
+                <p>Köksrenovering i villa eller lägenhet i Uppsala — vi samordnar snickeri, VVS och el i samma planerade projekt.</p>
+                <a class="nt-icon-card__link" href="/koksrenovering-stockholm">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                <h4><a href="/koksmontering-uppsala">Köksmontering Uppsala</a></h4>
+                <p>Har du redan köpt kök? Vi monterar det till fast pris, inplanerat i en och samma resa till Uppsala.</p>
+                <a class="nt-icon-card__link" href="/koksmontering-uppsala">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-toolbox"></i></div>
+                <h4><a href="/ikea-koksmontering-uppsala">IKEA-köksmontering Uppsala</a></h4>
+                <p>Ett kostnadseffektivt val i både studentlägenheter och villor — vi monterar ditt IKEA METOD-kök fackmannamässigt.</p>
+                <a class="nt-icon-card__link" href="/ikea-koksmontering-uppsala">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-hammer"></i></div>
+                <h4><a href="/bygg-renovering">Bygg &amp; renovering</a></h4>
+                <p>Ombyggnationer och renoveringar i både äldre flerbostadshus och villor i Uppsala.</p>
+                <a class="nt-icon-card__link" href="/bygg-renovering">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-shower"></i></div>
+                <h4><a href="/vvs-badrum">VVS &amp; Badrum</a></h4>
+                <p>Badrumsrenovering och byte av äldre rörinstallationer, vanligt i Uppsalas äldre fastighetsbestånd.</p>
+                <a class="nt-icon-card__link" href="/vvs-badrum">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-bolt"></i></div>
+                <h4><a href="/elektriker-stockholm">Elektriker Stockholm</a></h4>
+                <p>Uppgradering av elcentraler och elinstallationer, planerat in i samma besök som övrigt arbete.</p>
+                <a class="nt-icon-card__link" href="/elektriker-stockholm">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-sun"></i></div>
+                <h4><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm</a></h4>
+                <p>Altan eller uteplats till villa i Uppsala, planerad och byggd som en del av ett större besök.</p>
+                <a class="nt-icon-card__link" href="/altanbygge-i-stockholm">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-icon-card h-100 position-relative">
+                <div class="nt-icon-card__icon"><i class="fas fa-triangle-exclamation"></i></div>
+                <h4><a href="/jour">Jour — akut hjälp</a></h4>
+                <p>Vid akuta ärenden i Uppsala gör vi alltid en bedömning från fall till fall — hör av dig så ger vi ett ärligt besked om insatstiden.</p>
+                <a class="nt-icon-card__link" href="/jour">Läs mer <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Varför anlita PRM Montage i Uppsala?</h4>
+          <ul class="nt-check mb-50">
+            <li><i class="fas fa-check-circle"></i><span>Fast pris innan vi sätter igång — inga överraskningar på fakturan.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>F-skatt och fullt försäkrade under varje uppdrag.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Egna hantverkare inom bygg, VVS och el — inga underentreprenörer.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Vi planerar resan till Uppsala så att den samordnas med ditt projekt.</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Garanti på utfört arbete.</span></li>
+          </ul>
+
+          <div class="mb-50">
+            <img src="assets/img/projekt/badrum-08.webp" width="900" height="675" loading="lazy" alt="Exempel på badrumsrenovering" class="w-100" style="border-radius:12px;aspect-ratio:16/9;height:auto;object-fit:cover;">
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om hantverkare i Uppsala</h4>
+          <div class="accordion nt-accordion mb-45" id="faqUppsala">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqUppsala1">Hur begär jag en offert för mitt projekt i Uppsala?</button></h2>
+              <div id="faqUppsala1" class="accordion-collapse collapse show" data-bs-parent="#faqUppsala"><div class="accordion-body">Ring oss på 08-520 279 77 eller fyll i formuläret på sidan och berätta om projektet. Vi tar fram en kostnadsfri offert med ett fast pris innan arbetet påbörjas.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqUppsala2">Hur snabbt kan ni komma ut till Uppsala?</button></h2>
+              <div id="faqUppsala2" class="accordion-collapse collapse" data-bs-parent="#faqUppsala"><div class="accordion-body">Uppsala ligger drygt sju mil från vårt kontor i Solna, så vi planerar in besök och projekt i Uppsala i förväg snarare än att rycka ut samma dag. För köks- och badrumsrenoveringar samt större ombyggnationer är det sällan ett problem, eftersom den typen av projekt ändå bokas med god framförhållning.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqUppsala3">Ger renoveringen rätt till ROT-avdrag?</button></h2>
+              <div id="faqUppsala3" class="accordion-collapse collapse" data-bs-parent="#faqUppsala"><div class="accordion-body">Arbetskostnaden vid de flesta renoverings- och ombyggnadsprojekt ger normalt rätt till ROT-avdrag, medan material och produkter inte gör det. Vi hjälper dig räkna på avdraget i offerten. Läs mer på vår <a href="/rut-rot">sida om ROT-avdrag</a>.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqUppsala4">Tar ni uppdrag i hela Uppsala, eller bara vissa delar?</button></h2>
+              <div id="faqUppsala4" class="accordion-collapse collapse" data-bs-parent="#faqUppsala"><div class="accordion-body">Vi åtar oss projekt i Uppsala tätort och närliggande områden. Hör av dig med din adress så ger vi dig ett tydligt besked om vi kan ta uppdraget och hur vi lägger upp planeringen.</div></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Våra tjänster</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Fler områden</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/solna">Solna <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/sundbyberg">Sundbyberg <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/upplands-vasby">Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/danderyd">Danderyd <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bromma">Bromma <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/tacby">Täby <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/lidingo">Lidingö <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/sodermalm">Södermalm <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Hantverkare i Uppsala redo att hjälpa dig</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

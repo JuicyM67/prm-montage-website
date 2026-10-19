@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Integritetspolicy | PRM Montage",
+  "description": "PRM Montage AB:s integritetspolicy — hur vi samlar in, använder, lagrar och skyddar dina personuppgifter i enlighet med GDPR, och vilka rättigheter du har.",
+  "canonical": "https://prmmontage.se/integritetspolicy",
+  "ogDescription": "Hur PRM Montage AB samlar in, använder och skyddar dina personuppgifter i enlighet med GDPR.",
+  "ogImage": "https://prmmontage.se/assets/img/brand/og-default.jpg",
+  "twitterDescription": "Hur PRM Montage AB samlar in, använder och skyddar dina personuppgifter.",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Integritetspolicy"
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo}>
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Integritetspolicy</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Integritetspolicy</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <!-- =============== /BREADCRUMB =============== -->
+
+  <div class="pt-100 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <p style="color:var(--nt-gray);line-height:1.85;font-size:1rem;margin-bottom:35px;">Senast uppdaterad: 25 augusti 2026. Denna integritetspolicy beskriver hur PRM Montage AB samlar in, använder och skyddar personuppgifter när du besöker vår webbplats eller kontaktar oss.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Personuppgiftsansvarig</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">Personuppgiftsansvarig för behandlingen av dina personuppgifter är PRM MONTAGE AB, org.nr 559377-9621, Industrivägen 19, 171 48 Solna. Vid frågor om vår behandling av personuppgifter, kontakta oss på info@pro-montage.se eller 08-520 279 77.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Vilka uppgifter vi samlar in</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">När du fyller i något av våra kontakt- eller offertformulär på webbplatsen samlar vi in de uppgifter du själv anger, vanligtvis namn, telefonnummer, e-postadress, adress samt eventuellt meddelande om ditt projekt. Vi samlar inte in fler uppgifter än vad som behövs för att kunna hantera din förfrågan.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Varför vi samlar in uppgifterna</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">Uppgifterna används för att kunna besvara din förfrågan, lämna offert och i förekommande fall genomföra det uppdrag du beställt av oss. Vi använder inte dina uppgifter för marknadsföring utan din tillåtelse.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Rättslig grund</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">Behandlingen sker med stöd av berättigat intresse, eftersom det krävs för att vi ska kunna besvara din förfrågan och lämna offert. Om du blir kund hos oss behandlas uppgifterna även för att vi ska kunna fullgöra vårt avtal med dig.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Hur länge vi sparar uppgifterna</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">Vi sparar dina uppgifter så länge det behövs för att hantera din förfrågan eller vårt uppdrag, samt så länge vi enligt lag är skyldiga att spara viss information, exempelvis bokförings- och affärsunderlag. Uppgifter som inte längre behövs raderas eller anonymiseras.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Vem vi delar uppgifter med</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">Formulärdata från webbplatsen skickas via e-posttjänsten Resend, som agerar personuppgiftsbiträde åt oss för att leverera din förfrågan till rätt person i vårt bolag. Vi delar inte dina uppgifter med några andra tredje parter, och vi säljer aldrig dina personuppgifter.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Dina rättigheter enligt GDPR</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:12px;">Du har enligt dataskyddsförordningen (GDPR) rätt att:</p>
+          <ul class="nt-check" style="margin-bottom:20px;">
+            <li><i class="fas fa-check-circle"></i><span>Begära tillgång till (registerutdrag av) de personuppgifter vi behandlar om dig</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Begära rättelse av felaktiga eller ofullständiga uppgifter</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Begära radering av dina uppgifter, i den mån vi inte är skyldiga att spara dem</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Invända mot eller begära begränsning av behandlingen</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Klaga till Integritetsskyddsmyndigheten (IMY) om du anser att vi behandlar dina uppgifter felaktigt</span></li>
+          </ul>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:35px;">Kontakta oss på info@pro-montage.se om du vill utöva någon av dina rättigheter.</p>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:14px;">Cookies</h4>
+          <p style="color:var(--nt-gray);line-height:1.8;margin-bottom:10px;">Vår webbplats använder cookies för att fungera på ett bra sätt och för att vi ska kunna följa upp hur webbplatsen används. Du väljer själv vilka typer av cookies du godkänner via vår cookie-banner när du besöker webbplatsen första gången, och du kan när som helst ändra ditt val via länken nedan.</p>
+          <p style="color:var(--nt-gray);line-height:1.8;">
+            <a href="#" class="nt-cookie-settings-link" style="color:var(--nt-orange);font-weight:600;">Ändra cookie-inställningar</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== CTA =============== -->
+  <div class="tp-cta-area nt-dark-band pt-100 pb-100" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Frågor om dina uppgifter?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Vi svarar gärna på dina frågor</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss om du har frågor kring vår hantering av personuppgifter.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Kontakta oss</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+  <!-- =============== /CTA =============== -->
+
+  <!-- =============== FOOTER =============== -->
+</BaseLayout>

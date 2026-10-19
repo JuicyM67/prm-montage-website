@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Installera diskmaskin Stockholm — Fast pris | PRM Montage",
+  "description": "Installera eller byta diskmaskin i Stockholm till fast pris. Fackmannamässig anslutning av vatten, avlopp och el. Kostnadsfri offert.",
+  "canonical": "https://prmmontage.se/installera-diskmaskin",
+  "ogDescription": "Installation och byte av diskmaskin i Stockholm till fast pris — anslutning av vatten, avlopp och el.",
+  "ogImage": "https://prmmontage.se/assets/img/logo/logo-color.png",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tjänster",
+            "item": "https://prmmontage.se/tjanster"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Installera diskmaskin"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Installation av diskmaskin",
+        "name": "Installera diskmaskin Stockholm",
+        "description": "Installation och byte av diskmaskin i Stockholm till fast pris — anslutning av vatten, avlopp och el.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Stockholm",
+        "url": "https://prmmontage.se/installera-diskmaskin"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar det att installera en diskmaskin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Priset beror på om det finns färdiga anslutningar för vatten, avlopp och el, eller om något behöver dras nytt. Ett byte där anslutningarna redan finns går snabbt. Du får alltid ett fast pris innan arbetet påbörjas, baserat på en kostnadsfri offert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan jag byta diskmaskin själv?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rent praktiskt går det, men en felaktig anslutning är en vanlig orsak till vattenskador — och en skada som orsakats av en installation som inte utförts fackmannamässigt kan påverka ersättningen från försäkringen. Vi rekommenderar att en fackman utför och dokumenterar anslutningen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Forslar ni bort den gamla diskmaskinen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, vi tar med den gamla maskinen och lämnar den till återvinning. Säg bara till när du bokar så räknar vi in det i offerten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ger installation av diskmaskin rätt till ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arbetskostnaden vid installation av diskmaskin ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår ROT-avdragssida."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="tjanster" defaultService="VVS & Badrum">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Installera eller byta diskmaskin i Stockholm</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Installera diskmaskin</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-90 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Tjänst</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Installation av diskmaskin — anslutning av vatten, avlopp och el</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Ny diskmaskin på väg hem? PRM Montage installerar och byter diskmaskiner i hela Stockholm. Vi ansluter vatten och avlopp, monterar vattenlås med diskmaskinsavstängning och ser till att maskinen står stadigt och i våg — och kopplar bort och forslar bort den gamla maskinen.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">En felaktigt ansluten diskmaskin är en av de vanligaste orsakerna till vattenskador i kök. Därför utför vi installationen fackmannamässigt med tätt underlägg och kontrollerar alla anslutningar innan vi lämnar. Saknas ett eget uttag hjälper våra behöriga elektriker till — läs mer om <a href="/eluttag-tvattmaskin-diskmaskin">eluttag till diskmaskin</a>.</p>
+
+          <div class="row g-4 mt-10 mb-45">
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-orange);">
+                <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris</h5>
+                <p>Du får en tydlig, fast prisbild innan vi sätter igång — inga överraskningar.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-navy);">
+                <h5><i class="fas fa-shield-check" style="color:#1FA968;margin-right:8px;"></i>Auktoriserade installatörer</h5>
+                <p>Behöriga VVS-installatörer, fullt försäkrade och med garanti på arbetet.</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Vad ingår vid installation av diskmaskin?</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Bortkoppling och urmontering av den gamla diskmaskinen</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Anslutning av vatten och avlopp</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Montering av vattenlås med diskmaskinsavstängning</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Läggning av tätt underlägg som skydd mot läckage</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Injustering så att maskinen står i våg</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Provkörning och kontroll av täthet</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Bortforsling av den gamla maskinen</span></li>
+          </ul>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om installation av diskmaskin</h4>
+          <div class="accordion nt-accordion mb-45" id="faqDisk">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqDisk1">Vad kostar det att installera en diskmaskin?</button></h2>
+              <div id="faqDisk1" class="accordion-collapse collapse show" data-bs-parent="#faqDisk"><div class="accordion-body">Priset beror på om det finns färdiga anslutningar för vatten, avlopp och el, eller om något behöver dras nytt. Ett byte där anslutningarna redan finns går snabbt. Du får alltid ett fast pris innan arbetet påbörjas, baserat på en kostnadsfri offert.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDisk2">Kan jag byta diskmaskin själv?</button></h2>
+              <div id="faqDisk2" class="accordion-collapse collapse" data-bs-parent="#faqDisk"><div class="accordion-body">Rent praktiskt går det, men en felaktig anslutning är en vanlig orsak till vattenskador — och en skada som orsakats av en installation som inte utförts fackmannamässigt kan påverka ersättningen från försäkringen. Vi rekommenderar att en fackman utför och dokumenterar anslutningen.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDisk3">Forslar ni bort den gamla diskmaskinen?</button></h2>
+              <div id="faqDisk3" class="accordion-collapse collapse" data-bs-parent="#faqDisk"><div class="accordion-body">Ja, vi tar med den gamla maskinen och lämnar den till återvinning. Säg bara till när du bokar så räknar vi in det i offerten.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDisk4">Ger installation av diskmaskin rätt till ROT-avdrag?</button></h2>
+              <div id="faqDisk4" class="accordion-collapse collapse" data-bs-parent="#faqDisk"><div class="accordion-body">Arbetskostnaden vid installation av diskmaskin ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår <a href="/rut-rot">ROT-avdragssida</a>.</div></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Varför PRM Montage?</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Alla tjänster</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li class="is-active"><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Fler jobb till fast pris</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/byta-blandare">Byta blandare <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/byta-toalettstol">Byta toalettstol <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/installera-tvattmaskin">Installera tvättmaskin <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/eluttag-tvattmaskin-diskmaskin">Eluttag till tvätt- &amp; diskmaskin <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/eluttag-badrum">Eluttag i badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/laga-lackande-blandare">Laga läckande blandare <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/montera-duschvagg">Montera duschvägg <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/byta-handfat-kommod">Byta handfat &amp; kommod <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/montera-tv-pa-vagg">Montera TV på vägg <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Behöver du hjälp med diskmaskinen?</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

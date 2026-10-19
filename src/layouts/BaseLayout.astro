@@ -1,0 +1,78 @@
+---
+import Seo from '../components/Seo.astro';
+import Preloader from '../components/Preloader.astro';
+import Offcanvas from '../components/Offcanvas.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileCtaBar from '../components/MobileCtaBar.astro';
+import HireModal from '../components/HireModal.astro';
+import type { Props as SeoProps } from '../components/Seo.astro';
+
+interface Props {
+  seo: SeoProps;
+  activeNav?: 'hem' | 'tjanster' | 'omraden' | 'projekt' | 'om-oss' | 'kontakt' | null;
+  defaultService?: string | null;
+}
+const { seo, activeNav = null, defaultService = null } = Astro.props;
+---
+<!doctype html>
+<html class="no-js" lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{seo.title}</title>
+  <meta name="description" content={seo.description}>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/img/logo/favicon-192.png">
+  <link rel="shortcut icon" href="assets/img/logo/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+  <slot name="head" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap">
+  
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+  <link rel="stylesheet" href="assets/css/spacing.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <Seo {...seo} />
+</head><body class="tp-bg-common-white-2">
+
+  <Preloader />
+  <Offcanvas />
+
+  <Header activeNav={activeNav} />
+
+  <slot />
+
+  <Footer />
+
+  <MobileCtaBar />
+  <slot name="before-modal" />
+
+  <HireModal defaultService={defaultService} />
+  <slot name="after-modal" />
+
+  <script is:inline src="assets/js/vendor/jquery.js"></script>
+  <script is:inline src="assets/js/bootstrap-bundle.js"></script>
+  <script is:inline src="assets/js/nice-select.js"></script>
+  <script is:inline src="assets/js/wow.js"></script>
+  <script is:inline src="assets/js/swiper-bundle.js"></script>
+  <script is:inline src="assets/js/purecounter.js"></script>
+  <script is:inline src="assets/js/magnific-popup.js"></script>
+  <script is:inline src="assets/js/jarallax.js"></script>
+  <script is:inline src="assets/js/slider-init.js"></script>
+  <script is:inline src="assets/js/main.js"></script>
+  <script is:inline src="assets/js/modal.js"></script>
+  <script is:inline src="assets/js/form-utils.js"></script>
+  <script is:inline src="assets/js/contact-form.js"></script>
+  <script is:inline src="assets/js/cookie-consent.js"></script>
+  <slot name="scripts" />
+</body>
+</html>

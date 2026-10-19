@@ -1,0 +1,27 @@
+---
+interface Props {
+  defaultService?: string | null;
+}
+const { defaultService = null } = Astro.props;
+const services = ["Köksrenovering","Bygg & renovering","VVS & Badrum","Elektriker","Altanbygge","Jour / akut","Annat"];
+---
+  <div class="nt-modal-overlay" id="nt-hire-modal">
+    <div class="nt-modal">
+      <button class="nt-modal__close" aria-label="Stäng">&times;</button>
+      <h3>Begär offert</h3>
+      <p class="subtitle">Fyll i formuläret så återkommer vi till dig.</p>
+      <form id="hire-form">
+        <div class="row-2col"><div class="form-group"><label>Förnamn &amp; efternamn *</label><input type="text" name="name" required placeholder="Anna Svensson"></div><div class="form-group"><label>Telefon *</label><input type="tel" name="phone" required placeholder="070-123 45 67"></div></div>
+        <div class="row-2col"><div class="form-group"><label>E-postadress</label><input type="email" name="email" placeholder="anna@exempel.se"></div><div class="form-group"><label>Adress *</label><input type="text" name="address" required placeholder="Gatuadress"></div></div><div class="row-2col"><div class="form-group"><label>Postnummer *</label><input type="text" name="postalCode" required inputmode="numeric" placeholder="123 45"></div><div class="form-group"><label>Stad *</label><input type="text" name="city" required placeholder="T.ex. Solna"></div></div>
+        <div class="form-group"><label>Vilken tjänst gäller det? *</label><select name="service" required><option value="">— Välj tjänst —</option>{services.map((s) => <option selected={s === defaultService}>{s}</option>)}</select></div>
+        <div class="form-group"><label>Beskriv ditt projekt</label><textarea name="message" placeholder="Berätta gärna lite om vad som ska göras..."></textarea></div>
+        <div class="form-group">
+          <label>Bifoga bilder (valfritt)</label>
+          <div class="nt-file-field"><input type="file" name="files" accept="image/*,.pdf" multiple>
+            <p class="nt-file-hint">Max 3 filer, totalt 10 MB. JPG, PNG, WEBP, HEIC eller PDF.</p>
+          </div>
+        </div>
+        <button type="submit" class="nt-submit-btn">Skicka förfrågan &rarr;</button>
+      </form>
+    </div>
+  </div>

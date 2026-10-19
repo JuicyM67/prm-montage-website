@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Installera tvättmaskin Stockholm — Fast pris | PRM Montage",
+  "description": "Installation av tvättmaskin i Stockholm till fast pris. Vi ansluter vatten, avlopp och el fackmannamässigt. Kostnadsfri offert — se vad det kostar.",
+  "canonical": "https://prmmontage.se/installera-tvattmaskin",
+  "ogDescription": "Installation av tvättmaskin i Stockholm till fast pris — anslutning av vatten, avlopp och el.",
+  "ogImage": "https://prmmontage.se/assets/img/logo/logo-color.png",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tjänster",
+            "item": "https://prmmontage.se/tjanster"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Installera tvättmaskin"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Installation av tvättmaskin",
+        "name": "Installera tvättmaskin Stockholm",
+        "description": "Installation av tvättmaskin i Stockholm till fast pris — anslutning av vatten, avlopp och el.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Stockholm",
+        "url": "https://prmmontage.se/installera-tvattmaskin"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar det att installera en tvättmaskin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kostnaden beror på om vatten, avlopp och eluttag redan finns på plats. Ett rakt byte där allt finns går snabbt, medan ny dragning av el eller vatten tar längre tid. Du får alltid ett fast pris innan arbetet påbörjas, baserat på en kostnadsfri offert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad behöver finnas på plats innan installationen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En vattenanslutning med avstängningsventil, ett avlopp för tvättmaskin samt ett jordat eluttag. Saknas något löser vi det — våra behöriga elektriker installerar eluttaget och våra VVS-montörer drar vatten och avlopp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Måste transportsäkringarna tas bort?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. En ny tvättmaskin levereras med transportsäkringar som måste avlägsnas innan första tvätten, annars kan maskinen skadas. Det ingår alltid när vi installerar maskinen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ger installation av tvättmaskin rätt till ROT-avdrag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arbetskostnaden vid installation av tvättmaskin ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår ROT-avdragssida."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="tjanster" defaultService="VVS & Badrum">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Installera tvättmaskin i Stockholm</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Installera tvättmaskin</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-90 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Tjänst</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Installation av tvättmaskin — vad det kostar och vad som ingår</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">PRM Montage installerar tvättmaskiner i hela Stockholm — i badrum, tvättstuga och kök. Vi ansluter vatten och avlopp, tar bort transportsäkringarna, ställer maskinen i våg så att den inte vandrar under centrifugering och provkör den innan vi lämnar.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Kostnaden för att installera en tvättmaskin beror främst på om anslutningarna redan finns på plats. Finns vattenanslutning, avlopp och eluttag är det ett snabbt jobb; behöver ett <a href="/eluttag-tvattmaskin-diskmaskin">eluttag till tvättmaskinen</a> dras eller vattnet förlängas tillkommer arbete. Du får alltid ett fast pris innan vi börjar.</p>
+
+          <div class="row g-4 mt-10 mb-45">
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-orange);">
+                <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris</h5>
+                <p>Du får en tydlig, fast prisbild innan vi sätter igång — inga överraskningar.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-navy);">
+                <h5><i class="fas fa-shield-check" style="color:#1FA968;margin-right:8px;"></i>Auktoriserade installatörer</h5>
+                <p>Behöriga VVS-installatörer, fullt försäkrade och med garanti på arbetet.</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Vad ingår vid installation av tvättmaskin?</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Bortkoppling av den gamla tvättmaskinen</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Anslutning av vatten och avlopp</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Montering av avstängningsventil vid behov</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Borttagning av transportsäkringar och injustering i våg</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Provkörning och kontroll av täthet</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Eluttag av behörig elektriker vid behov</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Bortforsling av den gamla maskinen</span></li>
+          </ul>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om installation av tvättmaskin</h4>
+          <div class="accordion nt-accordion mb-45" id="faqTvatt">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqTvatt1">Vad kostar det att installera en tvättmaskin?</button></h2>
+              <div id="faqTvatt1" class="accordion-collapse collapse show" data-bs-parent="#faqTvatt"><div class="accordion-body">Kostnaden beror på om vatten, avlopp och eluttag redan finns på plats. Ett rakt byte där allt finns går snabbt, medan ny dragning av el eller vatten tar längre tid. Du får alltid ett fast pris innan arbetet påbörjas, baserat på en kostnadsfri offert.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTvatt2">Vad behöver finnas på plats innan installationen?</button></h2>
+              <div id="faqTvatt2" class="accordion-collapse collapse" data-bs-parent="#faqTvatt"><div class="accordion-body">En vattenanslutning med avstängningsventil, ett avlopp för tvättmaskin samt ett jordat eluttag. Saknas något löser vi det — våra behöriga elektriker installerar eluttaget och våra VVS-montörer drar vatten och avlopp.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTvatt3">Måste transportsäkringarna tas bort?</button></h2>
+              <div id="faqTvatt3" class="accordion-collapse collapse" data-bs-parent="#faqTvatt"><div class="accordion-body">Ja. En ny tvättmaskin levereras med transportsäkringar som måste avlägsnas innan första tvätten, annars kan maskinen skadas. Det ingår alltid när vi installerar maskinen.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTvatt4">Ger installation av tvättmaskin rätt till ROT-avdrag?</button></h2>
+              <div id="faqTvatt4" class="accordion-collapse collapse" data-bs-parent="#faqTvatt"><div class="accordion-body">Arbetskostnaden vid installation av tvättmaskin ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår <a href="/rut-rot">ROT-avdragssida</a>.</div></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär kostnadsfri offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="tel:+46852027977" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Varför PRM Montage?</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Alla tjänster</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li class="is-active"><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Fler jobb till fast pris</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/byta-blandare">Byta blandare <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/installera-diskmaskin">Installera diskmaskin <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/byta-toalettstol">Byta toalettstol <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/eluttag-tvattmaskin-diskmaskin">Eluttag till tvätt- &amp; diskmaskin <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/eluttag-badrum">Eluttag i badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/laga-lackande-blandare">Laga läckande blandare <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/montera-duschvagg">Montera duschvägg <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/byta-handfat-kommod">Byta handfat &amp; kommod <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/montera-tv-pa-vagg">Montera TV på vägg <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Ska tvättmaskinen installeras?</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>

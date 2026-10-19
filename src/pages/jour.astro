@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  "title": "Jour Stockholm — Akut Hjälp | PRM Montage",
+  "description": "Jour och akutservice i Stockholm dygnet runt vid vattenläckage, elfel och stopp i avlopp. Ring PRM Montage direkt — för både privatpersoner och företag.",
+  "canonical": "https://prmmontage.se/jour",
+  "ogDescription": "Jour och akutservice i Stockholm dygnet runt vid vattenläckage, elfel och stopp i avlopp.",
+  "ogImage": "https://prmmontage.se/assets/img/logo/logo-color.png",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hem",
+            "item": "https://prmmontage.se/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tjänster",
+            "item": "https://prmmontage.se/tjanster"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Jour"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Jour / akutservice",
+        "name": "Jour Stockholm",
+        "description": "Jour och akutservice i Stockholm dygnet runt vid vattenläckage, elfel och stopp i avlopp — för både privatpersoner och företag.",
+        "provider": {
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://prmmontage.se/#organization",
+          "name": "PRM Montage",
+          "legalName": "PRM MONTAGE AB",
+          "url": "https://prmmontage.se/",
+          "telephone": "+46852027977",
+          "email": "info@pro-montage.se",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Industrivägen 19",
+            "postalCode": "171 48",
+            "addressLocality": "Solna",
+            "addressCountry": "SE"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": "Stockholm",
+        "url": "https://prmmontage.se/jour",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad räknas som en akut situation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det som räknas som akut är sådant som inte kan vänta till nästa vardag — till exempel vattenläckage, totalt elbortfall eller stopp i avlopp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur kontaktar jag jouren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ring oss direkt på 08-520 279 77. Vi finns tillgängliga dygnet runt vid akuta situationer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kostar jour extra?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jourpris offereras vid kontakt beroende på tid och omfattning — hör av dig så berättar vi mer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Täcker försäkringen kostnaden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vissa hemförsäkringar täcker delar av kostnaden vid akuta skador — kontakta ditt försäkringsbolag för att höra vad som gäller för dig."
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout seo={seo} activeNav="tjanster" defaultService="Jour / akut">
+  <!-- =============== BREADCRUMB =============== -->
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row"><div class="col-xl-8 col-lg-9">
+        <div class="nt-rating-badge" style="background:rgba(31,169,104,.15);border-color:rgba(31,169,104,.3);">
+          <i class="fas fa-triangle-exclamation" style="color:#1FA968;"></i>
+          <span class="txt">Akut hjälp — ring oss direkt</span>
+        </div>
+        <div class="tp-breadcrumb-content">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Jour i Stockholm</h1>
+          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Jour</li></ul></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="tp-service-details-area pt-70 pb-120" style="background:var(--nt-white);">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <span class="nt-eyebrow">Tjänst</span>
+          <h2 class="mb-25 fs-xl-40 fs-sm-36">Jour &amp; akutservice i Stockholm</h2>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Har du drabbats av ett akut problem som inte kan vänta — till exempel ett vattenläckage, ett totalt elbortfall eller stopp i avloppet? PRM Montage hjälper både privatpersoner och företag i Stockholm när det verkligen brådskar. Ring oss dygnet runt vid akuta situationer, så hjälper vi dig komma till rätta med problemet.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vi har egna hantverkare inom bygg, VVS och el, vilket gör att vi ofta kan lösa akuta problem inom flera olika discipliner utan att du behöver kontakta flera olika företag. Hör av dig så berättar vi mer om vad som gäller för just din situation.</p>
+
+          <div class="row g-4 mt-10 mb-45">
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-orange);">
+                <h5><i class="fas fa-phone" style="color:#1FA968;margin-right:8px;"></i>Ring direkt</h5>
+                <p>Samma nummer dygnet runt vid akuta situationer — 08-520 279 77.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="nt-highlight h-100" style="background:var(--nt-gray-light);border-left-color:var(--nt-navy);">
+                <h5><i class="fas fa-user-group" style="color:#1FA968;margin-right:8px;"></i>Privat &amp; företag</h5>
+                <p>Vi hjälper både privatpersoner och företag med akuta situationer.</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;">Exempel på akuta situationer vi hjälper till med</h4>
+          <ul class="nt-check mb-45">
+            <li><i class="fas fa-check-circle"></i><span>Vattenläckage</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Totalt elbortfall</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Stopp i avlopp</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Akuta VVS-fel</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Akuta elfel</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Andra situationer som inte kan vänta till nästa vardag</span></li>
+          </ul>
+
+          <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om jour</h4>
+          <div class="accordion nt-accordion mb-45" id="faqJour">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqJour1">Vad räknas som en akut situation?</button></h2>
+              <div id="faqJour1" class="accordion-collapse collapse show" data-bs-parent="#faqJour"><div class="accordion-body">Det som räknas som akut är sådant som inte kan vänta till nästa vardag — till exempel vattenläckage, totalt elbortfall eller stopp i avlopp.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqJour2">Hur kontaktar jag jouren?</button></h2>
+              <div id="faqJour2" class="accordion-collapse collapse" data-bs-parent="#faqJour"><div class="accordion-body">Ring oss direkt på <a href="tel:+46852027977">08-520 279 77</a>. Vi finns tillgängliga dygnet runt vid akuta situationer.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqJour3">Kostar jour extra?</button></h2>
+              <div id="faqJour3" class="accordion-collapse collapse" data-bs-parent="#faqJour"><div class="accordion-body">Jourpris offereras vid kontakt beroende på tid och omfattning — hör av dig så berättar vi mer.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqJour4">Täcker försäkringen kostnaden?</button></h2>
+              <div id="faqJour4" class="accordion-collapse collapse" data-bs-parent="#faqJour"><div class="accordion-body">Vissa hemförsäkringar täcker delar av kostnaden vid akuta skador — kontakta ditt försäkringsbolag för att höra vad som gäller för dig.</div></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="tel:+46852027977" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+            <a href="/kontakt" class="tp-btn-xl d-inline-block lh-0 tp-round-26 fs-16 border-full-1 ls-0 tp-btn-switch-animation fw-500">
+              <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
+            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
+              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
+            </div>
+          </div>
+          <div class="nt-side-card">
+            <h5>Varför PRM Montage?</h5>
+            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Alla tjänster</h5>
+            <ul class="nt-side-nav">
+              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li class="is-active"><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="nt-side-card">
+            <h5>Akut hjälp per situation</h5>
+            <p style="color:var(--nt-gray);font-size:.9rem;margin-bottom:14px;">Vissa akuta ärenden har vi beskrivit närmare på egna sidor.</p>
+            <ul class="nt-side-nav">
+              <li><a href="/akut-rormokare-stockholm">Akut rörmokare Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/vattenlacka-stockholm">Vattenläcka Stockholm <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/rormokare-upplands-vasby">Rörmokare &amp; jour Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="/rormokare-stockholm">Rörmokare Stockholm <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
+      <span class="nt-eyebrow nt-eyebrow-light">Akut situation?</span>
+      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Ring oss direkt — vi hjälper dig</h2>
+      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Vattenläckage, elfel eller stopp i avloppet? Ring oss dygnet runt vid akuta situationer.</p>
+      <div class="d-flex flex-wrap align-items-center gap-4">
+        <a href="tel:+46852027977" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
+        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
+      </div>
+    </div></div></div>
+  </div>
+</BaseLayout>
