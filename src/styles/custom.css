@@ -1489,6 +1489,7 @@ body.nt-menu-open .back-to-top-wrapper { opacity: 0 !important; visibility: hidd
     transition: transform .42s cubic-bezier(.2,.8,.2,1), visibility 0s;
   }
   .tpoffcanvas.nt-dragging { transition: none; }
+  .tpoffcanvas.nt-mouse-dragging { user-select: none; -webkit-user-select: none; cursor: grabbing; }
   /* handtag (samma som i offert-sheeten) */
   .tpoffcanvas::before {
     content: ""; display: block; width: 44px; height: 5px; border-radius: 99px;

@@ -79,31 +79,49 @@
 	$(document).on("keydown", function (e) {
 		if (e.key === "Escape" && $offcanvas.hasClass("opened")) closeMenu();
 	});
-	// Dra nedåt för att stänga (bara när panelen är scrollad längst upp).
+	// Dra nedåt för att stänga — med finger (touch) eller mus. Bara när panelen är scrollad längst upp.
 	(function () {
 		var el = $offcanvas[0];
 		if (!el) return;
-		var startY = 0, dy = 0, startT = 0, tracking = false;
-		el.addEventListener("touchstart", function (e) {
-			if (window.innerWidth > 767 || el.scrollTop > 0 || !el.classList.contains("opened")) return;
-			tracking = true; dy = 0; startY = e.touches[0].clientY; startT = Date.now();
-		}, { passive: true });
-		el.addEventListener("touchmove", function (e) {
+		var startY = 0, dy = 0, startT = 0, tracking = false, moved = false;
+		function begin(y) {
+			if (window.innerWidth > 767 || el.scrollTop > 0 || !el.classList.contains("opened")) return false;
+			tracking = true; moved = false; dy = 0; startY = y; startT = Date.now();
+			return true;
+		}
+		function move(y) {
 			if (!tracking) return;
-			dy = e.touches[0].clientY - startY;
+			dy = y - startY;
 			if (dy <= 0) { dy = 0; el.classList.remove("nt-dragging"); el.style.transform = ""; return; }
+			if (dy > 6) moved = true;
 			el.classList.add("nt-dragging");
 			el.style.transform = "translateY(" + dy + "px)";
-		}, { passive: true });
+		}
 		function release() {
 			if (!tracking) return;
 			tracking = false;
 			el.classList.remove("nt-dragging");
 			var fast = dy / Math.max(Date.now() - startT, 1) > 0.6;
 			if (dy > 110 || (fast && dy > 40)) closeMenu(); else el.style.transform = "";
+			el.classList.remove("nt-mouse-dragging");
 		}
+		// touch
+		el.addEventListener("touchstart", function (e) { begin(e.touches[0].clientY); }, { passive: true });
+		el.addEventListener("touchmove", function (e) { move(e.touches[0].clientY); }, { passive: true });
 		el.addEventListener("touchend", release);
 		el.addEventListener("touchcancel", release);
+		// mus (smalt skrivbordsfönster, devtools): samma logik; ingen textmarkering medan man drar
+		el.addEventListener("mousedown", function (e) {
+			if (e.button === 0 && begin(e.clientY)) el.classList.add("nt-mouse-dragging");
+		});
+		// utan detta startar webbläsaren inbyggd länk-/bilddrag och mus-händelserna uteblir
+		el.addEventListener("dragstart", function (e) { e.preventDefault(); });
+		document.addEventListener("mousemove", function (e) { move(e.clientY); });
+		document.addEventListener("mouseup", release);
+		// en drag som började på en länk/knapp ska inte räknas som klick
+		el.addEventListener("click", function (e) {
+			if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+		}, true);
 	})();
 
 	////////////////////////////////////////////////////
