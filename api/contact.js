@@ -89,7 +89,7 @@ module.exports = async (req, res) => {
     <h2>${heading}</h2>
     <p><strong>Namn:</strong> ${escapeHtml(name)}</p>
     <p><strong>Telefon:</strong> ${escapeHtml(phone)}</p>
-    ${email ? `<p><strong>E-post:</strong> ${escapeHtml(email)}</p>` : ''}
+    <p><strong>E-post:</strong> ${email ? escapeHtml(email) : 'ej angiven'}</p>
     ${service ? `<p><strong>Tjänst:</strong> ${escapeHtml(service)}</p>` : ''}
     ${address ? `<p><strong>Adress:</strong> ${escapeHtml(address)}${postalCode ? ', ' + escapeHtml(postalCode) : ''}${city ? ' ' + escapeHtml(city) : ''}</p>` : ''}
     ${area ? `<p><strong>Område:</strong> ${escapeHtml(area)}</p>` : ''}
