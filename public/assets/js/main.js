@@ -63,18 +63,54 @@
 
 	////////////////////////////////////////////////////
 	// 04. Sidebar Js
-	$(".tp-menu-bar").on("click", function () {
-		$(".tpoffcanvas").addClass("opened");
+	// Mobilmenyn är en bottenpanel under 768px (se custom.css). body.nt-menu-open döljer de
+	// klistriga knapparna (CTA-bar, upp-knapp) och låser sidans scroll medan menyn är öppen.
+	var $offcanvas = $(".tpoffcanvas");
+	function openMenu() {
+		$offcanvas.removeClass("nt-dragging").css("transform", "").addClass("opened");
 		$(".body-overlay").addClass("apply");
-	});
-	$(".close-btn").on("click", function () {
-		$(".tpoffcanvas").removeClass("opened");
+		$("body").addClass("nt-menu-open");
+		$(".tp-menu-bar").attr("aria-expanded", "true");
+	}
+	function closeMenu() {
+		$offcanvas.removeClass("nt-dragging opened").css("transform", "");
 		$(".body-overlay").removeClass("apply");
+		$("body").removeClass("nt-menu-open");
+		$(".tp-menu-bar").attr("aria-expanded", "false");
+	}
+	$(".tp-menu-bar").on("click", openMenu);
+	$(".close-btn, .body-overlay").on("click", closeMenu);
+	// "Begär offert" i menyn öppnar offert-sheeten — stäng menyn så den inte ligger kvar bakom.
+	$offcanvas.find(".hire-btn").on("click", closeMenu);
+	$(document).on("keydown", function (e) {
+		if (e.key === "Escape" && $offcanvas.hasClass("opened")) closeMenu();
 	});
-	$(".body-overlay").on("click", function () {
-		$(".tpoffcanvas").removeClass("opened");
-		$(".body-overlay").removeClass("apply");
-	});
+	// Dra nedåt för att stänga (bara när panelen är scrollad längst upp).
+	(function () {
+		var el = $offcanvas[0];
+		if (!el) return;
+		var startY = 0, dy = 0, startT = 0, tracking = false;
+		el.addEventListener("touchstart", function (e) {
+			if (window.innerWidth > 767 || el.scrollTop > 0 || !el.classList.contains("opened")) return;
+			tracking = true; dy = 0; startY = e.touches[0].clientY; startT = Date.now();
+		}, { passive: true });
+		el.addEventListener("touchmove", function (e) {
+			if (!tracking) return;
+			dy = e.touches[0].clientY - startY;
+			if (dy <= 0) { dy = 0; el.classList.remove("nt-dragging"); el.style.transform = ""; return; }
+			el.classList.add("nt-dragging");
+			el.style.transform = "translateY(" + dy + "px)";
+		}, { passive: true });
+		function release() {
+			if (!tracking) return;
+			tracking = false;
+			el.classList.remove("nt-dragging");
+			var fast = dy / Math.max(Date.now() - startT, 1) > 0.6;
+			if (dy > 110 || (fast && dy > 40)) closeMenu(); else el.style.transform = "";
+		}
+		el.addEventListener("touchend", release);
+		el.addEventListener("touchcancel", release);
+	})();
 
 	////////////////////////////////////////////////////
 	// 05. Search Js
