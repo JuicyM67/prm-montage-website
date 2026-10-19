@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { organization } from '../data/organization';
 
 const seo = {
   "title": "IKEA-köksmontering Täby — Fast pris | PRM Montage",
@@ -31,23 +32,7 @@ const seo = {
         "serviceType": "IKEA-köksmontering",
         "name": "IKEA-köksmontering Täby",
         "description": "Montering av IKEA:s METOD-köksystem i Täby — stommar, luckor, MAXIMERA-lådor och bänkskiva, till fast pris.",
-        "provider": {
-          "@type": "HomeAndConstructionBusiness",
-          "@id": "https://prmmontage.se/#organization",
-          "name": "PRM Montage",
-          "legalName": "PRM MONTAGE AB",
-          "url": "https://prmmontage.se/",
-          "telephone": "+46852027977",
-          "email": "info@pro-montage.se",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Industrivägen 19",
-            "postalCode": "171 48",
-            "addressLocality": "Solna",
-            "addressCountry": "SE"
-          },
-          "priceRange": "$$"
-        },
+        "provider": organization,
         "areaServed": "Täby",
         "url": "https://prmmontage.se/ikea-koksmontering-tacby"
       },

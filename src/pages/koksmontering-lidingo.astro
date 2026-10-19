@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { organization } from '../data/organization';
 
 const seo = {
   "title": "Köksmontering Lidingö — Fast pris | PRM Montage",
@@ -31,23 +32,7 @@ const seo = {
         "serviceType": "Köksmontering",
         "name": "Köksmontering Lidingö",
         "description": "Montering av kök du redan köpt — stomme, luckor, bänkskiva och infästning, till fast pris i Lidingö.",
-        "provider": {
-          "@type": "HomeAndConstructionBusiness",
-          "@id": "https://prmmontage.se/#organization",
-          "name": "PRM Montage",
-          "legalName": "PRM MONTAGE AB",
-          "url": "https://prmmontage.se/",
-          "telephone": "+46852027977",
-          "email": "info@pro-montage.se",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Industrivägen 19",
-            "postalCode": "171 48",
-            "addressLocality": "Solna",
-            "addressCountry": "SE"
-          },
-          "priceRange": "$$"
-        },
+        "provider": organization,
         "areaServed": "Lidingö",
         "url": "https://prmmontage.se/koksmontering-lidingo"
       },

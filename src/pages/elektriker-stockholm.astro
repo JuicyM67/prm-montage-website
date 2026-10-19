@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { organization } from '../data/organization';
 
 const seo = {
   "title": "Elektriker Stockholm — Fast pris | PRM Montage",
@@ -37,23 +38,7 @@ const seo = {
         "serviceType": "Elinstallation",
         "name": "Elektriker Stockholm",
         "description": "Behörig elektriker i Stockholm till fast pris — elinstallationer, elcentraler, belysning och eluttag.",
-        "provider": {
-          "@type": "HomeAndConstructionBusiness",
-          "@id": "https://prmmontage.se/#organization",
-          "name": "PRM Montage",
-          "legalName": "PRM MONTAGE AB",
-          "url": "https://prmmontage.se/",
-          "telephone": "+46852027977",
-          "email": "info@pro-montage.se",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Industrivägen 19",
-            "postalCode": "171 48",
-            "addressLocality": "Solna",
-            "addressCountry": "SE"
-          },
-          "priceRange": "$$"
-        },
+        "provider": organization,
         "areaServed": "Stockholm",
         "url": "https://prmmontage.se/elektriker-stockholm"
       },

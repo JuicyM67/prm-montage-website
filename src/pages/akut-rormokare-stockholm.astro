@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { organization } from '../data/organization';
 
 const seo = {
   "title": "Rörjour Stockholm — Akut rörmokare dygnet runt | PRM Montage",
@@ -37,23 +38,7 @@ const seo = {
         "serviceType": "Akut VVS-jour",
         "name": "Akut rörmokare i Stockholm",
         "description": "Akut rörmokare med jour dygnet runt i Stockholm — vattenläcka, rörbrott, stopp i avlopp och trasig varmvattenberedare, med fast pris på åtgärden.",
-        "provider": {
-          "@type": "HomeAndConstructionBusiness",
-          "@id": "https://prmmontage.se/#organization",
-          "name": "PRM Montage",
-          "legalName": "PRM MONTAGE AB",
-          "url": "https://prmmontage.se/",
-          "telephone": "+46852027977",
-          "email": "info@pro-montage.se",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Industrivägen 19",
-            "postalCode": "171 48",
-            "addressLocality": "Solna",
-            "addressCountry": "SE"
-          },
-          "priceRange": "$$"
-        },
+        "provider": organization,
         "areaServed": "Stockholm",
         "url": "https://prmmontage.se/akut-rormokare-stockholm"
       },
