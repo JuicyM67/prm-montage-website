@@ -50,16 +50,10 @@
 		}
 	});
 
-	if ($('.tp-header-height').length > 0) {
-        var headerHeight = document.querySelector(".tp-header-height");
-        var setHeaderHeight = headerHeight.offsetHeight;
-
-        $(".tp-header-height").each(function () {
-            $(this).css({
-                'height': setHeaderHeight + 'px'
-            });
-        });
-    }
+	// (Mallens "frys headerns höjd"-snutt är borttagen: den mätte offsetHeight en enda gång vid
+	// skriptstart — innan stilmallen hunnit gälla i dev, och fel igen vid fönsterändring — och
+	// klippte då logotypen/knappen. Headern får sin höjd av sitt innehåll; den läggs ändå utanför
+	// flödet (position: fixed) när den blir klistrig, så frysningen reserverade aldrig något.)
 
 	////////////////////////////////////////////////////
 	// 04. Sidebar Js
