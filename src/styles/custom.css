@@ -933,14 +933,14 @@ a:hover { color: var(--nt-orange-dark); }
   padding-bottom: 90px;
   background:
     linear-gradient(100deg, rgba(15,45,39,.94) 0%, rgba(15,45,39,.86) 42%, rgba(15,45,39,.55) 75%, rgba(15,45,39,.4) 100%),
-    url('../img/hero/hero-home-mobile.webp') center/cover no-repeat;
+    url('/assets/img/hero/hero-home-mobile.webp') center/cover no-repeat;
   overflow: hidden;
 }
 @media (min-width: 768px) {
   .nt-hero-static {
     background:
       linear-gradient(100deg, rgba(15,45,39,.94) 0%, rgba(15,45,39,.86) 42%, rgba(15,45,39,.55) 75%, rgba(15,45,39,.4) 100%),
-      url('../img/hero/hero-home.webp') center/cover no-repeat;
+      url('/assets/img/hero/hero-home.webp') center/cover no-repeat;
   }
 }
 .nt-hero-static::before {

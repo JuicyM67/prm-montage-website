@@ -1,0 +1,10 @@
+/* Hela sajtens CSS i ett paket (Vite slår ihop och minifierar) — ordningen = kaskadordningen. */
+@import './fonts.css';
+@import './bootstrap.css';
+@import './animate.css';
+@import './swiper-bundle.css';
+@import './magnific-popup.css';
+@import './font-awesome-pro.css';
+@import './spacing.css';
+@import './main.css';
+@import './custom.css';

@@ -90,7 +90,6 @@
 /*----------------------------------------*/
 /*  1.1 Theme Default
 /*----------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet');
 .back-to-top-wrapper, a,
 button,
 p,
@@ -3919,7 +3918,7 @@ input[type=color] {
   visibility: visible;
 }
 .body-overlay:hover {
-  cursor: url(../img/cross-icon/cross-out.png), pointer;
+  cursor: url(/assets/img/cross-icon/cross-out.png), pointer;
 }
 
 .tpoffcanvas {
@@ -6130,7 +6129,7 @@ input[type=color] {
   left: -20px;
   width: 40px;
   height: 40px;
-  background: url(../img/hero/hero-2/video-icon.png);
+  background: url(/assets/img/hero/hero-2/video-icon.png);
   content: "";
   z-index: 999999999999;
   background-size: 100%;
