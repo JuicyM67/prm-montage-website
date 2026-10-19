@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "verify:urls": "node scripts/verify-urls.mjs"
   },
   "engines": {
     "node": ">=22.22.0"
@@ -15,5 +16,8 @@
     "@vercel/blob": "2.8.2",
     "astro": "7.4.0",
     "resend": "6.20.0"
+  },
+  "devDependencies": {
+    "cheerio": "1.1.2"
   }
 }
