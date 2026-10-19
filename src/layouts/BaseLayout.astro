@@ -10,11 +10,13 @@ import type { Props as SeoProps } from '../components/Seo.astro';
 import '../styles/site.css';
 
 interface Props {
-  seo: SeoProps;
+  // Sidor med noindex (t.ex. 404) behöver bara title/description — ingen canonical/og/JSON-LD.
+  seo: Pick<SeoProps, 'title' | 'description'> & Partial<SeoProps>;
+  noindex?: boolean;
   activeNav?: 'hem' | 'tjanster' | 'omraden' | 'projekt' | 'om-oss' | 'kontakt' | null;
   defaultService?: string | null;
 }
-const { seo, activeNav = null, defaultService = null } = Astro.props;
+const { seo, noindex = false, activeNav = null, defaultService = null } = Astro.props;
 ---
 <!doctype html>
 <html class="no-js" lang="sv">
@@ -31,7 +33,7 @@ const { seo, activeNav = null, defaultService = null } = Astro.props;
 
   <link rel="preload" href="/assets/fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <Seo {...seo} />
+  {noindex ? <meta name="robots" content="noindex, follow" /> : <Seo {...(seo as SeoProps)} />}
 </head><body class="tp-bg-common-white-2">
 
   <Preloader />

@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Vercel serverar 404.html för alla okända URL:er. noindex så att den aldrig hamnar i sökresultaten.
+const seo = {
+  title: 'Sidan hittades inte | PRM Montage',
+  description: 'Sidan du letar efter finns inte längre. Hitta vidare till våra tjänster eller kontakta PRM Montage direkt.',
+};
+const links = [
+  { href: '/tjanster', label: 'Alla tjänster' },
+  { href: '/koksrenovering-stockholm', label: 'Köksrenovering' },
+  { href: '/vvs-badrum', label: 'VVS & badrum' },
+  { href: '/elektriker-stockholm', label: 'Elektriker' },
+  { href: '/rormokare-stockholm', label: 'Rörmokare' },
+  { href: '/projekt', label: 'Våra projekt' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+---
+
+<BaseLayout seo={seo} noindex>
+  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8">
+          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Sidan hittades inte</h1>
+          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Länken du följde fungerar inte längre — sidan kan ha flyttats eller tagits bort.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-100 pb-130" style="background:var(--nt-white);">
+    <div class="container">
+      <p style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;max-width:640px;" class="mb-30">Här är några sidor som kan hjälpa dig vidare, eller ring oss på <a href="tel:+46852027977" style="color:var(--nt-navy);font-weight:700;">08-520 279 77</a> så hjälper vi dig direkt.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;" class="mb-40">
+        {links.map((l) => <a href={l.href} class="tp-btn" style="padding:12px 26px;">{l.label}</a>)}
+      </div>
+      <a href="/" style="color:var(--nt-navy);font-weight:600;text-decoration:none;">&larr; Till startsidan</a>
+    </div>
+  </div>
+</BaseLayout>
