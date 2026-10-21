@@ -75,6 +75,25 @@ module.exports = async (req, res) => {
     }
   }
 
+  // Spara förfrågan i Neon så den syns i admin. Misslyckas det ska mejlet ändå skickas —
+  // mejlet är fortfarande det som garanterar att ingen förfrågan tappas bort.
+  try {
+    const { query, logActivity } = await import('../lib/db.mjs');
+    const leadType = ['offert', 'jour', 'contact', 'hire', 'area'].includes(type) ? type : 'contact';
+    const clip = (value, max) => (value ? String(value).slice(0, max) : null);
+    await query(
+      `insert into leads (type, name, email, phone, service, message, address, postal_code, city, area, attachments)
+       values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+      [
+        leadType, clip(name, 200), clip(email, 200), clip(phone, 50), clip(service, 200), clip(message, 5000),
+        clip(address, 200), clip(postalCode, 20), clip(city, 100), clip(area, 200), JSON.stringify(safeAttachments),
+      ],
+    );
+    await logActivity({ action: 'lead.created', subject: clip(name, 200), meta: { type: leadType } });
+  } catch (err) {
+    console.error('Kunde inte spara förfrågan i databasen:', err);
+  }
+
   const headings = {
     offert: 'Ny offertförfrågan',
     jour: 'AKUT — Jourförfrågan',

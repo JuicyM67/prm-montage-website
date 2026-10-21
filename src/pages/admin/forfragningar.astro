@@ -1,0 +1,7 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import Shell from '../../admin/Shell';
+---
+<AdminLayout title="Förfrågningar">
+  <Shell client:only="react" page="leads" />
+</AdminLayout>

@@ -30,7 +30,7 @@ const diff = (a, b) => a.filter((x) => !b.includes(x));
 const locs = (x) => [...x.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const liveLocs = locs(await (await getLive('/sitemap.xml')).text());
 const newLocs = locs(CANDIDATE ? await (await getCand('/sitemap.xml')).text() : fs.readFileSync('public/sitemap.xml', 'utf8'));
-const built = CANDIDATE ? newLocs : fs.readdirSync('dist').filter((f) => f.endsWith('.html') && f !== '404.html')
+const built = CANDIDATE ? newLocs : fs.readdirSync('dist').filter((f) => f.endsWith('.html') && f !== '404.html' && f !== 'admin.html')
   .map((f) => LIVE + (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));
 console.log(`sitemap: live ${liveLocs.length} URL:er, ny ${newLocs.length}, sidor ${built.length}`);
 diff(liveLocs, newLocs).forEach((u) => note(`i LIVE-sitemap men inte i nya sitemap: ${u}`));

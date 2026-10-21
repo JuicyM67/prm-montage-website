@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 
 // Bygget misslyckas om public/sitemap.xml och sidorna i src/pages glidit isär —
 // en ny sida utan sitemap-rad (eller tvärtom) ska inte kunna nå produktion.
@@ -11,7 +12,8 @@ function sitemapGuard() {
     hooks: {
       'astro:build:done': ({ dir }) => {
         const out = fileURLToPath(dir);
-        const pages = fs.readdirSync(out).filter((f) => f.endsWith('.html') && f !== '404.html')
+        // admin.html (/admin) är noindex och ska inte stå i sitemap; resten av admin ligger i admin/.
+        const pages = fs.readdirSync(out).filter((f) => f.endsWith('.html') && f !== '404.html' && f !== 'admin.html')
           .map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));
         const xml = fs.readFileSync(path.join(out, 'sitemap.xml'), 'utf8');
         const listed = [...xml.matchAll(/<loc>https:\/\/prmmontage\.se([^<]*)<\/loc>/g)].map((m) => m[1] || '/');
@@ -35,5 +37,5 @@ export default defineConfig({
   // Behåll HTML:en identisk med den handskrivna — whitespace kan påverka inline-layouten.
   compressHTML: false,
   devToolbar: { enabled: false },
-  integrations: [sitemapGuard()],
+  integrations: [react(), sitemapGuard()],
 });
