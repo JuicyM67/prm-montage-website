@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { decimal, number } from '../format';
+import { decimal } from '../format';
 
 export interface Move {
   query: string;
@@ -38,8 +38,8 @@ export function MovementCard({ tabs, comparable = true }: { tabs: MoveTab[]; com
       </div>
       {tab.hint && <p className="adm-hint" style={{ margin: '0 0 6px' }}>{tab.hint}</p>}
       {tab.rows.length === 0 ? <p className="adm-empty">{comparable || tab.id === 'near' ? tab.empty : 'Det finns ingen data från perioden före att jämföra med än.'}</p> : (
-        <ul className="adm-list">
-          {tab.rows.slice(0, 6).map((r) => (
+        <ul className="adm-list adm-two-col">
+          {tab.rows.slice(0, 10).map((r) => (
             <li key={r.query}>
               <span className="grow adm-truncate" style={{ maxWidth: '100%' }}>{r.query}</span>
               {r.delta !== null && Math.abs(r.delta) >= 0.05 && (
@@ -50,7 +50,6 @@ export function MovementCard({ tabs, comparable = true }: { tabs: MoveTab[]; com
               {comparable && r.prevPosition === null && <span className="adm-chip new">Ny</span>}
               <span className="when" style={{ minWidth: 92, textAlign: 'right' }}>
                 plats {decimal(r.position)}
-                {tab.id === 'near' && <><br />{number(r.impressions)} visningar</>}
               </span>
             </li>
           ))}

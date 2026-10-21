@@ -50,14 +50,14 @@ export default function Queries() {
 
   return (
     <>
-      <div className="adm-head-wrap adm-head">
+      <div className="adm-head-wrap">
         <div>
           <h1 className="adm-h1">Sökord & ranking</h1>
           <p className="adm-sub" style={{ marginBottom: 0 }}>
             Google Search Console{data?.period ? ` · ${data.period.label} (${periodRange(data.period.start, data.period.end)})` : ''}
           </p>
         </div>
-        <PeriodPicker value={period} onChange={setPeriod} />
+        <div className="adm-period-row"><PeriodPicker value={period} onChange={setPeriod} /></div>
       </div>
 
       {error && <div className="adm-alert error" role="alert">{error}</div>}
@@ -74,7 +74,12 @@ export default function Queries() {
             <StatTile label="Snittposition" value={decimal(t.position)} cur={t.position} prev={p.position} invert abs series={s.filter((d) => d.impressions > 0).map((d) => d.position)} />
           </div>
 
-          <div className="adm-grid-2" style={{ alignItems: 'start', marginBottom: 16 }}>
+          {data.distribution && (
+            <div style={{ marginBottom: 16 }}>
+              <DistributionBar current={data.distribution.current} previous={data.distribution.previous} />
+            </div>
+          )}
+          <div style={{ marginBottom: 16 }}>
             <MovementCard
               comparable={comparable}
               tabs={[
@@ -84,7 +89,6 @@ export default function Queries() {
                 { id: 'near', label: 'Nära topp 10', rows: m.nearTop10, empty: 'Inga sökord på plats 11–20 än.', hint: 'Sökord på plats 11–20 med flest visningar — närmast att nå första sidan.' },
               ]}
             />
-            {data.distribution && <DistributionBar current={data.distribution.current} previous={data.distribution.previous} />}
           </div>
 
           <TabbedTable

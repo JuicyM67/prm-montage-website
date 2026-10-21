@@ -292,3 +292,24 @@ textarea.adm-input { min-height: 96px; resize: vertical; }
   .adm-head > .adm-period-select { margin-top: 4px; }
   .adm-filter { width: 100%; margin-left: 0; }
 }
+
+/* ---------- Finjusteringar: stabil rubrikrad, tvåkolumnslistor, mobilrullista ---------- */
+.adm-period-row { margin-top: 16px; }
+@media (min-width: 900px) {
+  .adm-two-col { column-count: 2; column-gap: 48px; }
+  .adm-two-col li { break-inside: avoid; border-top: 0; border-bottom: 1px solid var(--adm-line); }
+}
+.adm-period-select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 16px; /* 16px hindrar iOS från att zooma in vid fokus */
+  font-weight: 600;
+  min-height: 46px;
+  padding: 10px 44px 10px 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2363706D' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  color: var(--adm-ink);
+}

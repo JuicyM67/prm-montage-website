@@ -53,14 +53,14 @@ export default function Overview({ user }: { user: AdminUser }) {
 
   return (
     <>
-      <div className="adm-head-wrap adm-head">
+      <div className="adm-head-wrap">
         <div>
           <h1 className="adm-h1">Hej{user.name ? `, ${user.name.split(' ')[0]}` : ''}</h1>
           <p className="adm-sub" style={{ marginBottom: 0 }}>
             Vad sajten genererat{c ? ` · ${c.period.label} (${periodRange(c.period.start, c.period.end)})` : ''}
           </p>
         </div>
-        <PeriodPicker value={period} onChange={setPeriod} />
+        <div className="adm-period-row"><PeriodPicker value={period} onChange={setPeriod} /></div>
       </div>
 
       {error && <div className="adm-alert error" role="alert">{error}</div>}

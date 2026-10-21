@@ -43,14 +43,14 @@ export default function Visitors() {
 
   return (
     <>
-      <div className="adm-head-wrap adm-head">
+      <div className="adm-head-wrap">
         <div>
           <h1 className="adm-h1">Besökare</h1>
           <p className="adm-sub" style={{ marginBottom: 0 }}>
             Google Analytics{data?.period ? ` · ${data.period.label} (${periodRange(data.period.start, data.period.end)})` : ''}
           </p>
         </div>
-        <PeriodPicker value={period} onChange={setPeriod} />
+        <div className="adm-period-row"><PeriodPicker value={period} onChange={setPeriod} /></div>
       </div>
 
       {error && <div className="adm-alert error" role="alert">{error}</div>}

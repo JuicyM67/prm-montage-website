@@ -37,9 +37,6 @@ export function DistributionBar({ current, previous }: { current: Bucket[]; prev
           );
         })}
       </div>
-      <p className="adm-hint" style={{ margin: '14px 0 0' }}>
-        Snabbast vinst: sökorden på plats 11–20 — välj fliken <strong>Nära topp 10</strong> för att se vilka som ligger närmast första sidan.
-      </p>
     </section>
   );
 }
