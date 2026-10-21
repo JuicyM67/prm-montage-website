@@ -1,12 +1,17 @@
+import { decimal } from '../format';
+
 // Förändring mot föregående period. invert: lägre är bättre (t.ex. Googles snittposition).
-export function Delta({ cur, prev, invert = false }: { cur: number; prev: number; invert?: boolean }) {
+// abs: visa skillnaden i enheter (positioner) i stället för procent.
+export function Delta({ cur, prev, invert = false, abs = false }: { cur: number; prev: number; invert?: boolean; abs?: boolean }) {
   if (!prev) return null;
-  const change = ((cur - prev) / prev) * 100;
-  if (Math.abs(change) < 0.5) return null;
+  const diff = cur - prev;
+  const change = abs ? diff : (diff / prev) * 100;
+  if (Math.abs(change) < (abs ? 0.05 : 0.5)) return null;
   const good = invert ? change < 0 : change > 0;
+  const text = abs ? decimal(Math.abs(change)) : `${Math.abs(Math.round(change))} %`;
   return (
-    <span className={`adm-stat-delta ${good ? 'up' : 'down'}`} aria-label={`${change > 0 ? 'upp' : 'ner'} ${Math.abs(Math.round(change))} procent`}>
-      {change > 0 ? '▲' : '▼'} {Math.abs(Math.round(change))} %
+    <span className={`adm-stat-delta ${good ? 'up' : 'down'}`} aria-label={`${good ? 'bättre' : 'sämre'} med ${text}`}>
+      {change > 0 ? '▲' : '▼'} {text}
     </span>
   );
 }

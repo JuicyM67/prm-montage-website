@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { useApi } from '../api';
-import { describeActivity, number, timeAgo } from '../format';
+import { describeActivity, number, periodRange, timeAgo } from '../format';
+import { PeriodPicker, usePeriod } from '../period';
 import type { AdminUser } from '../Shell';
 import { Delta } from './shared';
 
@@ -13,7 +13,7 @@ interface OverviewData {
 
 interface Counts { phone: number; email: number; forms: number; total: number }
 interface Conversions {
-  days: number;
+  period: { label: string; start: string; end: string };
   totals: Counts;
   previous: Counts;
   daily: { date: string; phone: number; email: number; forms: number }[];
@@ -23,7 +23,6 @@ interface Conversions {
   trackingSince: string | null;
 }
 
-const PERIODS = [7, 28, 90];
 const COLORS = { phone: '#1F5C50', forms: '#1FA968', email: '#9FDDBF' };
 const PLACEMENT_LABELS: Record<string, string> = {
   header: 'Sidhuvud',
@@ -36,8 +35,8 @@ const PLACEMENT_LABELS: Record<string, string> = {
 const KIND_LABELS = { phone: 'Samtal', email: 'Mejl' };
 
 export default function Overview({ user }: { user: AdminUser }) {
-  const [days, setDays] = useState(28);
-  const conv = useApi<Conversions>(`/api/admin/conversions?days=${days}`);
+  const [period, setPeriod] = usePeriod();
+  const conv = useApi<Conversions>(`/api/admin/conversions?period=${period}`);
   const { data, error, loading } = useApi<OverviewData>('/api/admin/overview');
   const c = conv.data;
 
@@ -57,15 +56,11 @@ export default function Overview({ user }: { user: AdminUser }) {
       <div className="adm-head-wrap adm-head">
         <div>
           <h1 className="adm-h1">Hej{user.name ? `, ${user.name.split(' ')[0]}` : ''}</h1>
-          <p className="adm-sub" style={{ marginBottom: 0 }}>Vad sajten genererat de senaste {days} dagarna</p>
+          <p className="adm-sub" style={{ marginBottom: 0 }}>
+            Vad sajten genererat{c ? ` · ${c.period.label} (${periodRange(c.period.start, c.period.end)})` : ''}
+          </p>
         </div>
-        <div className="adm-tabs" role="tablist" aria-label="Period" style={{ marginBottom: 0 }}>
-          {PERIODS.map((p) => (
-            <button key={p} type="button" role="tab" aria-selected={days === p} className={`adm-tab${days === p ? ' is-active' : ''}`} onClick={() => setDays(p)}>
-              {p} dagar
-            </button>
-          ))}
-        </div>
+        <PeriodPicker value={period} onChange={setPeriod} />
       </div>
 
       {error && <div className="adm-alert error" role="alert">{error}</div>}

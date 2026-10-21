@@ -44,3 +44,14 @@ export function describeActivity(a: { action: string; subject: string | null; us
     default: return `${who}: ${a.action}${subject ? ' – ' + subject : ''}`;
   }
 }
+
+export const decimal = (n: number, digits = 1) =>
+  n.toLocaleString('sv-SE', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+export const percent = (fraction: number, digits = 1) => (fraction * 100).toLocaleString('sv-SE', { maximumFractionDigits: digits }) + ' %';
+export const pathOf = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+
+export function periodRange(start?: string, end?: string): string {
+  if (!start || !end) return '';
+  const f = (d: string) => new Date(d).toLocaleDateString('sv-SE', { day: 'numeric', month: 'short' });
+  return start === end ? f(start) : `${f(start)} – ${f(end)}`;
+}
