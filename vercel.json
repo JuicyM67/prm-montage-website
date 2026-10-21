@@ -297,6 +297,12 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/api/auth/:path*",
+      "destination": "/api/auth?path=:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/_astro/(.*)",
