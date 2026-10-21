@@ -14,7 +14,7 @@ export const GET = guarded(async (request) => {
   }
   const { rows } = await query(
     `select l.id, l.created_at, l.type, l.name, l.email, l.phone, l.service, l.message, l.address,
-            l.postal_code, l.city, l.area, l.attachments, l.status, l.notes, l.handled_at,
+            l.postal_code, l.city, l.area, l.page, l.attachments, l.status, l.notes, l.handled_at,
             u.name as handled_by_name
        from leads l left join "user" u on u.id = l.handled_by
        ${where}

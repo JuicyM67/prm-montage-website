@@ -1,26 +1,8 @@
-import { useEffect, useState } from 'react';
-import { api, useApi } from '../api';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { PaperclipLinearIcon } from '@solar-icons/react';
+import { useApi } from '../api';
 import { fullDate, LEAD_STATUS, LEAD_TYPES, timeAgo } from '../format';
-
-interface Lead {
-  id: string;
-  created_at: string;
-  type: string;
-  name: string;
-  email: string | null;
-  phone: string;
-  service: string | null;
-  message: string | null;
-  address: string | null;
-  postal_code: string | null;
-  city: string | null;
-  area: string | null;
-  attachments: { filename: string; url: string }[];
-  status: 'ny' | 'hanterad' | 'arkiverad';
-  notes: string | null;
-  handled_at: string | null;
-  handled_by_name: string | null;
-}
+import { LeadModal, type Lead } from '../components/LeadModal';
 
 const FILTERS: { id: string; label: string }[] = [
   { id: '', label: 'Alla' },
@@ -31,9 +13,30 @@ const FILTERS: { id: string; label: string }[] = [
 
 export default function Leads() {
   const [filter, setFilter] = useState('');
-  const { data, error, loading, reload } = useApi<{ leads: Lead[] }>(`/api/admin/leads${filter ? `?status=${filter}` : ''}`);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const selected = data?.leads.find((l) => l.id === selectedId) ?? null;
+  const { data, error, loading, reload, setData } = useApi<{ leads: Lead[] }>(`/api/admin/leads${filter ? `?status=${filter}` : ''}`);
+  const [open, setOpen] = useState<Lead | null>(null);
+  const deepLinkHandled = useRef(false);
+
+  // Listan håller alltid senaste sparade anteckning, så att man ser rätt text om man öppnar förfrågan igen.
+  const notesSaved = useCallback((id: string, text: string) => {
+    setData((d) => (d ? { ...d, leads: d.leads.map((l) => (l.id === id ? { ...l, notes: text } : l)) } : d));
+  }, [setData]);
+
+  // Öppen lead hålls uppdaterad när listan laddas om, men stängs inte om den försvinner ur filtret
+  // (t.ex. "Hanterad" när fliken "Nya" är vald) — då behåller vi den senast kända versionen.
+  useEffect(() => {
+    if (!data) return;
+    if (open) {
+      const fresh = data.leads.find((l) => l.id === open.id);
+      if (fresh && fresh !== open) setOpen(fresh);
+    } else if (!deepLinkHandled.current) {
+      // /admin/forfragningar?lead=<id> (t.ex. efter omladdning) öppnar den förfrågan direkt.
+      deepLinkHandled.current = true;
+      const id = new URLSearchParams(window.location.search).get('lead');
+      const match = id ? data.leads.find((l) => l.id === id) : undefined;
+      if (match) setOpen(match);
+    }
+  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -61,9 +64,16 @@ export default function Leads() {
             {loading && !data && <tr><td colSpan={5}><div className="adm-skeleton" /></td></tr>}
             {data?.leads.length === 0 && <tr><td colSpan={5} className="adm-empty">Inga förfrågningar här än.</td></tr>}
             {data?.leads.map((l) => (
-              <tr key={l.id} className="is-click" onClick={() => setSelectedId(l.id)} tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter') setSelectedId(l.id); }}>
+              <tr key={l.id} className="is-click" onClick={() => setOpen(l)} tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter') setOpen(l); }}>
                 <td>
-                  <div className="adm-cell-main">{l.name}</div>
+                  <div className="adm-cell-main">
+                    {l.name}
+                    {l.attachments?.length > 0 && (
+                      <span className="adm-clip" title={`${l.attachments.length} bilaga${l.attachments.length > 1 ? 'r' : ''}`}>
+                        <PaperclipLinearIcon size={14} />{l.attachments.length}
+                      </span>
+                    )}
+                  </div>
                   <div className="adm-cell-sub">{l.phone}</div>
                 </td>
                 <td><span className={`adm-pill${l.type === 'jour' ? ' jour' : ''}`}>{LEAD_TYPES[l.type] || l.type}</span></td>
@@ -79,89 +89,7 @@ export default function Leads() {
         </table>
       </div>
 
-      {selected && <LeadDrawer lead={selected} onClose={() => setSelectedId(null)} onChanged={reload} />}
+      {open && <LeadModal key={open.id} lead={open} onClosed={() => setOpen(null)} onChanged={reload} onNotesSaved={notesSaved} />}
     </>
-  );
-}
-
-function LeadDrawer({ lead, onClose, onChanged }: { lead: Lead; onClose: () => void; onChanged: () => void }) {
-  const [notes, setNotes] = useState(lead.notes ?? '');
-  const [busy, setBusy] = useState(false);
-  const [err, setErr] = useState('');
-
-  useEffect(() => { setNotes(lead.notes ?? ''); }, [lead.id, lead.notes]);
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [onClose]);
-
-  const patch = async (body: Record<string, unknown>) => {
-    setBusy(true);
-    setErr('');
-    try {
-      await api('/api/admin/leads', { method: 'PATCH', json: { id: lead.id, ...body } });
-      onChanged();
-    } catch (e) {
-      setErr(e instanceof Error ? e.message : 'Något gick fel.');
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const address = [lead.address, [lead.postal_code, lead.city].filter(Boolean).join(' ')].filter(Boolean).join(', ');
-
-  return (
-    <div className="adm-overlay" onClick={onClose}>
-      <aside className="adm-drawer" role="dialog" aria-modal="true" aria-label={`Förfrågan från ${lead.name}`} onClick={(e) => e.stopPropagation()}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}>
-          <div>
-            <h2>{lead.name}</h2>
-            <span className={`adm-pill${lead.type === 'jour' ? ' jour' : ''}`}>{LEAD_TYPES[lead.type] || lead.type}</span>{' '}
-            <span className={`adm-pill${lead.status === 'ny' ? ' ny' : ''}`}>{LEAD_STATUS[lead.status]}</span>
-          </div>
-          <button type="button" className="adm-btn secondary small" onClick={onClose} style={{ alignSelf: 'flex-start' }}>Stäng</button>
-        </div>
-
-        <dl className="adm-dl">
-          <dt>Inkom</dt><dd>{fullDate(lead.created_at)}</dd>
-          <dt>Telefon</dt><dd><a href={`tel:${lead.phone.replace(/[^\d+]/g, '')}`}>{lead.phone}</a></dd>
-          <dt>E-post</dt><dd>{lead.email ? <a href={`mailto:${lead.email}`}>{lead.email}</a> : '–'}</dd>
-          {lead.service && <><dt>Tjänst</dt><dd>{lead.service}</dd></>}
-          {address && <><dt>Adress</dt><dd>{address}</dd></>}
-          {lead.area && <><dt>Område</dt><dd>{lead.area}</dd></>}
-          {lead.handled_at && <><dt>Hanterad</dt><dd>{fullDate(lead.handled_at)}{lead.handled_by_name ? ` av ${lead.handled_by_name}` : ''}</dd></>}
-        </dl>
-
-        {lead.message && <div className="adm-msg">{lead.message}</div>}
-
-        {lead.attachments?.length > 0 && (
-          <>
-            <h3 style={{ fontSize: 14, margin: '20px 0 8px' }}>Bilagor</h3>
-            <ul className="adm-list">
-              {lead.attachments.map((a) => (
-                <li key={a.url}><a className="grow" href={a.url} target="_blank" rel="noopener noreferrer">{a.filename}</a></li>
-              ))}
-            </ul>
-          </>
-        )}
-
-        <div className="adm-field" style={{ marginTop: 20 }}>
-          <label htmlFor="lead-notes">Anteckningar</label>
-          <textarea id="lead-notes" className="adm-input" value={notes} onChange={(e) => setNotes(e.target.value)} maxLength={5000} placeholder="Intern anteckning, syns bara i admin" />
-          <div>
-            <button type="button" className="adm-btn secondary small" disabled={busy || notes === (lead.notes ?? '')} onClick={() => patch({ notes })}>Spara anteckning</button>
-          </div>
-        </div>
-
-        {err && <div className="adm-alert error" role="alert">{err}</div>}
-
-        <div className="adm-actions">
-          {lead.status !== 'hanterad' && <button type="button" className="adm-btn" disabled={busy} onClick={() => patch({ status: 'hanterad' })}>Markera som hanterad</button>}
-          {lead.status !== 'ny' && <button type="button" className="adm-btn secondary" disabled={busy} onClick={() => patch({ status: 'ny' })}>Sätt som ny</button>}
-          {lead.status !== 'arkiverad' && <button type="button" className="adm-btn secondary" disabled={busy} onClick={() => patch({ status: 'arkiverad' })}>Arkivera</button>}
-        </div>
-      </aside>
-    </div>
   );
 }
