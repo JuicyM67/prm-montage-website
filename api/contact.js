@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const { name, email, phone, service, message, address, postalCode, city, area, type, attachments } = req.body || {};
+  const { name, email, phone, service, message, address, postalCode, city, area, type, attachments, page } = req.body || {};
 
   if (!name || !phone) {
     res.status(400).json({ error: 'Namn och telefonnummer krävs.' });
@@ -82,11 +82,12 @@ module.exports = async (req, res) => {
     const leadType = ['offert', 'jour', 'contact', 'hire', 'area'].includes(type) ? type : 'contact';
     const clip = (value, max) => (value ? String(value).slice(0, max) : null);
     await query(
-      `insert into leads (type, name, email, phone, service, message, address, postal_code, city, area, attachments)
-       values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+      `insert into leads (type, name, email, phone, service, message, address, postal_code, city, area, attachments, page)
+       values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
       [
         leadType, clip(name, 200), clip(email, 200), clip(phone, 50), clip(service, 200), clip(message, 5000),
         clip(address, 200), clip(postalCode, 20), clip(city, 100), clip(area, 200), JSON.stringify(safeAttachments),
+        typeof page === 'string' && /^\/[A-Za-z0-9\-._~%/]{0,199}$/.test(page) ? page : null,
       ],
     );
     await logActivity({ action: 'lead.created', subject: clip(name, 200), meta: { type: leadType } });

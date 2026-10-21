@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (fileInput && fileInput.name) formData.delete(fileInput.name);
       const data = Object.fromEntries(formData.entries());
       data.type = 'hire';
+      data.page = location.pathname;
 
       window.PRMForm.readAttachments(fileInput)
         .then(function (attachments) {

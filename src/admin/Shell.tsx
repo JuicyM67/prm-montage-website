@@ -71,6 +71,9 @@ export default function Shell({ page }: { page: PageId }) {
         window.location.replace('/admin/login');
         return;
       }
+      // Admin och publika sajten delar origin: markera webbläsaren så att teamets egna klick på
+      // telefonnummer/mejl inte räknas som leads (se beacon() i cookie-consent.js).
+      try { localStorage.setItem('nt_internal', '1'); } catch { /* ignore */ }
       setUser(data.user as AdminUser);
       setChecked(true);
     }).catch(() => window.location.replace('/admin/login'));

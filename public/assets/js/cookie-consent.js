@@ -45,13 +45,42 @@
     } catch (e) {}
   };
 
+  // Var på sidan länken sitter. Sidorna har inga data-attribut på länkarna, så vi läser av
+  // närmaste behållare i stället.
+  function linkPlacement(a) {
+    if (a.closest('.nt-mobile-cta-bar')) return 'mobile_bar';
+    if (a.closest('#nt-hire-modal')) return 'modal';
+    if (a.closest('.tpoffcanvas')) return 'menu';
+    if (a.closest('header')) return 'header';
+    if (a.closest('footer')) return 'footer';
+    return 'page';
+  }
+
+  // Anonym egen räkning av samtals- och mejlklick (api/track.mjs): inga cookies, inga ID:n —
+  // bara typ, sida och placering. Räknar även besökare som tackat nej till statistik.
+  // Teamets egna klick räknas inte: admin sätter nt_internal i webbläsaren efter inloggning.
+  function beacon(kind, placement) {
+    try {
+      if (localStorage.getItem('nt_internal') === '1') return;
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+      var body = JSON.stringify({ kind: kind, page: location.pathname, placement: placement });
+      if (navigator.sendBeacon && navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }))) return;
+      fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+    } catch (err) {}
+  }
+
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
-    if (a) {
-      window.ntTrack('phone_click', {
-        phone: a.getAttribute('href').replace('tel:', ''),
-        source: a.closest('.nt-mobile-cta-bar') ? 'mobile_bar' : 'page_link',
-      });
+    var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+    // .hire-btn-länkar öppnar offertfönstret i stället för att ringa (modal.js stoppar klicket).
+    if (!a || e.defaultPrevented || a.classList.contains('hire-btn')) return;
+    var placement = linkPlacement(a);
+    var href = a.getAttribute('href');
+    if (href.indexOf('tel:') === 0) {
+      window.ntTrack('phone_click', { phone: href.replace('tel:', ''), source: placement });
+      beacon('phone', placement);
+    } else {
+      window.ntTrack('email_click', { email: href.replace('mailto:', '').split('?')[0], source: placement });
+      beacon('email', placement);
     }
   });
 

@@ -257,3 +257,12 @@ textarea.adm-input { min-height: 96px; resize: vertical; }
   .adm-stat { padding: 16px; }
   .adm-stat-num { font-size: 26px; }
 }
+
+/* ---------- Konverteringar på Översikt ---------- */
+.adm-stat.is-primary { background: var(--adm-primary); color: #fff; }
+.adm-stat.is-primary .adm-stat-label { color: rgba(255, 255, 255, 0.75); }
+.adm-stat.is-primary .adm-stat-delta.up { color: #7FE3B1; }
+.adm-stat.is-primary .adm-stat-delta.down { color: #FFB4AB; }
+.adm-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--adm-muted); }
+.adm-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.adm-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }

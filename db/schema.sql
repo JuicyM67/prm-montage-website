@@ -32,3 +32,17 @@ create table if not exists activity_log (
   meta        jsonb not null default '{}'::jsonb
 );
 create index if not exists activity_log_created_at_idx on activity_log (created_at desc);
+
+-- Klick på telefonnummer/mejladress på sajten (api/track.mjs). Anonymt: inga cookies, IP eller ID:n sparas.
+create table if not exists click_events (
+  id          bigint generated always as identity primary key,
+  created_at  timestamptz not null default now(),
+  kind        text not null check (kind in ('phone', 'email')),
+  page        text,
+  placement   text
+);
+create index if not exists click_events_created_at_idx on click_events (created_at desc);
+create index if not exists click_events_kind_created_at_idx on click_events (kind, created_at);
+
+-- Vilken sida ett formulär skickades från.
+alter table leads add column if not exists page text;

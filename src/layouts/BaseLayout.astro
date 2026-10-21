@@ -8,6 +8,9 @@ import MobileCtaBar from '../components/MobileCtaBar.astro';
 import HireModal from '../components/HireModal.astro';
 import type { Props as SeoProps } from '../components/Seo.astro';
 import '../styles/site.css';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 interface Props {
   // Sidor med noindex (t.ex. 404) behöver bara title/description — ingen canonical/og/JSON-LD.
@@ -17,6 +20,13 @@ interface Props {
   defaultService?: string | null;
 }
 const { seo, noindex = false, activeNav = null, defaultService = null } = Astro.props;
+
+// /assets/* cachas i ett år (immutable, se vercel.json). Skripten vi ändrar får därför ett
+// innehållshash i URL:en, så att återkommande besökare hämtar den nya versionen.
+const asset = (path: string) => {
+  const hash = createHash('md5').update(readFileSync(join(process.cwd(), 'public', path))).digest('hex').slice(0, 8);
+  return `${path}?v=${hash}`;
+};
 ---
 <!doctype html>
 <html class="no-js" lang="sv">
@@ -61,10 +71,10 @@ const { seo, noindex = false, activeNav = null, defaultService = null } = Astro.
   <script is:inline src="assets/js/jarallax.js"></script>
   <script is:inline src="assets/js/slider-init.js"></script>
   <script is:inline src="assets/js/main.js"></script>
-  <script is:inline src="assets/js/modal.js"></script>
-  <script is:inline src="assets/js/form-utils.js"></script>
-  <script is:inline src="assets/js/contact-form.js"></script>
-  <script is:inline src="assets/js/cookie-consent.js"></script>
+  <script is:inline src={asset('assets/js/modal.js')}></script>
+  <script is:inline src={asset('assets/js/form-utils.js')}></script>
+  <script is:inline src={asset('assets/js/contact-form.js')}></script>
+  <script is:inline src={asset('assets/js/cookie-consent.js')}></script>
   <slot name="scripts" />
 </body>
 </html>

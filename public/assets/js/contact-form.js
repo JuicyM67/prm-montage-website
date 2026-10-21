@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (fileInput && fileInput.name) formData.delete(fileInput.name);
       var data = Object.fromEntries(formData.entries());
       data.type = form.getAttribute('data-form-type') || 'contact';
+      data.page = location.pathname;
 
       if (submitBtn) {
         submitBtn.disabled = true;
