@@ -11,6 +11,7 @@ import {
 } from '@solar-icons/react';
 import { authClient } from './auth-client';
 import { api } from './api';
+import { hideSplash } from './splash';
 import Overview from './pages/Overview';
 import Leads from './pages/Leads';
 import Users from './pages/Users';
@@ -76,6 +77,7 @@ export default function Shell({ page }: { page: PageId }) {
       try { localStorage.setItem('nt_internal', '1'); } catch { /* ignore */ }
       setUser(data.user as AdminUser);
       setChecked(true);
+      hideSplash();
     }).catch(() => window.location.replace('/admin/login'));
   }, []);
 

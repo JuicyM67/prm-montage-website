@@ -217,6 +217,21 @@ textarea.adm-input { min-height: 96px; resize: vertical; }
 .adm-login-card .adm-btn { width: 100%; }
 .adm-loading { min-height: 100vh; display: grid; place-items: center; color: rgba(255, 255, 255, 0.6); }
 
+/* ---------- Splash ---------- */
+.adm-splash {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  background: var(--adm-side);
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+.adm-splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.adm-splash img { height: 44px; width: auto; animation: adm-splash-pulse 1.8s ease-in-out infinite; }
+.adm-splash-bar { width: 120px; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+.adm-splash-bar span { display: block; height: 100%; width: 40%; border-radius: 3px; background: var(--adm-accent); animation: adm-splash-slide 1.2s ease-in-out infinite; }
+@keyframes adm-splash-pulse { 50% { opacity: 0.6; transform: scale(0.97); } }
+@keyframes adm-splash-slide { from { transform: translateX(-100%); } to { transform: translateX(300%); } }
+@media (prefers-reduced-motion: reduce) { .adm-splash img, .adm-splash-bar span { animation: none; } .adm-splash { transition: none; } }
+
 .adm-hint { font-size: 13px; color: var(--adm-muted); }
 .adm-skeleton { height: 14px; border-radius: 6px; background: linear-gradient(90deg, #E7EEEC, #F3F7F6, #E7EEEC); background-size: 200% 100%; animation: adm-shimmer 1.2s infinite; }
 @keyframes adm-shimmer { to { background-position: -200% 0; } }

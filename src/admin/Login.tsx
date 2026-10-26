@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { authClient } from './auth-client';
+import { hideSplash } from './splash';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -10,7 +11,8 @@ export default function Login() {
   useEffect(() => {
     authClient.getSession().then(({ data }) => {
       if (data?.user) window.location.replace('/admin');
-    }).catch(() => {});
+      else hideSplash();
+    }).catch(() => hideSplash());
     if (new URLSearchParams(window.location.search).get('error')) {
       setState('error');
       setError('Länken är ogiltig eller har gått ut. Begär en ny nedan.');

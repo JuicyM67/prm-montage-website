@@ -20,6 +20,19 @@ const { title } = Astro.props;
   <link rel="preload" href="/assets/fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body class="adm-body">
+  <div id="adm-splash" class="adm-splash" role="status" aria-label="Laddar">
+    <img src="/assets/img/logo/logo-white.webp" alt="PRM Montage" height="44">
+    <div class="adm-splash-bar" aria-hidden="true"><span></span></div>
+  </div>
   <slot />
+  <script is:inline>
+    // Splashen göms av appen (src/admin/splash.ts) när inloggningskontrollen är klar.
+    // Reservlösning om något hänger sig, så att den aldrig blir kvar.
+    window.__admSplashStart = Date.now();
+    setTimeout(function () {
+      var el = document.getElementById('adm-splash');
+      if (el) el.remove();
+    }, 8000);
+  </script>
 </body>
 </html>
