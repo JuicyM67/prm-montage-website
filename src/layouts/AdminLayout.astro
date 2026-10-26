@@ -26,9 +26,11 @@ const { title } = Astro.props;
   </div>
   <slot />
   <script is:inline>
-    // Splashen göms av appen (src/admin/splash.ts) när inloggningskontrollen är klar.
-    // Reservlösning om något hänger sig, så att den aldrig blir kvar.
+    // Splashen visas bara vid första laddningen i en session; sidbyten mellan adminsidor hoppar över den.
+    // Den göms av appen (src/admin/splash.ts). Reservlösning om något hänger sig: ta bort efter 8 s.
     window.__admSplashStart = Date.now();
+    var splash = document.getElementById('adm-splash');
+    try { if (sessionStorage.getItem('adm-splashed') === '1' && splash) splash.remove(); } catch (e) {}
     setTimeout(function () {
       var el = document.getElementById('adm-splash');
       if (el) el.remove();

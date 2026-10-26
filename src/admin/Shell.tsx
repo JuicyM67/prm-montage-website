@@ -55,13 +55,19 @@ const nav: { group: string | null; items: NavItem[] }[] = [
   },
 ];
 
+// Senast inloggade användaren, så att sidbyten kan rendera direkt medan sessionen verifieras i bakgrunden.
+// Bara ett UI-hint: alla /api/admin-anrop skyddas fortfarande på serversidan.
+const readCachedUser = (): AdminUser | null => {
+  try { return JSON.parse(sessionStorage.getItem('adm-user') || 'null'); } catch { return null; }
+};
+
 const readCollapsed = () => {
   try { return localStorage.getItem('adm-collapsed') === '1'; } catch { return false; }
 };
 
 export default function Shell({ page }: { page: PageId }) {
-  const [user, setUser] = useState<AdminUser | null>(null);
-  const [checked, setChecked] = useState(false);
+  const [user, setUser] = useState<AdminUser | null>(readCachedUser);
+  const [checked, setChecked] = useState(() => readCachedUser() !== null);
   const [collapsed, setCollapsed] = useState(readCollapsed);
   const [open, setOpen] = useState(false);
   const [newLeads, setNewLeads] = useState(0);
@@ -69,12 +75,14 @@ export default function Shell({ page }: { page: PageId }) {
   useEffect(() => {
     authClient.getSession().then(({ data }) => {
       if (!data?.user) {
+        try { sessionStorage.removeItem('adm-user'); } catch { /* ignore */ }
         window.location.replace('/admin/login');
         return;
       }
       // Admin och publika sajten delar origin: markera webbläsaren så att teamets egna klick på
       // telefonnummer/mejl inte räknas som leads (se beacon() i cookie-consent.js).
       try { localStorage.setItem('nt_internal', '1'); } catch { /* ignore */ }
+      try { sessionStorage.setItem('adm-user', JSON.stringify(data.user)); } catch { /* ignore */ }
       setUser(data.user as AdminUser);
       setChecked(true);
       hideSplash();
@@ -94,6 +102,7 @@ export default function Shell({ page }: { page: PageId }) {
   };
 
   const logout = async () => {
+    try { sessionStorage.removeItem('adm-user'); sessionStorage.removeItem('adm-splashed'); } catch { /* ignore */ }
     await authClient.signOut();
     window.location.href = '/admin/login';
   };
