@@ -14,8 +14,8 @@ module.exports = async (req, res) => {
 
   const { name, email, phone, service, message, address, postalCode, city, area, type, attachments, page } = req.body || {};
 
-  if (!name || !phone) {
-    res.status(400).json({ error: 'Namn och telefonnummer krävs.' });
+  if (!name || !phone || !email) {
+    res.status(400).json({ error: 'Namn, telefonnummer och e-post krävs.' });
     return;
   }
 
