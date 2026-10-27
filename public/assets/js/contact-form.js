@@ -23,9 +23,19 @@ document.addEventListener('DOMContentLoaded', function () {
       messageBox.style.color = isError ? '#b3261e' : '#0f6b3c';
     }
 
+    // Egen validering med meddelanden under fälten i stället för webbläsarens bubblor.
+    form.setAttribute('novalidate', '');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (messageBox) messageBox.style.display = 'none';
+      window.PRMForm.clearFieldErrors(form);
+      var invalid = window.PRMForm.validate(form);
+      if (invalid) {
+        showMessage('Kontrollera de markerade fälten.', true);
+        invalid.focus();
+        return;
+      }
 
       var formData = new FormData(form);
       if (fileInput && fileInput.name) formData.delete(fileInput.name);
@@ -47,19 +57,21 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(data),
           });
         })
-        .then(function (res) {
-          return res.json().then(function (body) {
-            if (!res.ok) throw new Error(body.error || 'Något gick fel.');
-            return body;
-          });
-        })
+        .then(window.PRMForm.parseResponse)
         .then(function () {
           if (window.ntTrack) window.ntTrack('generate_lead', { form_type: data.type, service: data.service || '' });
-          showMessage('Tack! Vi återkommer till dig så snart vi kan.', false);
-          form.reset();
+          // Byt ut formuläret mot en bekräftelse så det är tydligt att förfrågan gick iväg.
+          if (messageBox) messageBox.style.display = 'none';
+          var panel = document.createElement('div');
+          panel.innerHTML = window.PRMForm.successHtml(data.email);
+          form.parentNode.replaceChild(panel, form);
+          panel.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          panel.firstChild.focus({ preventScroll: true });
         })
         .catch(function (err) {
+          var bad = err.fields && window.PRMForm.showServerErrors(form, err.fields);
           showMessage(err.message || 'Kunde inte skicka meddelandet. Försök igen eller ring oss direkt.', true);
+          if (bad) bad.focus();
         })
         .finally(function () {
           if (submitBtn) {

@@ -240,12 +240,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chips.scrollIntoView({ block: 'center', behavior: 'smooth' });
         return;
       }
-      const fields = [nameInput, phoneInput];
-      for (let i = 0; i < fields.length; i++) {
-        if (!fields[i].checkValidity()) {
-          fields[i].reportValidity();
-          return;
-        }
+      window.PRMForm.clearFieldErrors(form);
+      const invalid = window.PRMForm.validate(form, ['name', 'phone']);
+      if (invalid) {
+        haptic([30, 40, 30]);
+        invalid.focus();
+        return;
       }
       nextBtn.style.display = 'none';
       step2.style.display = '';
@@ -271,18 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function showSuccess() {
+  function showSuccess(email) {
     const progress = overlay.querySelector('.nt-progress');
     if (progress) progress.remove();
     const sub = overlay.querySelector('.subtitle');
     if (sub) sub.style.display = 'none';
-    form.innerHTML =
-      '<div class="nt-success">' +
-        '<svg viewBox="0 0 52 52" width="72" height="72" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="#1FA968" stroke-width="3"/><path fill="none" stroke="#1FA968" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M15 27l8 8 14-16"/></svg>' +
-        '<h4>Tack för din förfrågan!</h4>' +
-        '<p>Vi återkommer så snart vi kan.</p>' +
-        '<p class="nt-success__hint">Brådskar det? Ring <a href="tel:+46852027977">08-520 279 77</a></p>' +
-      '</div>';
+    form.innerHTML = window.PRMForm.successHtml(email);
+    const done = form.querySelector('.nt-success');
+    if (done) done.focus({ preventScroll: true });
     haptic([15, 50, 15]);
   }
 
@@ -301,8 +297,17 @@ document.addEventListener('DOMContentLoaded', function () {
     setupSteps();
 
     // Formulär submit — skickas via /api/contact (Resend)
+    form.setAttribute('novalidate', '');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      window.PRMForm.clearFieldErrors(form);
+      const invalid = window.PRMForm.validate(form);
+      if (invalid) {
+        haptic([30, 40, 30]);
+        invalid.focus();
+        return;
+      }
       const submitBtn = form.querySelector('.nt-submit-btn:not([style*="display: none"])') || form.querySelector('.nt-submit-btn');
       const originalBtnText = submitBtn.textContent;
       submitBtn.textContent = 'Skickar...';
@@ -324,20 +329,20 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(data),
           });
         })
-        .then(function (res) {
-          return res.json().then(function (body) {
-            if (!res.ok) throw new Error(body.error || 'Något gick fel.');
-            return body;
-          });
-        })
+        .then(window.PRMForm.parseResponse)
         .then(function () {
           track('generate_lead', { form_type: 'hire', service: data.service || '' });
-          showSuccess();
+          showSuccess(data.email);
         })
         .catch(function (err) {
           submitBtn.textContent = originalBtnText;
           submitBtn.disabled = false;
-          alert(err.message || 'Kunde inte skicka förfrågan. Försök igen eller ring oss direkt.');
+          const bad = err.fields && window.PRMForm.showServerErrors(form, err.fields);
+          if (bad) {
+            bad.focus();
+          } else {
+            alert(err.message || 'Kunde inte skicka förfrågan. Försök igen eller ring oss direkt.');
+          }
         });
     });
   }

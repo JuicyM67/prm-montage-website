@@ -14,13 +14,9 @@ module.exports = async (req, res) => {
 
   const { name, email, phone, service, message, address, postalCode, city, area, type, attachments, page } = req.body || {};
 
-  if (!name || !phone || !email) {
-    res.status(400).json({ error: 'Namn, telefonnummer och e-post krävs.' });
-    return;
-  }
-
-  if (!address || !postalCode || !city) {
-    res.status(400).json({ error: 'Adress, postnummer och stad krävs.' });
+  const fieldErrors = validateFields({ name, phone, email, address, postalCode, city });
+  if (Object.keys(fieldErrors).length) {
+    res.status(400).json({ error: 'Kontrollera de markerade fälten och försök igen.', fields: fieldErrors });
     return;
   }
 
@@ -140,12 +136,62 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Bekräftelse till den som skickade in. Misslyckas den är förfrågan ändå mottagen, så
+    // det ska inte ge kunden ett felmeddelande.
+    try {
+      const { error: confirmError } = await resend.emails.send({
+        from: process.env.RESEND_FROM || 'PRM Montage <no-reply@effektivmedia.nu>',
+        to: String(email).trim(),
+        reply_to: toEmails[0],
+        subject: 'Vi har tagit emot din förfrågan – PRM Montage',
+        html: confirmationHtml({ name, service, type }),
+      });
+      if (confirmError) console.error('Resend bekräftelse error:', confirmError);
+    } catch (err) {
+      console.error('Resend bekräftelse error:', err);
+    }
+
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Resend error:', err);
     res.status(500).json({ error: 'Kunde inte skicka meddelandet. Försök igen senare.' });
   }
 };
+
+// Samma regler som i public/assets/js/form-utils.js — håll dem i synk.
+function validateFields({ name, phone, email, address, postalCode, city }) {
+  const errors = {};
+  const text = (v) => (typeof v === 'string' ? v.trim() : '');
+  if (text(name).length < 2) errors.name = 'Fyll i ditt namn.';
+  const phoneDigits = text(phone).replace(/[\s\-().]/g, '');
+  if (!/^\+?\d{7,15}$/.test(phoneDigits)) errors.phone = 'Ange ett giltigt telefonnummer, t.ex. 070-123 45 67.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(text(email)) || text(email).length > 200) {
+    errors.email = 'Ange en giltig e-postadress, t.ex. namn@exempel.se.';
+  }
+  if (text(address).length < 3) errors.address = 'Fyll i din adress.';
+  if (!/^\d{5}$/.test(text(postalCode).replace(/\s/g, ''))) errors.postalCode = 'Postnumret ska vara fem siffror, t.ex. 123 45.';
+  if (text(city).length < 2) errors.city = 'Fyll i din stad.';
+  return errors;
+}
+
+function confirmationHtml({ name, service, type }) {
+  const first = String(name).trim().split(/\s+/)[0];
+  const urgent = type === 'jour';
+  const lead = urgent
+    ? 'Vi har tagit emot din jourförfrågan och ringer upp dig så snart vi kan.'
+    : 'Tack för din förfrågan! Vi har tagit emot den och går igenom den så snart vi kan. Därefter hör vi av oss till dig med återkoppling.';
+  return `
+    <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#12332C;line-height:1.55;">
+      <h2 style="margin:0 0 16px;">Hej ${escapeHtml(first)}!</h2>
+      <p>${lead}</p>
+      ${service ? `<p><strong>Gäller:</strong> ${escapeHtml(service)}</p>` : ''}
+      <p>${urgent ? 'Kan det inte vänta?' : 'Brådskar det?'} Ring oss på <a href="tel:+46852027977">08-520 279 77</a>.
+      Har du fler bilder eller uppgifter att lägga till kan du svara direkt på det här mejlet.</p>
+      <p style="margin-top:28px;">Vänliga hälsningar<br><strong>PRM Montage AB</strong><br>
+      <a href="https://prmmontage.se">prmmontage.se</a></p>
+    </div>
+  `;
+}
 
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({
