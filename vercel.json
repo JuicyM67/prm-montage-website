@@ -6,6 +6,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.prmmontage.se"
+        }
+      ],
+      "destination": "https://prmmontage.se/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
