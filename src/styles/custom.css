@@ -513,6 +513,7 @@ html, body {
   position: relative;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   animation: modalSlideIn 0.3s ease;
 }
 @keyframes modalSlideIn {
@@ -1404,7 +1405,8 @@ a:hover { color: var(--nt-orange-dark); }
 .nt-chip[aria-checked="true"] { border-color: var(--nt-orange); background: #e9f8f0; animation: ntPop .25s ease; }
 .nt-chips--error { animation: ntShake .35s; }
 .nt-chips--error .nt-chip { border-color: #e5484d; }
-.nt-select-hidden { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; padding: 0; border: 0; }
+/* Mer specifik än `.nt-modal select` (width:100% + padding), annars sticker den dolda selecten ut och gör arket sidledsscrollbart. */
+.nt-modal .nt-select-hidden, .nt-select-hidden { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; padding: 0; border: 0; margin: 0; overflow: hidden; }
 .nt-step2--in { animation: ntStepIn .3s ease; }
 
 .nt-success { text-align: center; padding: 28px 0 8px; }
