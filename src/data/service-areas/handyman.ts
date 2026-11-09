@@ -4,7 +4,7 @@ import type { AreaEntry } from './index';
 export const handyman: AreaEntry[] = [
   {
     area: 'solna',
-    lead: 'Montering och småjobb efter flytten — med kontor mitt i Solna.',
+    lead: 'Montering och småjobb efter flytten. Med kontor mitt i Solna.',
     h2: 'Handyman i Solna — hjälp med montering och småjobb',
     intro: [
       'Efter en flytt blir det en lång lista: hyllor som ska upp, möbler som ska monteras, TV:n som ska hängas och en gardinstång som aldrig blev av. PRM Montage är handyman i Solna med kontor på Industrivägen 19, och vi tar de jobben så att du kan ta hand om resten av inflyttningen.',
@@ -25,7 +25,7 @@ export const handyman: AreaEntry[] = [
   },
   {
     area: 'sundbyberg',
-    lead: 'Montering och småjobb i lägenheten — kort väg från Solna.',
+    lead: 'Montering och småjobb i lägenheten. Kort väg från Solna.',
     h2: 'Handyman i Sundbyberg — från Rissne till Hallonbergen',
     intro: [
       'Sundbyberg ligger granne med Solna, och därför är det en kort resa för oss när du behöver en handyman. PRM Montage hjälper till med montering och småjobb i lägenheter och hus i kommunen: tavlor, hyllor, möbler, TV och lås.',
@@ -46,7 +46,7 @@ export const handyman: AreaEntry[] = [
   },
   {
     area: 'bromma',
-    lead: 'Lägenheter, radhus och villor — handyman i hela Bromma.',
+    lead: 'Lägenheter, radhus och villor. Handyman i hela Bromma.',
     h2: 'Handyman i Bromma — för både lägenhet och villa',
     intro: [
       'I Bromma blandas villor, radhus och flerbostadshus, och det gäller även vilka småjobb som behöver göras. I lägenheten handlar det ofta om hyllor, TV och möbler, i villan om fler rum, större garderober och mer att hänga upp. PRM Montage hjälper till med båda.',
@@ -67,7 +67,7 @@ export const handyman: AreaEntry[] = [
   },
   {
     area: 'danderyd',
-    lead: 'Villaägare i Djursholm och Stocksund — handyman för alla rum.',
+    lead: 'Villaägare i Djursholm och Stocksund. Handyman för alla rum.',
     h2: 'Handyman i Danderyd — hjälp i villan',
     intro: [
       'I en stor villa i Danderyd finns mycket att hålla ordning på: fler rum, fler väggar och ofta mer av allt som ska hängas, monteras eller bytas. PRM Montage är handyman i Danderyd, bland annat i Djursholm och Stocksund, och hjälper dig med montering och småjobb.',
@@ -109,7 +109,7 @@ export const handyman: AreaEntry[] = [
   },
   {
     area: 'lidingo',
-    lead: 'Montering och småjobb på Lidingö — i villa eller lägenhet.',
+    lead: 'Montering och småjobb på Lidingö. I villa eller lägenhet.',
     h2: 'Handyman på Lidingö — småjobb i hus med karaktär',
     intro: [
       'Lidingö har många välskötta hus och lägenheter där man vill att varje detalj ska bli rätt, även när det handlar om en hylla, en spegel eller en gardinstång. PRM Montage är handyman på Lidingö och kommer över bron från vårt kontor i Solna.',

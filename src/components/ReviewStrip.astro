@@ -12,7 +12,7 @@ const picked = names ? names.map((n) => reviews.find((r) => r.name === n)).filte
     <figure class="cv-review">
       <div class="stars" aria-label="5 av 5 stjärnor"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
       <blockquote>”{r.text}”</blockquote>
-      <figcaption><i class="fab fa-google"></i> {r.name} · Google-recension</figcaption>
+      <figcaption><span class="cv-avatar">{r.name.split(" ").map((x) => x[0]).slice(0, 2).join("")}</span><span>{r.name}<small><i class="fab fa-google"></i> Google-recension</small></span></figcaption>
     </figure>
   ))}
 </div>

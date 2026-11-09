@@ -1,16 +1,5 @@
 ---
-// Proof-rad direkt under hero: fyra korta trygghetspunkter.
-const items = [
-  { icon: 'fa-star', text: '4,9 på Google · 100+ omdömen' },
-  { icon: 'fa-shield-check', text: 'F-skatt & försäkrade' },
-  { icon: 'fa-tags', text: 'Alltid fast pris' },
-  { icon: 'fa-clock', text: 'Jour dygnet runt' },
-];
+// Behåller namnet ProofBar (importeras av alla tjänstesidor) men visar samma stats-band som startsidan.
+import StatsBand from './landing/StatsBand.astro';
 ---
-<div class="cv-proof">
-  <div class="cv-container">
-    <ul class="cv-proof__list">
-      {items.map((i) => <li><i class={`fas ${i.icon}`}></i><span>{i.text}</span></li>)}
-    </ul>
-  </div>
-</div>
+<StatsBand />

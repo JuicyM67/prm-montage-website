@@ -7,6 +7,7 @@ import { organization } from '../data/organization';
 import ProofBar from './ProofBar.astro';
 import ReviewStrip from './ReviewStrip.astro';
 import FinalCta from './FinalCta.astro';
+import SectionHeader from './landing/SectionHeader.astro';
 import StickyOfferCard from './StickyOfferCard.astro';
 
 import type { JobPageProps } from './small-job-types';
@@ -83,6 +84,8 @@ const reviewOffset = [...p.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % 13;
     </div>
   </section>
 
+  <div class="cv-pageshot-wrap"><div class="cv-container cv-pageshot"><img src={p.heroImage} width="1400" height="560" alt={p.heroAlt} fetchpriority="high"></div></div>
+
   <ProofBar />
 
   <section class="cv-section">
@@ -135,7 +138,7 @@ const reviewOffset = [...p.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % 13;
 
   <section class="cv-section cv-section--tint">
     <div class="cv-container">
-      <h2 class="cv-h2">Det säger våra kunder</h2>
+      <SectionHeader pill="Omdömen" title="Det säger våra kunder" />
       <ReviewStrip count={3} offset={reviewOffset} job />
     </div>
   </section>

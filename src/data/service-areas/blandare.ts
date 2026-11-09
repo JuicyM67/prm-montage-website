@@ -4,7 +4,7 @@ import type { AreaEntry } from './index';
 export const blandare: AreaEntry[] = [
   {
     area: 'solna',
-    lead: 'Blandarbyte i Solna med kort startsträcka — vårt kontor ligger på Industrivägen 19.',
+    lead: 'Blandarbyte i Solna med kort startsträcka. Vårt kontor ligger på Industrivägen 19.',
     h2: 'Blandarbyte i Solna, från Råsunda till Arenastaden',
     intro: [
       'En blandare som droppar, sitter löst eller har blivit för kalkad hör till de jobb som är lätta att skjuta upp och dyra att vänta med. PRM Montage har kontor på Industrivägen 19 i Solna, så när du bokar ett blandarbyte hos oss behöver hantverkaren inte åka långt.',
@@ -25,7 +25,7 @@ export const blandare: AreaEntry[] = [
   },
   {
     area: 'sundbyberg',
-    lead: 'Blandarbyte i Sundbyberg — granne med Solna och kort väg från vårt kontor.',
+    lead: 'Blandarbyte i Sundbyberg. Granne med Solna och kort väg från vårt kontor.',
     h2: 'Blandarbyte i Sundbyberg — nytt och äldre',
     intro: [
       'Sundbyberg är granne med Solna, där PRM Montage har sitt kontor, så ett blandarbyte i kommunen kräver ingen lång resa. Vi hjälper dig med köksblandare, duschblandare och blandare på handfatet, och kommer hem till dig för att byta och prova att allt är tätt.',
@@ -46,7 +46,7 @@ export const blandare: AreaEntry[] = [
   },
   {
     area: 'bromma',
-    lead: 'Lägenhet, radhus eller villa — vi byter blandare i hela Bromma.',
+    lead: 'Lägenhet, radhus eller villa. Vi byter blandare i hela Bromma.',
     h2: 'Blandarbyte i Bromma — lägenheter, radhus och villor',
     intro: [
       'Bromma är en stadsdel med stor variation, där villor, radhus och flerbostadshus ofta ligger i samma kvarter i delar som Alvik, Åkeshov och Riksby. Det gör att blandarbyten ser olika ut från hus till hus, och därför börjar vi alltid med att höra hur din bostad ser ut.',
@@ -67,7 +67,7 @@ export const blandare: AreaEntry[] = [
   },
   {
     area: 'danderyd',
-    lead: 'Villaägare i Djursholm och Stocksund — vi byter blandare i hela Danderyd.',
+    lead: 'Villaägare i Djursholm och Stocksund. Vi byter blandare i hela Danderyd.',
     h2: 'Blandarbyte i Danderyds villor',
     intro: [
       'Danderyd är en av Stockholmsområdets mest villatäta kommuner, med områden som Djursholm och Stocksund där många hus är byggda för flera decennier sedan. I ett större hus finns ofta flera badrum, kök och kanske ett extra handfat, och därmed flera blandare som slits i olika takt.',
@@ -88,7 +88,7 @@ export const blandare: AreaEntry[] = [
   },
   {
     area: 'taby',
-    lead: 'Barnfamiljer i Näsbypark och kring Täby Centrum — vi byter blandare som tål vardagen.',
+    lead: 'Barnfamiljer i Näsbypark och kring Täby Centrum. Vi byter blandare som tål vardagen.',
     h2: 'Blandarbyte i Täby — blandare som tål en familjs vardag',
     intro: [
       'I Täby bor många barnfamiljer i villor och radhus, bland annat i Näsbypark och kring Täby Centrum. En blandare som används av hela familjen flera gånger om dagen slits snabbare, och en som droppar eller sitter löst märks direkt i vardagen.',
@@ -109,7 +109,7 @@ export const blandare: AreaEntry[] = [
   },
   {
     area: 'lidingo',
-    lead: 'Villor och lägenheter på Lidingö — blandarbyte med hänsyn till huset.',
+    lead: 'Villor och lägenheter på Lidingö. Blandarbyte med hänsyn till huset.',
     h2: 'Blandarbyte på Lidingö — i hus med karaktär',
     intro: [
       'Lidingö nås via bro från Stockholm och har välskötta villaområden som Bodal, Käppala, Larsberg, Skärsätra och Högberga, blandat med lägenheter i Lidingö centrum och Torsvik. Kommunen har generellt höga krav på slutresultatet, och det gäller även ett så litet jobb som ett blandarbyte.',

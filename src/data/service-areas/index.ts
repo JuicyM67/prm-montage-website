@@ -36,6 +36,8 @@ export interface Job {
   /** slug-prefix: byta-blandare → byta-blandare-solna */
   prefix: string;
   titleBase: string;
+  /** "att byta blandare" → "Vanliga frågor om att byta blandare i Solna" */
+  faqTopic: string;
   titleTail: string;
   h1Base: string;
   hub: string;
@@ -50,17 +52,17 @@ export interface Job {
 const ALT = 'Arbete utfört av PRM Montage i Stockholm';
 const jobs: Job[] = [
   {
-    prefix: 'byta-blandare', titleBase: 'Byta blandare', titleTail: 'Kök, dusch & handfat', h1Base: 'Byta blandare',
+    prefix: 'byta-blandare', titleBase: 'Byta blandare', faqTopic: 'att byta blandare', titleTail: 'Kök, dusch & handfat', h1Base: 'Byta blandare',
     hub: '/byta-blandare', hubLabel: 'Byta blandare', serviceType: 'Byte av blandare', defaultService: 'VVS & Badrum',
     heroImage: 'assets/img/projekt/badrum-07.webp', ctaHeading: 'Dags att byta blandare?', entries: blandare,
   },
   {
-    prefix: 'handyman', titleBase: 'Handyman', titleTail: 'Montering & småjobb', h1Base: 'Handyman',
+    prefix: 'handyman', titleBase: 'Handyman', faqTopic: 'handyman', titleTail: 'Montering & småjobb', h1Base: 'Handyman',
     hub: '/handyman-stockholm', hubLabel: 'Handyman Stockholm', serviceType: 'Handyman och montering', defaultService: 'Montering & handyman',
     heroImage: 'assets/img/projekt/bygg-02.webp', ctaHeading: 'Har du något som behöver fixas?', entries: handyman,
   },
   {
-    prefix: 'byta-las', titleBase: 'Byta lås', titleTail: 'Lås & låscylinder', h1Base: 'Byta lås',
+    prefix: 'byta-las', titleBase: 'Byta lås', faqTopic: 'att byta lås', titleTail: 'Lås & låscylinder', h1Base: 'Byta lås',
     hub: '/byta-las-cylinder', hubLabel: 'Byta lås & låscylinder', serviceType: 'Byte av lås och låscylinder', defaultService: 'Lås & dörrar',
     heroImage: 'assets/img/projekt/bygg-04.webp', ctaHeading: 'Dags att byta lås?', entries: las,
   },
@@ -86,7 +88,7 @@ export const allPages: JobPageProps[] = jobs.flatMap((job) =>
       h2: e.h2,
       intro: e.intro,
       sections: [e.section, extras[job.prefix][area.id]],
-      faqTitle: `Vanliga frågor — ${job.titleBase.toLowerCase()} ${area.loc}`,
+      faqTitle: `Vanliga frågor om ${job.faqTopic} ${area.loc}`,
       faqs: e.faqs,
       serviceType: job.serviceType,
       serviceName: h1,

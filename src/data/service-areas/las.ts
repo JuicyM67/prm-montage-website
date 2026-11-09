@@ -5,7 +5,7 @@ import type { AreaEntry } from './index';
 export const las: AreaEntry[] = [
   {
     area: 'solna',
-    lead: 'Byte av lås och cylinder i Solna — med kontor på Industrivägen 19.',
+    lead: 'Byte av lås och cylinder i Solna. Med kontor på Industrivägen 19.',
     h2: 'Byta lås och låscylinder i Solna',
     intro: [
       'Nyinflyttad i Solna och osäker på vem som har nycklar till dörren? Det är ett vanligt skäl att byta låscylindern. PRM Montage byter lås och låscylindrar i lägenheter och villor i Solna, och vi har kontor på Industrivägen 19 mitt i kommunen.',
@@ -26,7 +26,7 @@ export const las: AreaEntry[] = [
   },
   {
     area: 'sundbyberg',
-    lead: 'Lås och låscylinder i Sundbyberg — kort väg från vårt kontor i Solna.',
+    lead: 'Lås och låscylinder i Sundbyberg. Kort väg från vårt kontor i Solna.',
     h2: 'Byta lås och cylinder i Sundbyberg',
     intro: [
       'Sundbyberg gränsar till Solna, så vägen är kort när du behöver få ett lås bytt. PRM Montage byter låscylindrar och lås i lägenheter och hus i Sundbyberg, justerar dörren och provar att nyckeln går lätt.',
@@ -47,7 +47,7 @@ export const las: AreaEntry[] = [
   },
   {
     area: 'bromma',
-    lead: 'Lås i ytterdörr och lägenhetsdörr — i hela Bromma.',
+    lead: 'Lås i ytterdörr och lägenhetsdörr. I hela Bromma.',
     h2: 'Byta lås och låscylinder i Bromma',
     intro: [
       'I Bromma finns både villor, radhus och lägenheter, och det betyder olika dörrar och olika behov: ytterdörren till ett hus, altandörren, en lägenhetsdörr eller förrådsdörren. PRM Montage byter lås och låscylindrar i hela Bromma.',
@@ -110,7 +110,7 @@ export const las: AreaEntry[] = [
   },
   {
     area: 'lidingo',
-    lead: 'Lås och cylinder på Lidingö — i villor och lägenheter.',
+    lead: 'Lås och cylinder på Lidingö. I villor och lägenheter.',
     h2: 'Byta lås och låscylinder på Lidingö',
     intro: [
       'Lidingö nås via bro från Stockholm, och hit kommer vi från vårt kontor i Solna när du behöver byta lås eller låscylinder. PRM Montage byter lås i villor i bland annat Bodal, Larsberg och Högberga, och i lägenheter i Lidingö centrum och Torsvik.',

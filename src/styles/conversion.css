@@ -447,3 +447,26 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-ctastars .stars { display: inline-flex; gap: 4px; color: #F5B301; font-size: 1.2rem; }
 .cv-ctastars .txt { color: rgba(255,255,255,.88); font-size: .95rem; font-weight: 600; }
 .cv-ctastars:hover .txt { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ============================================================
+   Tjänste-/ortssidor i samma stil som startsidan: vit centrerad hero, bild, stats, recensionskort
+   ============================================================ */
+.cv-pagehero { background: #fff; color: var(--nt-navy); padding: 36px 0 4px; text-align: center; }
+@media (min-width: 992px) { .cv-pagehero { padding: 60px 0 8px; } }
+.cv-pagehero .cv-crumbs { justify-content: center; color: var(--nt-gray); margin-bottom: 18px; }
+.cv-pagehero .cv-crumbs a { color: var(--nt-gray); }
+.cv-pagehero .cv-crumbs a:hover { color: var(--nt-navy); text-decoration: underline; }
+.cv-pagehero .cv-crumbs li + li::before { color: #B5C3BE; }
+.cv-pagehero h1 { color: var(--nt-navy-dark); font-size: clamp(2rem, 5.2vw, 3.4rem); line-height: 1.1; letter-spacing: -.02em; margin: 0 auto 16px; max-width: 900px; text-wrap: balance; }
+.cv-pagehero__lead { color: var(--nt-gray); margin: 0 auto 26px; max-width: 640px; font-size: 1.1rem; }
+.cv-pagehero .cv-btn-row { justify-content: center; }
+.cv-pagehero .cv-btn--outline-light { background: #fff; color: var(--nt-navy) !important; border-color: var(--cv-border); }
+.cv-pagehero .cv-btn--outline-light:hover { border-color: var(--nt-navy); }
+.cv-pagehero .cv-rating, .cv-pagehero .cv-rating--light { display: flex; justify-content: center; color: var(--nt-gray); margin-top: 20px; }
+.cv-pageshot { max-width: 1040px; margin: 36px auto 0; }
+.cv-pageshot img { display: block; width: 100%; height: 260px; object-fit: cover; border-radius: var(--cv-radius-lg); box-shadow: 0 1px 2px rgba(22,63,55,.06), 0 18px 40px rgba(22,63,55,.14); }
+@media (min-width: 768px) { .cv-pageshot { margin-top: 48px; } .cv-pageshot img { height: 380px; } }
+
+.cv-pageshot-wrap { background: #fff; padding: 32px 16px 0; }
+@media (min-width: 768px) { .cv-pageshot-wrap { padding: 44px 24px 0; } }
+.cv-pageshot-wrap .cv-pageshot { padding: 0; margin: 0 auto; }
