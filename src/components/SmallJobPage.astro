@@ -110,7 +110,14 @@ const reviewOffset = [...p.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % 13;
         {(p.sections ?? []).map((s) => (
           <>
             <h3 set:html={s.h} />
-            {(s.paras ?? []).map((t) => <p set:html={t} />)}
+            {(s.paras ?? []).map((t) => {
+              // "1. A. 2. B. 3. C. Resten" -> numrerad steglista + avslutande stycke
+              const m = t.match(/^1\.\s+(.*?)\s+2\.\s+(.*?)\s+3\.\s+(.*?\.)(?:\s+(.*))?$/s);
+              return m ? (<>
+                <ol>{[m[1], m[2], m[3]].map((x) => <li set:html={x} />)}</ol>
+                {m[4] && <p set:html={m[4]} />}
+              </>) : <p set:html={t} />;
+            })}
             {s.list && s.list.length > 0 && (
               <ul class="cv-checks">
                 {s.list.map((li) => <li><i class="fas fa-check-circle"></i><span set:html={li} /></li>)}

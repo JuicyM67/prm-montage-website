@@ -589,3 +589,8 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-prose h3::before, .cv-prose h4::before, .cv-prose h2:not(:first-of-type):not(.accordion-header)::before { left: 50%; transform: translateX(-50%); }
 .cv-prose > .cv-btn-row, .cv-prose > .cv-midcta-row, .cv-prose > .d-flex, .cv-aside .cv-links ul { justify-content: center; }
 .cv-aside .cv-links, .cv-aside .cv-links h3 { text-align: center; }
+
+/* Numrerade steg: bara gröna siffror + vanlig brödtext, inga kort */
+.cv-prose ol { gap: 14px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.cv-prose ol > li { background: none; border: 0; border-radius: 0; padding: 0 0 0 44px; min-height: 30px; text-align: left; }
+.cv-prose ol > li::before { left: 0; top: -1px; width: 30px; height: 30px; font-size: .9rem; }
