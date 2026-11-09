@@ -612,3 +612,12 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-layout { max-width: 980px; margin: 0 auto; display: block; }
 @media (min-width: 900px) { .cv-prose .row.g-4:has(> :nth-child(3)) { grid-template-columns: repeat(3, 1fr); } }
 .nt-gallery-filter { justify-content: center; }
+
+/* animationsklasser från mallen får aldrig dölja innehåll */
+.img-custom-anim-top, .img-custom-anim-left, .img-custom-anim-right { opacity: 1 !important; clip-path: none !important; animation: none !important; transform: none !important; }
+
+/* Ikoner: ingen bakgrundsruta/cirkel, bara själva ikonen */
+.cv-card__icon, .b-urgent .cv-card__icon { background: none !important; width: auto; height: auto; border-radius: 0; font-size: 1.6rem; margin-bottom: 14px; }
+.nt-icon-card__icon, .nt-icon-card:hover .nt-icon-card__icon, .tp-feature-3-wrap span.nt-icon-card__icon { background: none !important; width: auto !important; height: auto !important; border-radius: 0 !important; color: var(--nt-orange) !important; font-size: 1.9rem; justify-content: flex-start; margin-bottom: 16px; }
+.cv-prose .nt-highlight h5 i { background: none; width: auto; height: auto; border-radius: 0; font-size: 1.25rem; }
+.cv-prose p.is-short, .tp-service-area .row > [class*="col-xl-8"] p.is-short { text-align: center !important; }
