@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { organization } from '../data/organization';
 
 const seo = {
-  "title": "Köksrenovering Stockholm — Fast pris | PRM Montage",
-  "description": "Köksrenovering i Stockholm till fast pris. PRM Montage samlar snickeri, VVS och el i samma projekt — från idé till färdigt kök. Kostnadsfri offert.",
+  "title": "Köksrenovering Stockholm — Fast pris & ROT | PRM Montage",
+  "description": "Köksrenovering i Stockholm till fast pris med ROT-avdrag. Snickeri, VVS och el i samma projekt — från rivning till färdigt kök. 4,9 på Google (100+ omdömen). Kostnadsfri offert.",
   "canonical": "https://prmmontage.se/koksrenovering-stockholm",
   "ogDescription": "Köksrenovering i Stockholm till fast pris — snickeri, VVS och el i samma projekt.",
   "ogImage": "https://prmmontage.se/assets/img/projekt/hero-kok.webp",
@@ -76,6 +76,30 @@ const seo = {
               "@type": "Answer",
               "text": "Arbetskostnaden vid en köksrenovering ger normalt rätt till ROT-avdrag, medan material och produkter inte gör det. Vi hjälper dig räkna på avdraget i offerten."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad påverkar tiden och omfattningen på en köksrenovering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mest påverkar om köket behåller sin planlösning eller om vatten, avlopp och el ska flyttas, samt om du har ett IKEA-kök, ett snickrat kök eller ett platsbyggt kök. Leveranstider för luckor och bänkskiva styr också när vi kan starta. Du får en tidsplan tillsammans med det fasta priset."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan ni montera ett IKEA-kök som en del av köksrenoveringen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Vi monterar IKEA-kök med stommar, luckor och bänkskiva och kan samtidigt ta hand om rivning, VVS och el, så att du har en enda kontakt genom hela projektet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vilka områden utför ni köksrenovering i?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vi utför köksrenovering i Stockholm med omnejd, bland annat Solna, Sundbyberg, Bromma, Danderyd, Täby, Lidingö, Upplands Väsby och Uppsala."
+            }
           }
         ]
       }
@@ -139,6 +163,22 @@ const seo = {
             <li><i class="fas fa-check-circle"></i><span>Slutstädning och besiktning</span></li>
           </ul>
 
+          <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Så går en köksrenovering till</h3>
+          <ol class="mb-45" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;padding-left:1.2rem;">
+            <li><strong>Kostnadsfri offert.</strong> Du berättar om köket och vi går igenom önskemål, mått och vad som ska göras. Du får ett fast pris innan vi startar.</li>
+            <li><strong>Planering.</strong> Vi går igenom tidsplan, leveranser och vad som behöver flyttas — vatten, avlopp och el — så att alla moment hamnar i rätt ordning.</li>
+            <li><strong>Rivning och förberedelser.</strong> Det gamla köket demonteras och underlaget görs klart för VVS- och elarbeten.</li>
+            <li><strong>Installation.</strong> Våra egna hantverkare utför snickeri, VVS och el i samma projekt, så att du slipper samordna flera företag.</li>
+            <li><strong>Montering och finish.</strong> Stommar, luckor, bänkskiva och vitvaror monteras, därefter slutstädning och genomgång tillsammans med dig.</li>
+          </ol>
+
+          <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vilket kök passar dig?</h3>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Köksrenovering ser olika ut beroende på kök och bostad. Många väljer ett IKEA-kök som vi <a href="/ikea-koksmontering-stockholm">monterar fackmannamässigt</a>, andra vill ha <a href="/snickeri-stockholm">platsbyggt snickeri</a> som utnyttjar rummet maximalt. Behöver vatten, avlopp eller eluttag flyttas ingår <a href="/rormokare-stockholm">VVS</a> och <a href="/elektriker-stockholm">el</a> i samma projekt.</p>
+          <p class="mb-45" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Det som oftast avgör tid och omfattning är om planlösningen behålls eller ändras, vilka ytskikt som ska bytas och när luckor och bänkskiva levereras. Arbetskostnaden ger normalt rätt till ROT-avdrag — <a href="/rut-rot">så fungerar ROT-avdraget</a>.</p>
+
+          <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Köksrenovering i ditt område</h3>
+          <p class="mb-45" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vi utför köksrenovering i hela Stockholmsregionen: <a href="/solna">Solna</a>, <a href="/sundbyberg">Sundbyberg</a>, <a href="/bromma">Bromma</a>, <a href="/danderyd">Danderyd</a>, <a href="/tacby">Täby</a>, <a href="/lidingo">Lidingö</a>, <a href="/upplands-vasby">Upplands Väsby</a>, <a href="/sodermalm">Södermalm</a> och <a href="/uppsala">Uppsala</a>. Se även våra <a href="/projekt">genomförda projekt</a>.</p>
+
           <div class="mb-45">
             <img src="assets/img/projekt/kok-04.webp" width="900" height="675" loading="lazy" alt="Nytt kök med köksfläkt, utfört av PRM Montage" class="w-100" style="border-radius:12px;aspect-ratio:16/9;height:auto;object-fit:cover;">
           </div>
@@ -160,6 +200,18 @@ const seo = {
             <div class="accordion-item">
               <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKok4">Ger köksrenovering rätt till ROT-avdrag?</button></h2>
               <div id="faqKok4" class="accordion-collapse collapse" data-bs-parent="#faqKok"><div class="accordion-body">Arbetskostnaden vid en köksrenovering ger normalt rätt till ROT-avdrag, medan material och produkter inte gör det. Vi hjälper dig räkna på avdraget i offerten. Läs mer på vår <a href="/rut-rot">ROT-avdragssida</a>.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKok5">Vad påverkar tiden och omfattningen på en köksrenovering?</button></h2>
+              <div id="faqKok5" class="accordion-collapse collapse" data-bs-parent="#faqKok"><div class="accordion-body">Mest påverkar om köket behåller sin planlösning eller om vatten, avlopp och el ska flyttas, samt om du har ett IKEA-kök, ett snickrat kök eller ett platsbyggt kök. Leveranstider för luckor och bänkskiva styr också när vi kan starta. Du får en tidsplan tillsammans med det fasta priset.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKok6">Kan ni montera ett IKEA-kök som en del av köksrenoveringen?</button></h2>
+              <div id="faqKok6" class="accordion-collapse collapse" data-bs-parent="#faqKok"><div class="accordion-body">Ja. Vi <a href="/ikea-koksmontering-stockholm">monterar IKEA-kök</a> med stommar, luckor och bänkskiva och kan samtidigt ta hand om rivning, VVS och el, så att du har en enda kontakt genom hela projektet.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqKok7">Vilka områden utför ni köksrenovering i?</button></h2>
+              <div id="faqKok7" class="accordion-collapse collapse" data-bs-parent="#faqKok"><div class="accordion-body">Vi utför köksrenovering i Stockholm med omnejd, bland annat Solna, Sundbyberg, Bromma, Danderyd, Täby, Lidingö, Upplands Väsby och Uppsala.</div></div>
             </div>
           </div>
 
