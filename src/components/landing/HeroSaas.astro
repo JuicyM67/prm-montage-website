@@ -1,13 +1,12 @@
 ---
-// Hero i SaaS-stil: centrerad. Pill, rubrik, ingress, två CTA:er och en visuell yta (slot) under.
-interface Props { pill: string; title: string; accent?: string; lead: string }
-const { pill, title, accent, lead } = Astro.props;
+// Hero i SaaS-stil: centrerad. Rubrik (två rader), ingress, två CTA:er och en visuell yta (slot) under.
+interface Props { title: string; sub?: string; accent?: string; lead: string }
+const { title, sub, accent, lead } = Astro.props;
 ---
 <section class="cv-hero cv-hero--saas cv-hero--center">
   <div class="cv-container">
     <div class="cv-hero__copy">
-      <span class="cv-pill"><span class="dot"></span>{pill}</span>
-      <h1>{title} {accent && <span class="cv-grad">{accent}</span>}</h1>
+      <h1>{title}{sub && <span class="cv-h1-sub">{sub}{accent && <> <span class="cv-grad">{accent}</span></>}</span>}</h1>
       <p class="cv-hero__lead">{lead}</p>
       <div class="cv-btn-row">
         <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>

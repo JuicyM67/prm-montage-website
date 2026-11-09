@@ -50,12 +50,11 @@
 .cv-checks i { color: var(--nt-orange); margin-top: 4px; flex-shrink: 0; }
 
 /* ---------- Hero (startsida) ---------- */
-.cv-hero { padding: 108px 0 40px; background: linear-gradient(180deg, #EAF5F0 0%, #fff 100%); }
+.cv-hero { padding: 108px 0 40px; background: #fff; }
 @media (min-width: 992px) { .cv-hero { padding: 132px 0 72px; } }
 .cv-hero__grid { display: grid; gap: 28px; }
 @media (min-width: 992px) { .cv-hero__grid { grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: start; } }
 .cv-hero h1 { font-size: clamp(2rem, 5.2vw, 3.1rem); line-height: 1.12; font-weight: 800; color: var(--nt-navy-dark); margin: 14px 0 16px; letter-spacing: -.02em; }
-.cv-hero h1 span { color: var(--nt-orange-dark); display: block; }
 .cv-hero__lead { color: var(--nt-gray); font-size: 1.08rem; line-height: 1.65; margin: 0 0 22px; max-width: 540px; }
 .cv-hero .nt-hero-form-card { border: 1px solid var(--cv-border); box-shadow: var(--cv-shadow); border-radius: var(--cv-radius); padding: 24px 20px; }
 @media (min-width: 576px) { .cv-hero .nt-hero-form-card { padding: 28px 28px; } }
@@ -183,13 +182,10 @@
 .cv-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--nt-orange); box-shadow: 0 0 0 4px rgba(31,169,104,.18); }
 .cv-pill--soft { background: var(--cv-mint); border-color: transparent; color: var(--nt-orange-dark); box-shadow: none; margin-bottom: 14px; }
 .cv-pill--dark { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #fff; box-shadow: none; }
-.cv-grad { background: var(--cv-grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.cv-grad { color: var(--nt-orange-dark); }
 
 /* Hero: bakgrundsglöd */
-.cv-hero--saas { position: relative; overflow: hidden; background: #F6FBF8; }
-.cv-hero--saas::before, .cv-hero--saas::after { content: ""; position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
-.cv-hero--saas::before { width: 520px; height: 520px; background: #BDEBD3; opacity: .6; top: -160px; left: -140px; }
-.cv-hero--saas::after { width: 460px; height: 460px; background: #D3EEE2; opacity: .7; right: -140px; top: 40px; }
+.cv-hero--saas { position: relative; overflow: hidden; background: #fff; }
 .cv-hero--saas > .cv-container { position: relative; z-index: 1; }
 .cv-hero--saas h1 { margin-top: 18px; }
 .cv-hero--saas h1 .cv-grad { display: inline; }
@@ -293,3 +289,6 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 @media (min-width: 576px) { .cv-quote .nt-hero-form-card { padding: 30px 30px; } }
 .cv-quote .nt-form-field input, .cv-quote .nt-form-field select, .cv-quote .nt-form-field textarea { font-size: 1rem; padding: 13px 14px; }
 .cv-quote .nt-form-submit { padding: 16px; border-radius: 12px; font-size: 1.05rem; }
+
+/* Rubrik i två rader: andra raden lite mindre */
+.cv-h1-sub { display: block; margin-top: 6px; font-size: .58em; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; color: var(--nt-navy); }
