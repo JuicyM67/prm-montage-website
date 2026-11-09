@@ -380,9 +380,84 @@ const seo = {
     title="Hantverkare i Stockholm — bygg, renovering, VVS & el"
     accent="till fast pris"
     lead="PRM Montage är din lokala hantverksfirma i Solna. Du får egna hantverkare, F-skatt och försäkring — och alltid ett fast pris innan vi startar."
-    bullets={['Fast pris innan vi startar', 'Egna hantverkare — inga underentreprenörer', 'Garanti på utfört arbete']}
   >
-    <div class="nt-hero-form-card" id="offert">
+    <div class="cv-heroshot">
+      <img class="s1" src="assets/img/projekt/kok-02.webp" width="900" height="675" alt="Köksrenovering, Stockholm" fetchpriority="high">
+      <img class="s2" src="assets/img/projekt/badrum-04.webp" width="900" height="675" alt="Badrum, dusch med regnmunstycke">
+      <img class="s3" src="assets/img/projekt/bygg-01.webp" width="900" height="675" alt="Snickeri, ytterdörr">
+      <div class="cv-float"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><strong>4,9</strong><span>100+ omdömen på Google</span></div>
+    </div>
+  </HeroSaas>
+
+  <StatsBand />
+
+  <section class="cv-section">
+    <div class="cv-container">
+      <SectionHeader pill="Tjänster" title="Vad behöver du hjälp med?" text="Från snabba småjobb till större projekt — samma hantverkare, samma fasta pris." />
+      <BentoServices />
+      <p style="margin:24px 0 0;color:var(--nt-gray);">Letar du efter något annat? Se <a href="/tjanster" style="color:var(--nt-orange-dark);font-weight:600;">alla tjänster</a>, <a href="/bygg-renovering" style="color:var(--nt-orange-dark);font-weight:600;">bygg &amp; renovering</a> eller <a href="/altanbygge-i-stockholm" style="color:var(--nt-orange-dark);font-weight:600;">altanbygge</a>.</p>
+    </div>
+  </section>
+
+  <section class="cv-section cv-section--tint">
+    <div class="cv-container">
+      <FeatureRow
+        pill="Allt under ett tak"
+        title="Egna hantverkare — du slipper samordna flera firmor"
+        text="Bygg, snickeri, VVS och el hos samma företag. Det gör oss snabbare att komma igång och enklare att ha kontakt med genom hela jobbet."
+        bullets={['Snickare, VVS-montörer och elektriker i egen regi', 'En kontaktperson från offert till färdigt jobb', 'Garanti på utfört arbete']}
+        image="assets/img/projekt/badrum-10.webp"
+        alt="Utfört arbete av PRM Montage i Stockholm"
+        cta={{ href: '/om-oss', label: 'Om PRM Montage' }}
+      />
+      <FeatureRow
+        reverse
+        pill="Så går det till"
+        title="Fast pris — från förfrågan till färdigt jobb"
+        text="Du beskriver jobbet, vi lämnar en kostnadsfri offert, och när vi är klara går vi igenom resultatet tillsammans med dig."
+        bullets={['1. Du hör av dig — formulär eller telefon, gärna med bilder', '2. Du får ett fast pris, utan bindningstid', '3. Vi utför jobbet och lämnar garanti']}
+        image="assets/img/projekt/kok-05.webp"
+        alt="Utfört arbete av PRM Montage i Stockholm"
+        cta={{ href: '/sa-har-gar-det-till', label: 'Läs mer om processen' }}
+      />
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <div class="cv-container">
+      <SectionHeader pill="Omdömen" title="Det säger våra kunder" text="Riktiga Google-recensioner — snitt 4,9 av 5 på över 100 omdömen." />
+      <TestimonialWall names={['Marie Chenik', 'Fredrik Österholm', 'Margaretha Lindh', 'Daniel Hermansson', 'Staffan Karlsson', 'Georgia B']} />
+    </div>
+  </section>
+
+  <section class="cv-section cv-section--tint">
+    <div class="cv-container">
+      <SectionHeader pill="Projekt" title="Ett urval av våra senaste jobb" text='<a href="/projekt" style="color:var(--nt-orange-dark);font-weight:600;">Se hela galleriet</a>' />
+      <div class="cv-photos">
+        <a href="/projekt"><img src="assets/img/projekt/kok-02.webp" width="900" height="675" loading="lazy" alt="Köksrenovering, Stockholm"></a>
+        <a href="/projekt"><img src="assets/img/projekt/badrum-04.webp" width="900" height="675" loading="lazy" alt="Badrum, dusch med regnmunstycke"></a>
+        <a href="/projekt"><img src="assets/img/projekt/bygg-01.webp" width="900" height="675" loading="lazy" alt="Snickeri, ytterdörr"></a>
+        <a href="/projekt"><img src="assets/img/projekt/kok-04.webp" width="900" height="675" loading="lazy" alt="Kök med köksfläkt"></a>
+        <a href="/projekt"><img src="assets/img/projekt/badrum-09.webp" width="900" height="675" loading="lazy" alt="Badrum med nymonterad tvättställsblandare"></a>
+        <a href="/projekt"><img src="assets/img/projekt/bygg-05.webp" width="900" height="675" loading="lazy" alt="Utfört arbete av PRM Montage i Stockholm"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-section cv-section--tint" id="offert-sektion">
+    <div class="cv-container">
+      <div class="cv-quote">
+        <div class="cv-quote__text">
+          <SectionHeader pill="Begär offert" title="Berätta om jobbet — få ett fast pris" text="Fyll i formuläret så återkommer vi personligen. Kostnadsfritt och utan förpliktelser." />
+          <ul class="cv-checks">
+            <li><i class="fas fa-check-circle"></i><span>Svar och fast pris innan vi startar</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Egna hantverkare, F-skatt och försäkring</span></li>
+            <li><i class="fas fa-check-circle"></i><span>Garanti på utfört arbete</span></li>
+          </ul>
+          <a href="tel:+46852027977" class="cv-btn cv-btn--ghost"><i class="fas fa-phone"></i> Hellre ringa? 08-520 279 77</a>
+        </div>
+        <div>
+          <div class="nt-hero-form-card" id="offert">
             <h3>Kostnadsfri offert</h3>
             <p class="nt-form-sub">Fyll i formuläret så återkommer vi — utan kostnad eller förpliktelser.</p>
             <div class="nt-form-message"></div>
@@ -444,59 +519,7 @@ const seo = {
               <p class="nt-form-fineprint">Inget köptvång. Vi återkommer till dig personligen.</p>
             </form>
           </div>
-  </HeroSaas>
-
-  <StatsBand />
-
-  <section class="cv-section">
-    <div class="cv-container">
-      <SectionHeader pill="Tjänster" title="Vad behöver du hjälp med?" text="Från snabba småjobb till större projekt — samma hantverkare, samma fasta pris." />
-      <BentoServices />
-      <p style="margin:24px 0 0;color:var(--nt-gray);">Letar du efter något annat? Se <a href="/tjanster" style="color:var(--nt-orange-dark);font-weight:600;">alla tjänster</a>, <a href="/bygg-renovering" style="color:var(--nt-orange-dark);font-weight:600;">bygg &amp; renovering</a> eller <a href="/altanbygge-i-stockholm" style="color:var(--nt-orange-dark);font-weight:600;">altanbygge</a>.</p>
-    </div>
-  </section>
-
-  <section class="cv-section cv-section--tint">
-    <div class="cv-container">
-      <FeatureRow
-        pill="Allt under ett tak"
-        title="Egna hantverkare — du slipper samordna flera firmor"
-        text="Bygg, snickeri, VVS och el hos samma företag. Det gör oss snabbare att komma igång och enklare att ha kontakt med genom hela jobbet."
-        bullets={['Snickare, VVS-montörer och elektriker i egen regi', 'En kontaktperson från offert till färdigt jobb', 'Garanti på utfört arbete']}
-        image="assets/img/projekt/badrum-10.webp"
-        alt="Utfört arbete av PRM Montage i Stockholm"
-        cta={{ href: '/om-oss', label: 'Om PRM Montage' }}
-      />
-      <FeatureRow
-        reverse
-        pill="Så går det till"
-        title="Fast pris — från förfrågan till färdigt jobb"
-        text="Du beskriver jobbet, vi lämnar en kostnadsfri offert, och när vi är klara går vi igenom resultatet tillsammans med dig."
-        bullets={['1. Du hör av dig — formulär eller telefon, gärna med bilder', '2. Du får ett fast pris, utan bindningstid', '3. Vi utför jobbet och lämnar garanti']}
-        image="assets/img/projekt/kok-05.webp"
-        alt="Utfört arbete av PRM Montage i Stockholm"
-        cta={{ href: '/sa-har-gar-det-till', label: 'Läs mer om processen' }}
-      />
-    </div>
-  </section>
-
-  <section class="cv-section">
-    <div class="cv-container">
-      <SectionHeader pill="Omdömen" title="Det säger våra kunder" text="Riktiga Google-recensioner — snitt 4,9 av 5 på över 100 omdömen." />
-      <TestimonialWall names={['Marie Chenik', 'Fredrik Österholm', 'Margaretha Lindh', 'Daniel Hermansson', 'Staffan Karlsson', 'Georgia B']} />
-    </div>
-  </section>
-
-  <section class="cv-section cv-section--tint">
-    <div class="cv-container">
-      <SectionHeader pill="Projekt" title="Ett urval av våra senaste jobb" text='<a href="/projekt" style="color:var(--nt-orange-dark);font-weight:600;">Se hela galleriet</a>' />
-      <div class="cv-photos">
-        <a href="/projekt"><img src="assets/img/projekt/kok-02.webp" width="900" height="675" loading="lazy" alt="Köksrenovering, Stockholm"></a>
-        <a href="/projekt"><img src="assets/img/projekt/badrum-04.webp" width="900" height="675" loading="lazy" alt="Badrum, dusch med regnmunstycke"></a>
-        <a href="/projekt"><img src="assets/img/projekt/bygg-01.webp" width="900" height="675" loading="lazy" alt="Snickeri, ytterdörr"></a>
-        <a href="/projekt"><img src="assets/img/projekt/kok-04.webp" width="900" height="675" loading="lazy" alt="Kök med köksfläkt"></a>
-        <a href="/projekt"><img src="assets/img/projekt/badrum-09.webp" width="900" height="675" loading="lazy" alt="Badrum med nymonterad tvättställsblandare"></a>
-        <a href="/projekt"><img src="assets/img/projekt/bygg-05.webp" width="900" height="675" loading="lazy" alt="Utfört arbete av PRM Montage i Stockholm"></a>
+        </div>
       </div>
     </div>
   </section>
