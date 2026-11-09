@@ -8,7 +8,7 @@
   var lastFocus = null;
 
   // Alla komponenter som visar betyg eller recensioner blir klickbara.
-  var SELECTORS = ['.cv-rating', '.cv-float', '.cv-pill--dark', '.cv-proof__list li:first-child', '.cv-stat:nth-child(-n+2)', '.cv-reviews-all'];
+  var SELECTORS = ['.cv-rating', '.cv-float', '.cv-ctastars', '.cv-proof__list li:first-child', '.cv-stat:nth-child(-n+2)', '.cv-reviews-all'];
   document.querySelectorAll(SELECTORS.join(',')).forEach(function (el) {
     if (dlg.contains(el)) return;
     el.setAttribute('data-reviews-open', '');
