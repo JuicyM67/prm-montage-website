@@ -1,0 +1,170 @@
+/* ============================================================
+   PRM MONTAGE — Konverteringsdesign (minimalistisk)
+   Ett mål per sida: "Begär kostnadsfri offert". Byggd ovanpå --nt-*-variablerna i custom.css.
+   Klassnamn med prefixet cv- ; inget här rör spårningsklasserna (hire-btn, nt-mobile-cta-bar, nt-ajax-form).
+   ============================================================ */
+:root {
+  --cv-radius: 14px;
+  --cv-border: #E2ECE8;
+  --cv-tint: #F3F7F6;
+  --cv-mint: #E7F6EE;
+  --cv-shadow: 0 1px 2px rgba(22,63,55,.06), 0 10px 28px rgba(22,63,55,.07);
+  --cv-maxw: 1120px;
+}
+
+/* ---------- Layout ---------- */
+.cv-container { max-width: var(--cv-maxw); margin: 0 auto; padding: 0 16px; }
+@media (min-width: 768px) { .cv-container { padding: 0 24px; } }
+.cv-section { padding: 56px 0; background: var(--nt-white); }
+@media (min-width: 992px) { .cv-section { padding: 88px 0; } }
+.cv-section--tint { background: var(--cv-tint); }
+.cv-h2 { font-size: clamp(1.55rem, 3vw, 2.1rem); line-height: 1.2; font-weight: 700; color: var(--nt-navy); margin: 0 0 12px; letter-spacing: -.01em; }
+.cv-lead { color: var(--nt-gray); font-size: 1.05rem; line-height: 1.65; margin: 0 0 32px; max-width: 640px; }
+.cv-center { text-align: center; }
+.cv-center .cv-lead { margin-left: auto; margin-right: auto; }
+
+/* ---------- Knappar ---------- */
+.cv-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 26px; min-height: 52px; border-radius: 12px; border: 2px solid transparent;
+  font-weight: 700; font-size: 1rem; line-height: 1.2; text-decoration: none; cursor: pointer;
+  transition: background .2s, transform .2s, border-color .2s, box-shadow .2s;
+}
+.cv-btn--primary { background: var(--nt-orange); color: #fff !important; }
+.cv-btn--primary:hover { background: var(--nt-orange-dark); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(31,169,104,.28); }
+.cv-btn--ghost { background: #fff; color: var(--nt-navy) !important; border-color: var(--cv-border); }
+.cv-btn--ghost:hover { border-color: var(--nt-navy); }
+.cv-btn--light { background: #fff; color: var(--nt-navy-dark) !important; }
+.cv-btn--light:hover { transform: translateY(-1px); }
+.cv-btn--outline-light { background: transparent; color: #fff !important; border-color: rgba(255,255,255,.4); }
+.cv-btn--outline-light:hover { border-color: #fff; }
+.cv-btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 575px) { .cv-btn-row .cv-btn { width: 100%; } }
+
+/* ---------- Betygsbricka & checklistor ---------- */
+.cv-rating { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; font-size: .9rem; font-weight: 600; color: var(--nt-navy); }
+.cv-rating .stars { color: #F5B301; letter-spacing: 1px; white-space: nowrap; }
+.cv-rating--light { color: rgba(255,255,255,.9); }
+.cv-checks { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; }
+.cv-checks li { display: flex; gap: 10px; align-items: flex-start; color: var(--nt-navy); line-height: 1.5; }
+.cv-checks i { color: var(--nt-orange); margin-top: 4px; flex-shrink: 0; }
+
+/* ---------- Hero (startsida) ---------- */
+.cv-hero { padding: 108px 0 40px; background: linear-gradient(180deg, #EAF5F0 0%, #fff 100%); }
+@media (min-width: 992px) { .cv-hero { padding: 132px 0 72px; } }
+.cv-hero__grid { display: grid; gap: 28px; }
+@media (min-width: 992px) { .cv-hero__grid { grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: start; } }
+.cv-hero h1 { font-size: clamp(2rem, 5.2vw, 3.1rem); line-height: 1.12; font-weight: 800; color: var(--nt-navy-dark); margin: 14px 0 16px; letter-spacing: -.02em; }
+.cv-hero h1 span { color: var(--nt-orange-dark); display: block; }
+.cv-hero__lead { color: var(--nt-gray); font-size: 1.08rem; line-height: 1.65; margin: 0 0 22px; max-width: 540px; }
+.cv-hero .nt-hero-form-card { border: 1px solid var(--cv-border); box-shadow: var(--cv-shadow); border-radius: var(--cv-radius); padding: 24px 20px; }
+@media (min-width: 576px) { .cv-hero .nt-hero-form-card { padding: 28px 28px; } }
+.cv-hero .nt-hero-form-card h3 { font-size: 1.25rem; }
+.cv-hero .nt-form-field { margin-bottom: 12px; }
+.cv-hero .nt-form-field input, .cv-hero .nt-form-field select, .cv-hero .nt-form-field textarea { font-size: 1rem; padding: 13px 14px; }
+.cv-hero .nt-form-submit { padding: 16px; border-radius: 12px; font-size: 1.05rem; }
+
+/* ---------- Proof-rad ---------- */
+.cv-proof { border-top: 1px solid var(--cv-border); border-bottom: 1px solid var(--cv-border); background: #fff; }
+.cv-proof__list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 18px; padding: 18px 0; margin: 0; list-style: none; }
+@media (min-width: 768px) { .cv-proof__list { grid-template-columns: repeat(4, 1fr); padding: 22px 0; } }
+.cv-proof li { display: flex; gap: 10px; align-items: center; font-weight: 600; color: var(--nt-navy); font-size: .9rem; line-height: 1.3; }
+.cv-proof i { color: var(--nt-orange); font-size: 1.15rem; flex-shrink: 0; }
+
+/* ---------- Kort (tjänster) ---------- */
+.cv-grid { display: grid; gap: 16px; }
+@media (min-width: 640px) { .cv-grid--3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .cv-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+.cv-card { display: block; background: #fff; border: 1px solid var(--cv-border); border-radius: var(--cv-radius); padding: 24px; text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.cv-card:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow); transform: translateY(-2px); }
+.cv-card__icon { width: 46px; height: 46px; border-radius: 12px; background: var(--cv-mint); color: var(--nt-orange-dark); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.cv-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--nt-navy); margin: 16px 0 6px; }
+.cv-card p { color: var(--nt-gray); font-size: .95rem; line-height: 1.55; margin: 0; }
+.cv-card__more { display: inline-flex; gap: 8px; align-items: center; margin-top: 14px; font-weight: 700; font-size: .9rem; color: var(--nt-orange-dark); }
+
+/* ---------- Steg ---------- */
+.cv-steps { display: grid; gap: 24px; counter-reset: cv; }
+@media (min-width: 768px) { .cv-steps { grid-template-columns: repeat(3, 1fr); gap: 32px; } }
+.cv-step__num { width: 40px; height: 40px; border-radius: 50%; background: var(--nt-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 14px; }
+.cv-step h3 { font-size: 1.1rem; font-weight: 700; color: var(--nt-navy); margin: 0 0 6px; }
+.cv-step p { color: var(--nt-gray); margin: 0; line-height: 1.6; }
+
+/* ---------- Recensioner ---------- */
+.cv-reviews { display: grid; gap: 16px; }
+@media (min-width: 768px) { .cv-reviews--3 { grid-template-columns: repeat(3, 1fr); } .cv-reviews--2 { grid-template-columns: repeat(2, 1fr); } }
+.cv-review { background: #fff; border: 1px solid var(--cv-border); border-radius: var(--cv-radius); padding: 22px; margin: 0; }
+.cv-review .stars { color: #F5B301; letter-spacing: 2px; font-size: .9rem; }
+.cv-review blockquote { margin: 10px 0 14px; color: var(--nt-navy-dark); line-height: 1.6; font-size: 1rem; }
+.cv-review figcaption { font-size: .85rem; color: var(--nt-gray); display: flex; align-items: center; gap: 8px; }
+.cv-review figcaption i { color: #4285F4; }
+
+/* ---------- Projektbilder ---------- */
+.cv-photos { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 768px) { .cv-photos { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+.cv-photos a { display: block; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; }
+.cv-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.cv-photos a:hover img { transform: scale(1.04); }
+
+/* ---------- Områden ---------- */
+.cv-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.cv-chips a { padding: 10px 18px; border-radius: 999px; border: 1px solid var(--cv-border); background: #fff; color: var(--nt-navy); font-weight: 600; font-size: .92rem; text-decoration: none; transition: border-color .2s, background .2s; }
+.cv-chips a:hover { border-color: var(--nt-orange); background: var(--cv-mint); }
+
+/* ---------- FAQ (använder befintlig .nt-accordion) ---------- */
+.cv-faq { max-width: 780px; margin: 0 auto; }
+.cv-faq .accordion { margin: 0; }
+
+/* ---------- Slutlig CTA ---------- */
+.cv-final { background: linear-gradient(120deg, var(--nt-navy-dark) 0%, var(--nt-navy) 100%); color: #fff; padding: 64px 0; text-align: center; }
+@media (min-width: 992px) { .cv-final { padding: 88px 0; } }
+.cv-final h2 { color: #fff; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 700; margin: 0 0 12px; }
+.cv-final p { color: rgba(255,255,255,.8); font-size: 1.05rem; margin: 0 auto 28px; max-width: 560px; }
+.cv-final .cv-btn-row { justify-content: center; }
+.cv-final .cv-rating { margin-bottom: 18px; }
+
+/* ---------- Tjänstesidor: rubrikband + kolumner ---------- */
+.cv-pagehero { background: linear-gradient(120deg, var(--nt-navy-dark) 0%, var(--nt-navy) 100%); color: #fff; padding: 104px 0 36px; }
+@media (min-width: 992px) { .cv-pagehero { padding: 128px 0 52px; } }
+.cv-crumbs { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0 0 14px; font-size: .85rem; color: rgba(255,255,255,.65); }
+.cv-crumbs a { color: rgba(255,255,255,.8); text-decoration: none; }
+.cv-crumbs a:hover { color: #fff; text-decoration: underline; }
+.cv-crumbs li + li::before { content: "/"; margin-right: 6px; color: rgba(255,255,255,.4); }
+.cv-pagehero h1 { color: #fff; font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.12; font-weight: 800; margin: 0 0 12px; letter-spacing: -.02em; max-width: 820px; }
+.cv-pagehero__lead { color: rgba(255,255,255,.82); font-size: 1.08rem; line-height: 1.6; margin: 0 0 22px; max-width: 640px; }
+.cv-pagehero .cv-rating { margin-top: 18px; display: flex; }
+.cv-layout { display: grid; gap: 40px; }
+@media (min-width: 992px) { .cv-layout { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: start; } }
+.cv-prose { max-width: 720px; color: var(--nt-gray); font-size: 1.04rem; line-height: 1.8; }
+.cv-prose h2 { font-size: clamp(1.45rem, 2.6vw, 1.9rem); line-height: 1.22; font-weight: 700; color: var(--nt-navy); margin: 0 0 18px; }
+.cv-prose h3 { font-size: 1.2rem; font-weight: 700; color: var(--nt-navy); margin: 36px 0 12px; }
+.cv-prose p { margin: 0 0 18px; }
+.cv-prose a:not(.cv-btn) { color: var(--nt-orange-dark); text-decoration: underline; text-underline-offset: 2px; }
+.cv-prose .cv-checks { margin: 0 0 24px; }
+.cv-prose .cv-checks li { color: var(--nt-gray); }
+.cv-midcta-row { margin: 8px 0 32px; }
+.cv-midcta { margin: 28px 0 36px; padding: 20px; border: 1px solid var(--cv-border); border-radius: var(--cv-radius); background: var(--cv-tint); }
+.cv-midcta p { margin: 0 0 14px; color: var(--nt-navy); font-weight: 600; }
+.cv-block { margin-top: 44px; }
+.cv-aside { position: sticky; top: 108px; display: grid; gap: 16px; }
+@media (max-width: 991px) { .cv-aside { position: static; } }
+.cv-offer { background: #fff; border: 1px solid var(--cv-border); border-radius: var(--cv-radius); padding: 24px; box-shadow: var(--cv-shadow); }
+.cv-offer h2 { font-size: 1.25rem; font-weight: 700; color: var(--nt-navy); margin: 0 0 6px; }
+.cv-offer p { color: var(--nt-gray); font-size: .95rem; margin: 0 0 16px; line-height: 1.55; }
+.cv-offer .cv-btn { width: 100%; margin-bottom: 10px; }
+.cv-offer__note { text-align: center; font-size: .82rem; color: var(--nt-gray); margin: 8px 0 0 !important; }
+.cv-links { background: #fff; border: 1px solid var(--cv-border); border-radius: var(--cv-radius); padding: 20px 22px; }
+.cv-links h3 { font-size: 1rem; font-weight: 700; color: var(--nt-navy); margin: 0 0 10px; }
+.cv-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.cv-links a { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; color: var(--nt-navy); text-decoration: none; font-size: .93rem; font-weight: 500; border-bottom: 1px solid #EEF3F1; }
+.cv-links li:last-child a { border-bottom: 0; }
+.cv-links a:hover { color: var(--nt-orange-dark); }
+
+/* ---------- Sticky mobilknapp (behåll klassen .nt-mobile-cta-bar — spårning och modal förlitar sig på den) ---------- */
+.nt-mobile-cta-bar { padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 767px) { body { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); } }
+
+/* Ingen rörelse när användaren bett om det */
+@media (prefers-reduced-motion: reduce) { .cv-btn, .cv-card, .cv-photos img { transition: none !important; } }
+
+/* FAQ: rubrikerna är h3 i den nya mallen — nolla standardmarginaler */
+.nt-accordion .accordion-header { margin: 0; }

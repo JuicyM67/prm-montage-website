@@ -4,8 +4,8 @@
 //   npm run build && node scripts/check-duplication.mjs            # gränsen 15 %
 //   node scripts/check-duplication.mjs --max 10 --verbose
 //
-// Metod: huvudinnehållet (kolumnen mellan <div class="col-lg-8"> och <div class="col-lg-4">, alltså utan
-// header, footer, sidokolumn och CTA-band) delas i överlappande 6-ordsfraser ("shingles"). Duplicering för en
+// Metod: huvudinnehållet (<article class="cv-prose"> eller, på äldre sidor, kolumnen col-lg-8 — alltså utan
+// header, footer, sidokolumn, recensioner och CTA-band) delas i överlappande 6-ordsfraser ("shingles"). Duplicering för en
 // sida = andelen av dess fraser som finns på minst en annan sida i gruppen. Exit-kod 1 om någon grupp som
 // kontrolleras överskrider gränsen.
 import fs from 'node:fs';
@@ -38,8 +38,13 @@ const decode = (s) =>
   s.replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 
 function mainText(html) {
-  const a = html.indexOf('<div class="col-lg-8">');
-  const b = html.indexOf('<div class="col-lg-4">', a);
+  // Ny layout: <article class="cv-prose">…</article>. Äldre layout: kolumnen col-lg-8 (före col-lg-4).
+  let a = html.indexOf('<article class="cv-prose"');
+  let b = a === -1 ? -1 : html.indexOf('</article>', a);
+  if (a === -1) {
+    a = html.indexOf('<div class="col-lg-8">');
+    b = html.indexOf('<div class="col-lg-4">', a);
+  }
   if (a === -1 || b === -1) return '';
   return decode(
     html

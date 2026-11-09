@@ -1,0 +1,18 @@
+---
+// Riktiga Google-recensioner (src/data/reviews.ts). `count` 2 eller 3.
+import { reviews, jobReviews } from '../data/reviews';
+interface Props { count?: 2 | 3; offset?: number; heading?: string; job?: boolean; names?: string[] }
+const { count = 3, offset = 0, heading, job = false, names } = Astro.props;
+const pool = job && jobReviews.length >= count ? jobReviews : reviews;
+const picked = names ? names.map((n) => reviews.find((r) => r.name === n)).filter(Boolean) as typeof reviews : Array.from({ length: count }, (_, i) => pool[(offset + i) % pool.length]);
+---
+{heading && <h2 class="cv-h2">{heading}</h2>}
+<div class={`cv-reviews cv-reviews--${picked.length}`}>
+  {picked.map((r) => (
+    <figure class="cv-review">
+      <div class="stars" aria-label="5 av 5 stjärnor"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <blockquote>”{r.text}”</blockquote>
+      <figcaption><i class="fab fa-google"></i> {r.name} · Google-recension</figcaption>
+    </figure>
+  ))}
+</div>

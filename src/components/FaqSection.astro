@@ -1,0 +1,13 @@
+---
+// Vanliga frågor (befintlig .nt-accordion). FAQPage-JSON-LD läggs i sidans seo-objekt.
+interface Props { faqs: { q: string; a: string }[]; idPrefix?: string }
+const { faqs, idPrefix = 'faqCv' } = Astro.props;
+---
+<div class="accordion nt-accordion" id={idPrefix}>
+  {faqs.map((f, i) => (
+    <div class="accordion-item">
+      <h3 class="accordion-header"><button class={`accordion-button${i === 0 ? '' : ' collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#${idPrefix}${i + 1}`} set:html={f.q} /></h3>
+      <div id={`${idPrefix}${i + 1}`} class={`accordion-collapse collapse${i === 0 ? ' show' : ''}`} data-bs-parent={`#${idPrefix}`}><div class="accordion-body" set:html={f.a} /></div>
+    </div>
+  ))}
+</div>

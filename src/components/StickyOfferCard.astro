@@ -1,0 +1,21 @@
+---
+// Sticky offertkort på desktop (sidokolumn), staplas under texten på mobil. En primär knapp + telefon.
+interface Props { title?: string; related?: { href: string; label: string }[]; relatedTitle?: string }
+const { title = 'Få en kostnadsfri offert', related = [], relatedTitle = 'Fler jobb' } = Astro.props;
+---
+<div class="cv-aside">
+  <div class="cv-offer">
+    <div class="cv-rating" style="margin-bottom:12px;"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span>4,9 · 100+ omdömen</span></div>
+    <h2>{title}</h2>
+    <p>Beskriv jobbet så återkommer vi med ett fast pris. Egna hantverkare, F-skatt och garanti.</p>
+    <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär offert</a>
+    <a href="tel:+46852027977" class="cv-btn cv-btn--ghost"><i class="fas fa-phone"></i> Ring 08-520 279 77</a>
+    <p class="cv-offer__note">Inget köptvång</p>
+  </div>
+  {related.length > 0 && (
+    <nav class="cv-links" aria-label={relatedTitle}>
+      <h3>{relatedTitle}</h3>
+      <ul>{related.map((r) => <li><a href={r.href}>{r.label} <i class="fas fa-arrow-right"></i></a></li>)}</ul>
+    </nav>
+  )}
+</div>
