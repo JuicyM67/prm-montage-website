@@ -29,12 +29,27 @@
     for (var i = 0; i < 5; i++) out += '<i class="fas fa-star" style="' + (i < n ? '' : 'opacity:.25') + '"></i>';
     return out;
   }
+  var PAGE = 20;
+  function card(r) {
+    return '<figure class="cv-review"><div class="stars" aria-label="' + (r.rating || 5) + ' av 5 stjärnor">' + stars(r.rating || 5) + '</div>' +
+      '<blockquote>”' + esc(r.text) + '”</blockquote>' +
+      '<figcaption><span class="cv-avatar">' + esc(initials(r.name)) + '</span><span>' + esc(r.name) + '<small><i class="fab fa-google"></i> Google-recension</small></span></figcaption></figure>';
+  }
   function render(items) {
-    list.innerHTML = items.map(function (r) {
-      return '<figure class="cv-review"><div class="stars" aria-label="' + (r.rating || 5) + ' av 5 stjärnor">' + stars(r.rating || 5) + '</div>' +
-        '<blockquote>”' + esc(r.text) + '”</blockquote>' +
-        '<figcaption><span class="cv-avatar">' + esc(initials(r.name)) + '</span><span>' + esc(r.name) + '<small><i class="fab fa-google"></i> Google-recension</small></span></figcaption></figure>';
-    }).join('');
+    var shown = 0;
+    list.innerHTML = '';
+    var more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'cv-btn cv-btn--ghost cv-rmodal__more';
+    function next() {
+      var chunk = items.slice(shown, shown + PAGE);
+      more.insertAdjacentHTML('beforebegin', chunk.map(card).join(''));
+      shown += chunk.length;
+      if (shown >= items.length) { more.remove(); } else { more.textContent = 'Visa fler (' + (items.length - shown) + ' kvar)'; }
+    }
+    more.addEventListener('click', next);
+    list.appendChild(more);
+    next();
   }
   function fallback() {
     try { return JSON.parse(document.getElementById('cv-reviews-fallback').textContent) || []; } catch (e) { return []; }

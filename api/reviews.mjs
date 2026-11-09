@@ -5,7 +5,7 @@ import { query } from '../lib/db.mjs';
 export async function GET() {
   try {
     const { rows } = await query(
-      'select id, author, body, rating, source from reviews where published = true order by sort_order, id limit 200',
+      'select id, author, body, rating, source from reviews where published = true order by reviewed_at desc nulls last, sort_order, id limit 300',
     );
     return new Response(JSON.stringify({ reviews: rows }), {
       headers: {

@@ -84,3 +84,9 @@ select v.author, v.body, v.sort_order from (values
   ('Tomas Paulsson', 'Mycket bra installation, effektivt och prydligt.', 150)
 ) as v(author, body, sort_order)
 where not exists (select 1 from reviews);
+
+-- Import av alla Google-recensioner (scripts/import-reviews.mjs): källa-id för dubblettskydd, datum och ägarsvar.
+alter table reviews add column if not exists external_id text;
+alter table reviews add column if not exists reviewed_at timestamptz;
+alter table reviews add column if not exists owner_reply text;
+create unique index if not exists reviews_external_id_key on reviews (external_id);
