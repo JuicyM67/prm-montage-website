@@ -46,3 +46,7 @@ create index if not exists click_events_kind_created_at_idx on click_events (kin
 
 -- Vilken sida ett formulär skickades från.
 alter table leads add column if not exists page text;
+
+-- Första sidan besökaren landade på och varifrån de kom (google, direkt, annan sajt).
+alter table leads add column if not exists landing_page text;
+alter table leads add column if not exists source text;

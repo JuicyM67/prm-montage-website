@@ -38,6 +38,26 @@
   gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
   document.head.appendChild(gaScript);
 
+  // Var besökaren kom in och varifrån — följer med offertformulären så att admin kan visa vilka sidor
+  // (t.ex. SEO-sidor) som ger förfrågningar. Bara sessionStorage, inga cookies och inga ID:n.
+  function classifySource() {
+    var ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+    if (!ref || ref === location.hostname.replace(/^www\./, '')) return 'direkt';
+    if (/(^|\.)google\./.test(ref)) return 'google';
+    if (/(^|\.)(bing|duckduckgo|ecosia|yahoo|startpage)\./.test(ref)) return 'sökmotor';
+    return ref.slice(0, 80);
+  }
+  try {
+    if (!sessionStorage.getItem('nt_landing')) {
+      sessionStorage.setItem('nt_landing', location.pathname);
+      sessionStorage.setItem('nt_source', classifySource());
+    }
+  } catch (e) {}
+  window.ntAttribution = function () {
+    try { return { landing: sessionStorage.getItem('nt_landing') || '', source: sessionStorage.getItem('nt_source') || '' }; } catch (e) { return { landing: '', source: '' }; }
+  };
+
   // Gemensam hjälpfunktion för konverteringshändelser (används av formulär-skripten).
   window.ntTrack = function (name, params) {
     try {

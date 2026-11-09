@@ -22,6 +22,8 @@ export interface Lead {
   city: string | null;
   area: string | null;
   page: string | null;
+  landing_page?: string | null;
+  source?: string | null;
   attachments: Attachment[];
   status: 'ny' | 'hanterad' | 'arkiverad';
   notes: string | null;
@@ -243,6 +245,8 @@ function LeadBody({ lead, onChanged, onNotesSaved, close }: { lead: Lead; onChan
                 {lead.service && <><dt>Tjänst</dt><dd>{lead.service}</dd></>}
                 {lead.area && <><dt>Område</dt><dd>{lead.area}</dd></>}
                 {lead.page && <><dt>Skickat från</dt><dd>{lead.page}</dd></>}
+                {lead.landing_page && <><dt>Landade på</dt><dd>{lead.landing_page}</dd></>}
+                {lead.source && <><dt>Kom från</dt><dd>{lead.source}</dd></>}
               </dl>
             </section>
 

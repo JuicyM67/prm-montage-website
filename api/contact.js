@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const { name, email, phone, service, message, address, postalCode, city, area, type, attachments, page } = req.body || {};
+  const { name, email, phone, service, message, address, postalCode, city, area, type, attachments, page, landing, source } = req.body || {};
 
   const fieldErrors = validateFields({ name, phone, email, address, postalCode, city });
   if (Object.keys(fieldErrors).length) {
@@ -77,15 +77,30 @@ module.exports = async (req, res) => {
     const { query, logActivity } = await import('../lib/db.mjs');
     const leadType = ['offert', 'jour', 'contact', 'hire', 'area'].includes(type) ? type : 'contact';
     const clip = (value, max) => (value ? String(value).slice(0, max) : null);
-    await query(
-      `insert into leads (type, name, email, phone, service, message, address, postal_code, city, area, attachments, page)
-       values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
-      [
-        leadType, clip(name, 200), clip(email, 200), clip(phone, 50), clip(service, 200), clip(message, 5000),
-        clip(address, 200), clip(postalCode, 20), clip(city, 100), clip(area, 200), JSON.stringify(safeAttachments),
-        typeof page === 'string' && /^\/[A-Za-z0-9\-._~%/]{0,199}$/.test(page) ? page : null,
-      ],
-    );
+    const safePath = (v) => (typeof v === 'string' && /^\/[A-Za-z0-9\-._~%/]{0,199}$/.test(v) ? v : null);
+    const base = [
+      leadType, clip(name, 200), clip(email, 200), clip(phone, 50), clip(service, 200), clip(message, 5000),
+      clip(address, 200), clip(postalCode, 20), clip(city, 100), clip(area, 200), JSON.stringify(safeAttachments),
+      safePath(page),
+    ];
+    try {
+      await query(
+        `insert into leads (type, name, email, phone, service, message, address, postal_code, city, area, attachments, page, landing_page, source)
+         values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)`,
+        [...base, safePath(landing), clip(source, 80)],
+      );
+    } catch (err) {
+      // Kolumnerna landing_page/source saknas tills db/schema.sql körts — spara då utan dem så att förfrågan ändå syns i admin.
+      if (err && err.code === '42703') {
+        await query(
+          `insert into leads (type, name, email, phone, service, message, address, postal_code, city, area, attachments, page)
+           values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+          base,
+        );
+      } else {
+        throw err;
+      }
+    }
     await logActivity({ action: 'lead.created', subject: clip(name, 200), meta: { type: leadType } });
   } catch (err) {
     console.error('Kunde inte spara förfrågan i databasen:', err);

@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var data = Object.fromEntries(formData.entries());
       data.type = form.getAttribute('data-form-type') || 'contact';
       data.page = location.pathname;
+      if (window.ntAttribution) { var attr = window.ntAttribution(); data.landing = attr.landing; data.source = attr.source; }
 
       if (submitBtn) {
         submitBtn.disabled = true;

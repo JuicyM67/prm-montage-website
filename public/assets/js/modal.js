@@ -319,6 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = Object.fromEntries(formData.entries());
       data.type = 'hire';
       data.page = location.pathname;
+      if (window.ntAttribution) { var attr = window.ntAttribution(); data.landing = attr.landing; data.source = attr.source; }
 
       window.PRMForm.readAttachments(fileInput)
         .then(function (attachments) {
