@@ -25,13 +25,13 @@ const SHINGLE = 6;
 const dist = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 
 // Grupper: sidor som är varianter av samma mall och därför riskerar att likna varandra.
-// `enforce: false` = bara rapport (äldre sidor vi inte ändrar utan OK).
+// `enforce: false` = bara rapport (för grupper som ännu inte är rättade).
 const GROUPS = [
   { name: 'byta blandare × område', test: (s) => /^byta-blandare-.+/.test(s), enforce: true },
   { name: 'handyman × område', test: (s) => /^handyman-(?!stockholm$).+/.test(s), enforce: true },
   { name: 'byta lås × område', test: (s) => /^byta-las-(?!cylinder$).+/.test(s), enforce: true },
-  { name: 'köksmontering × ort (baslinje)', test: (s) => /^koksmontering-.+/.test(s), enforce: false },
-  { name: 'IKEA-köksmontering × ort (baslinje)', test: (s) => /^ikea-koksmontering-.+/.test(s), enforce: false },
+  { name: 'köksmontering × ort', test: (s) => /^koksmontering-.+/.test(s), enforce: true },
+  { name: 'IKEA-köksmontering × ort', test: (s) => /^ikea-koksmontering-.+/.test(s), enforce: true },
 ];
 
 const decode = (s) =>
