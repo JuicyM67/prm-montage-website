@@ -1,0 +1,25 @@
+---
+// Hero i SaaS-stil: pill-badge, rubrik, ingress, två CTA:er och ett "produktkort" (formuläret) i slot.
+interface Props { pill: string; title: string; accent?: string; lead: string; bullets?: string[] }
+const { pill, title, accent, lead, bullets = [] } = Astro.props;
+---
+<section class="cv-hero cv-hero--saas">
+  <div class="cv-container">
+    <div class="cv-hero__grid">
+      <div>
+        <span class="cv-pill"><span class="dot"></span>{pill}</span>
+        <h1>{title} {accent && <span class="cv-grad">{accent}</span>}</h1>
+        <p class="cv-hero__lead">{lead}</p>
+        {bullets.length > 0 && (
+          <ul class="cv-checks">{bullets.map((b) => <li><i class="fas fa-check-circle"></i><span>{b}</span></li>)}</ul>
+        )}
+        <div class="cv-btn-row">
+          <a href="#offert" class="cv-btn cv-btn--primary">Begär kostnadsfri offert</a>
+          <a href="tel:+46852027977" class="cv-btn cv-btn--ghost"><i class="fas fa-phone"></i> Ring 08-520 279 77</a>
+        </div>
+        <slot name="proof" />
+      </div>
+      <div><slot /></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+---
+// Rubrikblock för landningssektioner: liten pill, rubrik, ingress.
+interface Props { pill?: string; title: string; text?: string; center?: boolean }
+const { pill, title, text, center = false } = Astro.props;
+---
+<div class:list={['cv-sechead', { 'cv-center': center }]}>
+  {pill && <span class="cv-pill cv-pill--soft">{pill}</span>}
+  <h2 class="cv-h2" set:html={title} />
+  {text && <p class="cv-lead" set:html={text} />}
+</div>

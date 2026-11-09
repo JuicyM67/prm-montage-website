@@ -1,0 +1,15 @@
+---
+// Bild + text i omväxlande ordning.
+interface Props { pill?: string; title: string; text: string; bullets?: string[]; image: string; alt: string; reverse?: boolean; cta?: { href: string; label: string } }
+const { pill, title, text, bullets = [], image, alt, reverse = false, cta } = Astro.props;
+---
+<div class:list={['cv-frow', { 'cv-frow--rev': reverse }]}>
+  <div class="cv-frow__media"><img src={image} width="900" height="675" loading="lazy" alt={alt}></div>
+  <div class="cv-frow__text">
+    {pill && <span class="cv-pill cv-pill--soft">{pill}</span>}
+    <h3 set:html={title} />
+    <p>{text}</p>
+    {bullets.length > 0 && <ul class="cv-checks">{bullets.map((b) => <li><i class="fas fa-check-circle"></i><span>{b}</span></li>)}</ul>}
+    {cta && <a class="cv-btn cv-btn--ghost" href={cta.href}>{cta.label} <i class="fas fa-arrow-right"></i></a>}
+  </div>
+</div>

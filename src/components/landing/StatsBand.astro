@@ -1,0 +1,16 @@
+---
+// Fyra nyckeltal (bara sådant som redan står på sajten).
+const stats = [
+  { n: '4,9', l: 'Betyg på Google' },
+  { n: '100+', l: 'Omdömen från kunder' },
+  { n: '2022', l: 'Grundat i Solna' },
+  { n: 'Dygnet runt', l: 'Jour vid akuta fel' },
+];
+---
+<section class="cv-stats">
+  <div class="cv-container">
+    <dl class="cv-stats__grid">
+      {stats.map((s) => <div class="cv-stat"><dt>{s.l}</dt><dd>{s.n}</dd></div>)}
+    </dl>
+  </div>
+</section>

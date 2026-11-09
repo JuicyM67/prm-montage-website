@@ -1,15 +1,7 @@
 ---
+// Behålls som namn men renderar nu det rundade SaaS-kortet.
+import CtaBanner from './landing/CtaBanner.astro';
 interface Props { heading?: string; text?: string }
-const { heading = 'Redo när du är det', text = 'Beskriv jobbet så återkommer vi med ett fast pris — kostnadsfritt och utan förpliktelser.' } = Astro.props;
+const { heading, text } = Astro.props;
 ---
-<section class="cv-final">
-  <div class="cv-container">
-    <div class="cv-rating cv-rating--light"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span>4,9 på Google · 100+ omdömen</span></div>
-    <h2 set:html={heading} />
-    <p>{text}</p>
-    <div class="cv-btn-row">
-      <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
-      <a href="tel:+46852027977" class="cv-btn cv-btn--outline-light"><i class="fas fa-phone"></i> 08-520 279 77</a>
-    </div>
-  </div>
-</section>
+<CtaBanner heading={heading} text={text} />

@@ -1,0 +1,17 @@
+---
+// Recensionsvägg (riktiga Google-recensioner, src/data/reviews.ts).
+import { reviews } from '../../data/reviews';
+interface Props { names: string[] }
+const { names } = Astro.props;
+const picked = names.map((n) => reviews.find((r) => r.name === n)).filter(Boolean) as typeof reviews;
+const initials = (n: string) => n.split(' ').map((p) => p[0]).slice(0, 2).join('');
+---
+<div class="cv-wall">
+  {picked.map((r) => (
+    <figure class="cv-review">
+      <div class="stars" aria-label="5 av 5 stjärnor"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <blockquote>”{r.text}”</blockquote>
+      <figcaption><span class="cv-avatar">{initials(r.name)}</span><span>{r.name}<small><i class="fab fa-google"></i> Google-recension</small></span></figcaption>
+    </figure>
+  ))}
+</div>
