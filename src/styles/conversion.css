@@ -581,3 +581,11 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
   .cv-prose > .d-flex { justify-content: flex-start; }
   .cv-prose ul.nt-check { max-width: none; }
 }
+
+/* Final justering: rubriker, pill och knappar centrerade; löptext vänsterjusterad (alla skärmbredder) */
+.cv-prose > p, .cv-prose h3 + p, .cv-prose h4 + p, .cv-prose p { text-align: left; }
+.cv-prose > h2, .cv-prose h3, .cv-prose h4, .cv-prose h2:not(:first-of-type):not(.accordion-header) { text-align: center; }
+.cv-prose > .nt-eyebrow { margin-left: auto; margin-right: auto; }
+.cv-prose h3::before, .cv-prose h4::before, .cv-prose h2:not(:first-of-type):not(.accordion-header)::before { left: 50%; transform: translateX(-50%); }
+.cv-prose > .cv-btn-row, .cv-prose > .cv-midcta-row, .cv-prose > .d-flex, .cv-aside .cv-links ul { justify-content: center; }
+.cv-aside .cv-links, .cv-aside .cv-links h3 { text-align: center; }
