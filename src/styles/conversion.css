@@ -201,7 +201,7 @@
 .cv-stats__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 20px; margin: 0; padding: 32px 0; }
 @media (min-width: 768px) { .cv-stats__grid { grid-template-columns: repeat(4, 1fr); padding: 44px 0; } }
 .cv-stat { display: flex; flex-direction: column-reverse; gap: 4px; text-align: center; }
-.cv-stat dd { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.02em; color: var(--nt-navy-dark); line-height: 1.1; }
+.cv-stat dd { margin: 0; font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -.02em; color: var(--nt-orange); line-height: 1.1; }
 .cv-stat dt { font-weight: 500; font-size: .92rem; color: var(--nt-gray); }
 
 /* Bento */
