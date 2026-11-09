@@ -12,8 +12,8 @@ function sitemapGuard() {
     hooks: {
       'astro:build:done': ({ dir }) => {
         const out = fileURLToPath(dir);
-        // admin.html (/admin) är noindex och ska inte stå i sitemap; resten av admin ligger i admin/.
-        const pages = fs.readdirSync(out).filter((f) => f.endsWith('.html') && f !== '404.html' && f !== 'admin.html')
+        // admin.html (/admin) och omdome.html (personlig omdömeslänk) är noindex och ska inte stå i sitemap; resten av admin ligger i admin/.
+        const pages = fs.readdirSync(out).filter((f) => f.endsWith('.html') && f !== '404.html' && f !== 'admin.html' && f !== 'omdome.html')
           .map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));
         const xml = fs.readFileSync(path.join(out, 'sitemap.xml'), 'utf8');
         const listed = [...xml.matchAll(/<loc>https:\/\/prmmontage\.se([^<]*)<\/loc>/g)].map((m) => m[1] || '/');

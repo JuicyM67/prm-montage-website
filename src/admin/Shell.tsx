@@ -7,6 +7,7 @@ import {
   UsersGroupRoundedLinearIcon, UsersGroupRoundedBoldIcon,
   HistoryLinearIcon, HistoryBoldIcon,
   BillListLinearIcon, BillListBoldIcon,
+  StarLinearIcon, StarBoldIcon,
   DoubleAltArrowLeftLinearIcon, DoubleAltArrowRightLinearIcon,
   Logout2LinearIcon, HamburgerMenuLinearIcon,
 } from '@solar-icons/react';
@@ -20,6 +21,7 @@ import Activity from './pages/Activity';
 import Queries from './pages/Queries';
 import Visitors from './pages/Visitors';
 import Billing from './pages/Billing';
+import Reviews from './pages/Reviews';
 
 export interface AdminUser {
   id: string;
@@ -28,7 +30,7 @@ export interface AdminUser {
   role?: string | null;
 }
 
-export type PageId = 'overview' | 'leads' | 'queries' | 'visitors' | 'users' | 'activity' | 'billing';
+export type PageId = 'overview' | 'leads' | 'queries' | 'visitors' | 'users' | 'activity' | 'billing' | 'reviews';
 
 type IconProps = { size?: number };
 interface NavItem {
@@ -40,7 +42,7 @@ interface NavItem {
 }
 const nav: { group: string | null; items: NavItem[] }[] = [
   { group: null, items: [{ id: 'overview', href: '/admin', label: 'Översikt', Icon: Widget5LinearIcon, ActiveIcon: Widget5BoldIcon }] },
-  { group: 'Leads', items: [{ id: 'leads', href: '/admin/forfragningar', label: 'Förfrågningar', Icon: InboxLinearIcon, ActiveIcon: InboxBoldIcon }] },
+  { group: 'Leads', items: [{ id: 'leads', href: '/admin/forfragningar', label: 'Förfrågningar', Icon: InboxLinearIcon, ActiveIcon: InboxBoldIcon }, { id: 'reviews', href: '/admin/omdomen', label: 'Omdömen', Icon: StarLinearIcon, ActiveIcon: StarBoldIcon }] },
   { group: 'Ekonomi', items: [{ id: 'billing', href: '/admin/fakturering', label: 'Fakturering', Icon: BillListLinearIcon, ActiveIcon: BillListBoldIcon }] },
   {
     group: 'Synlighet',
@@ -122,6 +124,7 @@ export default function Shell({ page }: { page: PageId }) {
     case 'users': content = <Users me={user} />; break;
     case 'activity': content = <Activity />; break;
     case 'billing': content = <Billing />; break;
+    case 'reviews': content = <Reviews />; break;
   }
 
   return (

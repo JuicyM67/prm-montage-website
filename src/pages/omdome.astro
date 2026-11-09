@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+// Personlig länk från omdömesinbjudan (/omdome?t=...). Ej indexerad och ej i sitemap.
+const seo = { title: 'Berätta om din upplevelse | PRM Montage', description: 'Lämna ett omdöme om PRM Montage.' };
+---
+<BaseLayout seo={seo} noindex>
+  <section class="cv-pagehero">
+    <div class="cv-container">
+      <h1 id="rv-title">Berätta om din upplevelse</h1>
+      <p class="cv-pagehero__lead" id="rv-lead">Det tar bara en minut och betyder mycket för oss.</p>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <div class="cv-container rv-wrap">
+      <p class="rv-msg" id="rv-loading">Laddar…</p>
+      <p class="rv-msg rv-msg--error" id="rv-error" hidden></p>
+
+      <form class="rv-card" id="rv-form" hidden novalidate>
+        <fieldset class="rv-stars" aria-label="Betyg">
+          <legend>Hur nöjd är du?</legend>
+          <div class="rv-stars__row" id="rv-stars">
+            <button type="button" data-v="1" aria-label="1 stjärna"><i class="fas fa-star"></i></button>
+            <button type="button" data-v="2" aria-label="2 stjärnor"><i class="fas fa-star"></i></button>
+            <button type="button" data-v="3" aria-label="3 stjärnor"><i class="fas fa-star"></i></button>
+            <button type="button" data-v="4" aria-label="4 stjärnor"><i class="fas fa-star"></i></button>
+            <button type="button" data-v="5" aria-label="5 stjärnor"><i class="fas fa-star"></i></button>
+          </div>
+        </fieldset>
+        <div class="rv-field">
+          <label for="rv-body">Ditt omdöme</label>
+          <textarea id="rv-body" rows="6" maxlength="2000" placeholder="Vad gjorde vi, och hur gick det?"></textarea>
+        </div>
+        <div class="rv-field">
+          <label for="rv-author">Namn som visas</label>
+          <input id="rv-author" type="text" maxlength="80" autocomplete="name">
+          <small>Du kan förkorta efternamnet om du vill, till exempel "Anna L.".</small>
+        </div>
+        <p class="rv-msg rv-msg--error" id="rv-formerr" hidden></p>
+        <button type="submit" class="cv-btn cv-btn--primary" id="rv-submit">Skicka omdöme</button>
+      </form>
+
+      <div class="rv-card rv-done" id="rv-done" hidden>
+        <h2>Tack för ditt omdöme!</h2>
+        <p>Vi läser det med glädje. Vill du hjälpa oss lite extra? Lägg gärna upp det på Google också, då hittar fler oss.</p>
+        <p class="rv-hint" id="rv-copyhint" hidden>Tips: kopiera din text nedan och klistra in den på Google.</p>
+        <div class="cv-btn-row" style="justify-content:center;">
+          <a class="cv-btn cv-btn--primary" id="rv-google" href="#" target="_blank" rel="noopener"><i class="fab fa-google"></i> Skriv även på Google</a>
+          <button type="button" class="cv-btn cv-btn--outline-light" id="rv-copy" hidden>Kopiera min text</button>
+        </div>
+        <p class="rv-small">Det är helt frivilligt, och ditt omdöme hos oss är redan skickat.</p>
+      </div>
+
+      <div class="rv-card rv-done" id="rv-already" hidden>
+        <h2>Du har redan lämnat ett omdöme</h2>
+        <p>Tack! Vill du även skriva på Google är det bara att klicka här.</p>
+        <div class="cv-btn-row" style="justify-content:center;">
+          <a class="cv-btn cv-btn--primary" id="rv-google2" href="#" target="_blank" rel="noopener"><i class="fab fa-google"></i> Skriv på Google</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .rv-wrap { max-width: 640px; }
+    .rv-card { background: #fff; border: 1px solid var(--cv-border); border-radius: var(--cv-radius-lg); padding: 28px 24px; box-shadow: 0 1px 2px rgba(22,63,55,.05), 0 18px 40px rgba(22,63,55,.08); }
+    .rv-card[hidden], .rv-msg[hidden] { display: none; }
+    .rv-stars { border: 0; padding: 0; margin: 0 0 22px; text-align: center; }
+    .rv-stars legend { font-weight: 700; color: var(--nt-navy-dark); margin: 0 auto 10px; font-size: 1.1rem; padding: 0; float: none; width: auto; }
+    .rv-stars__row { display: inline-flex; gap: 6px; }
+    .rv-stars button { background: none; border: 0; padding: 4px; cursor: pointer; font-size: 2.2rem; line-height: 1; color: #D5DEDB; transition: transform .15s ease, color .15s ease; }
+    .rv-stars button.on { color: #F5B301; }
+    .rv-stars button:hover { transform: scale(1.12); }
+    .rv-stars button:focus-visible { outline: 2px solid var(--nt-orange); border-radius: 8px; }
+    .rv-field { margin-bottom: 18px; display: flex; flex-direction: column; gap: 6px; }
+    .rv-field label { font-weight: 600; color: var(--nt-navy-dark); }
+    .rv-field textarea, .rv-field input { width: 100%; padding: 12px 14px; border: 1px solid #CFDAD7; border-radius: 12px; font: inherit; background: #fff; }
+    .rv-field textarea { min-height: 150px; resize: vertical; }
+    .rv-field small, .rv-small { color: var(--nt-gray); font-size: .85rem; }
+    .rv-card .cv-btn { width: 100%; }
+    .rv-done { text-align: center; }
+    .rv-done .cv-btn { width: auto; }
+    .rv-done h2 { margin: 0 0 10px; color: var(--nt-navy-dark); }
+    .rv-done p { color: var(--nt-gray); }
+    .rv-hint { font-size: .92rem; }
+    .rv-msg { text-align: center; color: var(--nt-gray); }
+    .rv-msg--error { color: #B3261E; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var token = new URLSearchParams(location.search).get('t') || '';
+      var rating = 0;
+      var googleUrl = '';
+      function show(id) { ['rv-loading','rv-error','rv-form','rv-done','rv-already'].forEach(function (x) { $(x).hidden = x !== id; }); }
+      function fail(msg) { $('rv-error').textContent = msg; show('rv-error'); $('rv-title').textContent = 'Länken fungerar inte'; $('rv-lead').hidden = true; }
+
+      if (!token) { fail('Länken är ogiltig. Använd länken från mejlet.'); return; }
+
+      fetch('/api/review?t=' + encodeURIComponent(token)).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (!res.ok) { fail(res.d.error || 'Länken är ogiltig eller har gått ut.'); return; }
+          googleUrl = res.d.googleUrl;
+          $('rv-google').href = googleUrl; $('rv-google2').href = googleUrl;
+          if (res.d.submitted) { $('rv-title').textContent = 'Tack!'; $('rv-lead').hidden = true; show('rv-already'); return; }
+          var first = (res.d.name || '').split(' ')[0];
+          if (first) $('rv-title').textContent = 'Hej ' + first + ', hur gick det?';
+          $('rv-author').value = res.d.name || '';
+          show('rv-form');
+        })
+        .catch(function () { fail('Kunde inte ladda sidan. Försök igen om en stund.'); });
+
+      var stars = $('rv-stars').querySelectorAll('button');
+      function paint(n) { stars.forEach(function (b) { b.classList.toggle('on', Number(b.dataset.v) <= n); }); }
+      stars.forEach(function (b) {
+        b.addEventListener('click', function () { rating = Number(b.dataset.v); paint(rating); });
+        b.addEventListener('mouseenter', function () { paint(Number(b.dataset.v)); });
+        b.addEventListener('mouseleave', function () { paint(rating); });
+      });
+
+      $('rv-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var err = $('rv-formerr'); err.hidden = true;
+        var body = $('rv-body').value.trim();
+        if (!rating) { err.textContent = 'Välj hur många stjärnor du vill ge.'; err.hidden = false; return; }
+        if (body.length < 5) { err.textContent = 'Skriv några rader om din upplevelse.'; err.hidden = false; return; }
+        var btn = $('rv-submit'); btn.disabled = true; btn.textContent = 'Skickar…';
+        fetch('/api/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ t: token, rating: rating, body: body, author: $('rv-author').value }) })
+          .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+          .then(function (res) {
+            if (!res.ok) { err.textContent = res.d.error || 'Något gick fel.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Skicka omdöme'; return; }
+            $('rv-title').textContent = 'Tack!'; $('rv-lead').hidden = true;
+            if (navigator.clipboard) { $('rv-copy').hidden = false; $('rv-copyhint').hidden = false; }
+            $('rv-copy').addEventListener('click', function () {
+              navigator.clipboard.writeText(body).then(function () { $('rv-copy').textContent = 'Kopierat!'; });
+            });
+            show('rv-done');
+          })
+          .catch(function () { err.textContent = 'Kunde inte skicka. Försök igen.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Skicka omdöme'; });
+      });
+    })();
+  </script>
+</BaseLayout>

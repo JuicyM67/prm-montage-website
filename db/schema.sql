@@ -90,3 +90,20 @@ alter table reviews add column if not exists external_id text;
 alter table reviews add column if not exists reviewed_at timestamptz;
 alter table reviews add column if not exists owner_reply text;
 create unique index if not exists reviews_external_id_key on reviews (external_id);
+
+-- Omdömesinbjudningar: admin skriver in kundens namn och e-post, kunden får en unik länk (/omdome?t=<token>)
+-- där hen kan skriva ett omdöme på sajten och sedan fortsätta till Google. Länken fungerar en gång.
+create table if not exists review_invites (
+  id            serial primary key,
+  token         text not null unique,
+  name          text not null,
+  email         text not null,
+  note          text,
+  created_by    text,
+  created_at    timestamptz not null default now(),
+  sent_at       timestamptz,
+  opened_at     timestamptz,
+  submitted_at  timestamptz,
+  review_id     integer references reviews(id) on delete set null
+);
+create index if not exists review_invites_created_idx on review_invites (created_at desc);
