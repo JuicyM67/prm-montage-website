@@ -1,0 +1,12 @@
+---
+// Tjänst × område-sidor (byta-blandare-solna, handyman-taby, byta-las-lidingo …). Statiska sidor i
+// src/pages har företräde, så inget här krockar med de handskrivna sidorna.
+import SmallJobPage from '../components/SmallJobPage.astro';
+import { allPages } from '../data/service-areas';
+
+export function getStaticPaths() {
+  return allPages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+---
+<SmallJobPage {...page} />
