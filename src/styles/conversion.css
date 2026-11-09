@@ -122,8 +122,8 @@
 .cv-final .cv-rating { margin-bottom: 18px; }
 
 /* ---------- Tjänstesidor: rubrikband + kolumner ---------- */
-.cv-pagehero { background: linear-gradient(120deg, var(--nt-navy-dark) 0%, var(--nt-navy) 100%); color: #fff; padding: 104px 0 36px; }
-@media (min-width: 992px) { .cv-pagehero { padding: 128px 0 52px; } }
+.cv-pagehero { background: linear-gradient(120deg, var(--nt-navy-dark) 0%, var(--nt-navy) 100%); color: #fff; padding: 40px 0 36px; }
+@media (min-width: 992px) { .cv-pagehero { padding: 56px 0 52px; } }
 .cv-crumbs { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0 0 14px; font-size: .85rem; color: rgba(255,255,255,.65); }
 .cv-crumbs a { color: rgba(255,255,255,.8); text-decoration: none; }
 .cv-crumbs a:hover { color: #fff; text-decoration: underline; }
@@ -260,8 +260,8 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 .cv-ctabanner .cv-btn-row { justify-content: center; }
 
 /* ---------- Centrerad SaaS-hero ---------- */
-.cv-hero--center { padding: 104px 0 24px; }
-@media (min-width: 992px) { .cv-hero--center { padding: 132px 0 40px; } }
+.cv-hero--center { padding: 40px 0 24px; }
+@media (min-width: 992px) { .cv-hero--center { padding: 64px 0 40px; } }
 .cv-hero__copy { max-width: 820px; margin: 0 auto; text-align: center; }
 .cv-hero--center h1 { font-size: clamp(2.1rem, 5.6vw, 3.6rem); line-height: 1.08; margin: 20px 0 18px; text-wrap: balance; }
 .cv-hero--center .cv-hero__lead { margin: 0 auto 26px; max-width: 620px; font-size: 1.12rem; }
