@@ -350,7 +350,6 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 @keyframes cvPing { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(1.4); opacity: 0; } }
 .cv-callbtn { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 20px; border-radius: 12px; background: #fff; color: var(--nt-navy-dark) !important; font-weight: 800; font-size: 1.05rem; text-decoration: none; }
 .cv-callbtn i { color: var(--nt-orange); }
-.cv-credit { margin: 14px 0 0; font-size: .75rem; color: #8A9A95; }
 @media (prefers-reduced-motion: reduce) { .cv-tile__img, .cv-tile__go, .cv-glass-tags a { transition: none !important; } .cv-live .ping::after { animation: none; } }
 /* Ljusa bilder behöver kraftigare skugga för läsbar text */
 .t-ikea .cv-tile__shade, .t-vvs .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.28) 0%, rgba(10,30,26,.12) 30%, rgba(10,30,26,.84) 100%); }
