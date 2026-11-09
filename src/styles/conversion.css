@@ -570,3 +570,14 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-prose ul.nt-check li:has(a):hover a { text-decoration-color: var(--nt-orange); }
 .cv-prose ul.nt-check li a::after { content: none; }
 .cv-prose ul.nt-check li:has(a) { cursor: pointer; }
+
+/* Mobil: vänsterjusterad brödtext (centrerat bara på bredare skärmar) */
+@media (max-width: 767px) {
+  .cv-prose > .nt-eyebrow { margin-left: 0; }
+  .cv-prose > h2, .cv-prose > p, .cv-prose h3, .cv-prose h4, .cv-prose h3 + p, .cv-prose h4 + p,
+  .cv-prose h2:not(:first-of-type):not(.accordion-header), .cv-aside .cv-links, .cv-aside .cv-links h3 { text-align: left; }
+  .cv-prose h3::before, .cv-prose h4::before, .cv-prose h2:not(:first-of-type):not(.accordion-header)::before { left: 0; transform: none; }
+  .cv-prose > .cv-btn-row, .cv-prose > .cv-midcta-row, .cv-aside .cv-links ul { justify-content: flex-start; }
+  .cv-prose > .d-flex { justify-content: flex-start; }
+  .cv-prose ul.nt-check { max-width: none; }
+}
