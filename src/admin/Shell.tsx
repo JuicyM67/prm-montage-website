@@ -6,6 +6,7 @@ import {
   EyeLinearIcon, EyeBoldIcon,
   UsersGroupRoundedLinearIcon, UsersGroupRoundedBoldIcon,
   HistoryLinearIcon, HistoryBoldIcon,
+  BillListLinearIcon, BillListBoldIcon,
   DoubleAltArrowLeftLinearIcon, DoubleAltArrowRightLinearIcon,
   Logout2LinearIcon, HamburgerMenuLinearIcon,
 } from '@solar-icons/react';
@@ -18,6 +19,7 @@ import Users from './pages/Users';
 import Activity from './pages/Activity';
 import Queries from './pages/Queries';
 import Visitors from './pages/Visitors';
+import Billing from './pages/Billing';
 
 export interface AdminUser {
   id: string;
@@ -26,7 +28,7 @@ export interface AdminUser {
   role?: string | null;
 }
 
-export type PageId = 'overview' | 'leads' | 'queries' | 'visitors' | 'users' | 'activity';
+export type PageId = 'overview' | 'leads' | 'queries' | 'visitors' | 'users' | 'activity' | 'billing';
 
 type IconProps = { size?: number };
 interface NavItem {
@@ -39,6 +41,7 @@ interface NavItem {
 const nav: { group: string | null; items: NavItem[] }[] = [
   { group: null, items: [{ id: 'overview', href: '/admin', label: 'Översikt', Icon: Widget5LinearIcon, ActiveIcon: Widget5BoldIcon }] },
   { group: 'Leads', items: [{ id: 'leads', href: '/admin/forfragningar', label: 'Förfrågningar', Icon: InboxLinearIcon, ActiveIcon: InboxBoldIcon }] },
+  { group: 'Ekonomi', items: [{ id: 'billing', href: '/admin/fakturering', label: 'Fakturering', Icon: BillListLinearIcon, ActiveIcon: BillListBoldIcon }] },
   {
     group: 'Synlighet',
     items: [
@@ -118,6 +121,7 @@ export default function Shell({ page }: { page: PageId }) {
     case 'visitors': content = <Visitors />; break;
     case 'users': content = <Users me={user} />; break;
     case 'activity': content = <Activity />; break;
+    case 'billing': content = <Billing />; break;
   }
 
   return (
