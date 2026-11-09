@@ -399,3 +399,45 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 @media (prefers-reduced-motion: reduce) { dialog.cv-rmodal[open] { animation: none; } }
 
 .cv-rmodal__more { justify-self: center; margin: 6px 0 8px; }
+
+/* ============================================================
+   Sidfot med hopfällbara länkgrupper (Footer.astro)
+   ============================================================ */
+.cv-ctawrap { padding: 56px 0 72px; }
+@media (min-width: 992px) { .cv-ctawrap { padding: 88px 0 104px; } }
+
+.cv-footer { background: var(--nt-navy-dark); color: rgba(255,255,255,.7); padding: 56px 0 0; }
+@media (min-width: 992px) { .cv-footer { padding: 72px 0 0; } }
+.cv-foot__top { display: grid; gap: 36px; padding-bottom: 40px; }
+@media (min-width: 768px) { .cv-foot__top { grid-template-columns: repeat(2, 1fr); } .cv-foot__brand { grid-column: 1 / -1; } }
+@media (min-width: 992px) { .cv-foot__top { grid-template-columns: 1.4fr .8fr 1fr; gap: 56px; } .cv-foot__brand { grid-column: auto; } }
+.cv-foot__brand p { margin: 18px 0 16px; line-height: 1.7; max-width: 380px; color: rgba(255,255,255,.65); }
+.cv-foot__badges { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 8px; font-size: .9rem; }
+.cv-foot__badges i { color: var(--nt-orange); margin-right: 8px; }
+.cv-foot__badges a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 3px; }
+.cv-foot__col h4 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 16px; }
+.cv-foot__col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.cv-foot__col a, .cv-foot__col span { color: rgba(255,255,255,.7); text-decoration: none; font-size: .95rem; }
+.cv-foot__col a:hover { color: #fff; }
+.cv-foot__contact li { display: flex; gap: 10px; align-items: flex-start; }
+.cv-foot__contact i { color: var(--nt-orange); margin-top: 4px; width: 16px; flex-shrink: 0; }
+
+.cv-foot__groups { display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,.12); }
+@media (min-width: 768px) { .cv-foot__groups { grid-template-columns: repeat(3, 1fr); gap: 0 24px; align-items: start; } }
+.cv-foot__group { border-bottom: 1px solid rgba(255,255,255,.12); }
+@media (min-width: 768px) { .cv-foot__group { border-bottom: 0; } }
+.cv-foot__group summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 18px 0; color: #fff; font-weight: 700; font-size: 1rem; }
+.cv-foot__group summary::-webkit-details-marker { display: none; }
+.cv-foot__group summary::after { content: ""; margin-left: auto; width: 9px; height: 9px; border-right: 2px solid rgba(255,255,255,.7); border-bottom: 2px solid rgba(255,255,255,.7); transform: rotate(45deg) translateY(-2px); transition: transform .2s ease; }
+.cv-foot__group[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+.cv-foot__group summary:hover { color: var(--nt-orange-light); }
+.cv-foot__group summary:focus-visible { outline: 2px solid var(--nt-orange); outline-offset: 2px; border-radius: 6px; }
+.cv-foot__count { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,.12); color: rgba(255,255,255,.75); }
+.cv-foot__group ul { list-style: none; margin: 0; padding: 0 0 18px; display: grid; gap: 4px 16px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.cv-foot__group li a { display: block; padding: 6px 0; color: rgba(255,255,255,.72); text-decoration: none; font-size: .93rem; }
+.cv-foot__group li a:hover { color: #fff; }
+
+.cv-foot__bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 8px; padding: 22px 0; text-align: center; font-size: .85rem; }
+.cv-foot__bottom p { margin: 0; color: rgba(255,255,255,.6); }
+.cv-foot__bottom p + p { margin-top: 8px; }
+.cv-foot__bottom a { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 3px; }
