@@ -77,7 +77,7 @@ export const allPages: JobPageProps[] = jobs.flatMap((job) =>
     const h1 = `${job.h1Base} ${area.loc}`;
     return {
       slug,
-      title: `${job.titleBase} ${area.name} — ${job.titleTail} | PRM Montage`,
+      title: `${job.titleBase} ${area.name}: ${job.titleTail} | PRM Montage`,
       description: `${e.lead} Fast pris och kostnadsfri offert.`,
       heroImage: job.heroImage,
       heroAlt: ALT,

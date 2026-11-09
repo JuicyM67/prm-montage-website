@@ -207,7 +207,7 @@ html, body {
   color: var(--nt-orange-light);
   font-weight: 700;
 }
-.nt-megamenu__promo-content h4 { font-size: .98rem; font-weight: 700; margin: 6px 0 14px; line-height: 1.35; color: #fff; }
+.nt-megamenu__promo-content h4, .nt-megamenu__promo-content .nt-megamenu__promo-title { font-size: .98rem; font-weight: 700; margin: 6px 0 14px; line-height: 1.35; color: #fff; }
 .nt-megamenu__promo .nt-megamenu__promo-btn { display: inline-flex; align-items: center; gap: 8px; color: #fff !important; text-decoration: none; font-size: .84rem; font-weight: 600; }
 .nt-megamenu__promo-btn i { font-size: .72rem; transition: transform .2s ease; }
 .nt-megamenu__promo-btn:hover i { transform: translateX(4px); }
