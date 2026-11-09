@@ -443,5 +443,7 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-foot__bottom a { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Fem gula stjärnor överst i slut-CTA-kortet (öppnar omdömesmodalen) */
-.cv-ctastars { display: inline-flex; gap: 6px; color: #F5B301; font-size: 1.25rem; line-height: 1; }
-.cv-ctastars:hover { filter: brightness(1.1); }
+.cv-ctastars { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 10px; line-height: 1; }
+.cv-ctastars .stars { display: inline-flex; gap: 4px; color: #F5B301; font-size: 1.2rem; }
+.cv-ctastars .txt { color: rgba(255,255,255,.88); font-size: .95rem; font-weight: 600; }
+.cv-ctastars:hover .txt { text-decoration: underline; text-underline-offset: 3px; }
