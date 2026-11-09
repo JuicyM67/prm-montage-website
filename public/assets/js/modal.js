@@ -139,6 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
     'Elektriker': '⚡',
     'Altanbygge': '🏡',
     'Jour / akut': '🚨',
+    'Montering & handyman': '🔨',
+    'Lås & dörrar': '🔑',
     'Annat': '✨',
   };
 
