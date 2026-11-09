@@ -138,6 +138,8 @@ html, body { height: 100%; }
 .adm-stat-delta.down { color: var(--adm-danger); }
 
 .adm-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.adm-cols { align-items: start; }
+.adm-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .adm-card { background: var(--adm-card); border-radius: var(--adm-radius); padding: 22px 24px; }
 .adm-card + .adm-card { margin-top: 0; }
 .adm-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }

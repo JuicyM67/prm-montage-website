@@ -46,11 +46,6 @@ export default function Overview({ user }: { user: AdminUser }) {
     { n: data.pendingInvites, text: data.pendingInvites === 1 ? 'inbjudan har inte använts än' : 'inbjudningar har inte använts än', href: '/admin/anvandare', warn: false },
   ].filter((t) => t.n > 0) : [];
 
-  // Klickmätningen har en startdag; innan dess finns bara formulär. Säg det i stället för att visa vilseledande nollor.
-  const periodStart = c?.daily[0]?.date;
-  const sinceDay = c?.trackingSince ? c.trackingSince.slice(0, 10) : null;
-  const partial = c && (!sinceDay || (periodStart && sinceDay > periodStart));
-
   return (
     <>
       <div className="adm-head-wrap">
@@ -73,14 +68,6 @@ export default function Overview({ user }: { user: AdminUser }) {
         <Stat label="Formulär skickade" value={c?.totals.forms} prev={c?.previous.forms} loading={conv.loading && !c} />
       </div>
 
-      {partial && (
-        <div className="adm-alert" role="status">
-          {sinceDay
-            ? `Samtals- och mejlklick räknas sedan ${new Date(sinceDay).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long' })}. Dagarna före visar bara formulär.`
-            : 'Samtals- och mejlklick har inte börjat räknas än — de dyker upp här så fort någon klickar på ett nummer eller en mejladress.'}
-        </div>
-      )}
-
       {c && (
         <section className="adm-card" style={{ marginBottom: 16 }}>
           <div className="adm-card-head">
@@ -92,8 +79,9 @@ export default function Overview({ user }: { user: AdminUser }) {
         </section>
       )}
 
-      {c && (
-        <div className="adm-grid-2" style={{ marginBottom: 16, alignItems: 'start' }}>
+      <div className="adm-grid-2 adm-cols">
+        <div className="adm-col">
+          {c && (
           <section className="adm-card">
             <div className="adm-card-head"><h2 className="adm-card-title">Var klickar de?</h2></div>
             {c.placements.length === 0 ? <p className="adm-empty">Inga klick i perioden.</p> : (
@@ -107,7 +95,25 @@ export default function Overview({ user }: { user: AdminUser }) {
               </ul>
             )}
           </section>
-
+          )}
+        <section className="adm-card">
+          <div className="adm-card-head"><h2 className="adm-card-title">Behöver åtgärd</h2></div>
+          {loading ? <div className="adm-skeleton" /> : todo.length === 0 ? (
+            <p className="adm-empty">Inget just nu — allt är under kontroll.</p>
+          ) : (
+            <ul className="adm-list">
+              {todo.map((t) => (
+                <li key={t.text}>
+                  <span className={`adm-count${t.warn ? ' warn' : ''}`}>{t.n}</span>
+                  <a className="grow" href={t.href} style={{ textDecoration: 'none' }}>{t.text}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+        </div>
+        <div className="adm-col">
+          {c && (
           <section className="adm-card">
             <div className="adm-card-head"><h2 className="adm-card-title">Sidor som ger mest</h2></div>
             {c.pages.length === 0 ? <p className="adm-empty">Inga leads i perioden.</p> : (
@@ -124,26 +130,7 @@ export default function Overview({ user }: { user: AdminUser }) {
               </ul>
             )}
           </section>
-        </div>
-      )}
-
-      <div className="adm-grid-2">
-        <section className="adm-card">
-          <div className="adm-card-head"><h2 className="adm-card-title">Behöver åtgärd</h2></div>
-          {loading ? <div className="adm-skeleton" /> : todo.length === 0 ? (
-            <p className="adm-empty">Inget just nu — allt är under kontroll.</p>
-          ) : (
-            <ul className="adm-list">
-              {todo.map((t) => (
-                <li key={t.text}>
-                  <span className={`adm-count${t.warn ? ' warn' : ''}`}>{t.n}</span>
-                  <a className="grow" href={t.href} style={{ textDecoration: 'none' }}>{t.text}</a>
-                </li>
-              ))}
-            </ul>
           )}
-        </section>
-
         <section className="adm-card">
           <div className="adm-card-head">
             <h2 className="adm-card-title">Senaste aktivitet</h2>
@@ -162,6 +149,7 @@ export default function Overview({ user }: { user: AdminUser }) {
             </ul>
           )}
         </section>
+        </div>
       </div>
     </>
   );
