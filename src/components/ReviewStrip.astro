@@ -1,19 +1,37 @@
 ---
-// Riktiga Google-recensioner (src/data/reviews.ts). `count` 2 eller 3.
-import { reviews, jobReviews } from '../data/reviews';
+// Kundomdömen från databasen (src/data/db-reviews.ts, med lokal reservlista). `count` 2 eller 3.
+// Skriver även ut schema.org-markup för exakt de omdömen som visas på sidan.
+import { getReviews, aggregate } from '../data/db-reviews';
 interface Props { count?: 2 | 3; offset?: number; heading?: string; job?: boolean; names?: string[] }
 const { count = 3, offset = 0, heading, job = false, names } = Astro.props;
-const pool = job && jobReviews.length >= count ? jobReviews : reviews;
+const reviews = await getReviews();
+const jobPool = reviews.filter((r) => /blandare|installation|snabb|prydligt|effektivt|montör|diskmaskin/i.test(r.text));
+const pool = job && jobPool.length >= count ? jobPool : reviews;
 const picked = names ? names.map((n) => reviews.find((r) => r.name === n)).filter(Boolean) as typeof reviews : Array.from({ length: count }, (_, i) => pool[(offset + i) % pool.length]);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': 'https://prmmontage.se/#organization',
+  name: 'PRM Montage',
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: aggregate.ratingValue, bestRating: '5', reviewCount: String(aggregate.reviewCount) },
+  review: picked.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.name },
+    reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
+    reviewBody: r.text,
+    ...(r.date ? { datePublished: r.date } : {}),
+  })),
+};
 ---
 {heading && <h2 class="cv-h2">{heading}</h2>}
 <div class={`cv-reviews cv-reviews--${picked.length}`}>
   {picked.map((r) => (
     <figure class="cv-review">
-      <div class="stars" aria-label="5 av 5 stjärnor"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="stars" aria-label={`${r.rating} av 5 stjärnor`}>{Array.from({ length: r.rating }, () => <i class="fas fa-star"></i>)}</div>
       <blockquote>”{r.text}”</blockquote>
-      <figcaption><span class="cv-avatar">{r.name.split(" ").map((x) => x[0]).slice(0, 2).join("")}</span><span>{r.name}<small><i class="fab fa-google"></i> Google-recension</small></span></figcaption>
+      <figcaption><span class="cv-avatar">{r.name.split(" ").map((x) => x[0]).slice(0, 2).join("")}</span><span>{r.name}<small>{r.source === 'google' ? <><i class="fab fa-google"></i> Google-recension</> : 'Kundomdöme'}</small></span></figcaption>
     </figure>
   ))}
 </div>
 <div class="cv-reviews-more"><button type="button" class="cv-btn cv-btn--ghost cv-reviews-all">Se alla omdömen <i class="fas fa-arrow-right"></i></button></div>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
