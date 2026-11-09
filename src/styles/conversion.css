@@ -560,3 +560,13 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-prose h2:not(:first-of-type):not(.accordion-header) { text-align: center; font-size: 1.4rem; margin: 80px 0 24px; padding-top: 34px; position: relative; }
 .cv-prose h2:not(:first-of-type):not(.accordion-header)::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 56px; height: 3px; background: var(--nt-orange); border-radius: 3px; }
 .cv-prose .accordion-header { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: inherit !important; text-align: left !important; }
+
+/* Checklistor: lugn lista utan knappkänsla (ingen ram/bakgrund), två kolumner */
+.cv-prose ul.nt-check { gap: 0 48px; max-width: 760px; margin-left: auto !important; margin-right: auto !important; }
+@media (min-width: 900px) { .cv-prose ul.nt-check { grid-template-columns: 1fr 1fr; } }
+.cv-prose ul.nt-check li { background: none; border: 0; border-bottom: 1px solid var(--cv-border); border-radius: 0; padding: 14px 2px; box-shadow: none; transform: none !important; }
+.cv-prose ul.nt-check li:has(a):hover { border-color: var(--nt-orange); box-shadow: none; }
+.cv-prose ul.nt-check li a { text-decoration: underline; text-decoration-color: rgba(31,92,80,.3); text-underline-offset: 4px; }
+.cv-prose ul.nt-check li:has(a):hover a { text-decoration-color: var(--nt-orange); }
+.cv-prose ul.nt-check li a::after { content: none; }
+.cv-prose ul.nt-check li:has(a) { cursor: pointer; }
