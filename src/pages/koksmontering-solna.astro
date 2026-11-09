@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProofBar from '../components/ProofBar.astro';
+import ReviewStrip from '../components/ReviewStrip.astro';
+import FinalCta from '../components/FinalCta.astro';
+import StickyOfferCard from '../components/StickyOfferCard.astro';
 import { organization } from '../data/organization';
 
 const seo = {
@@ -72,26 +76,33 @@ const seo = {
 
 <BaseLayout seo={seo} defaultService="Köksrenovering">
   <!-- =============== BREADCRUMB =============== -->
-  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container">
-      <div class="row"><div class="col-xl-8 col-lg-9">
-        <div class="tp-breadcrumb-content">
-          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Köksrenovering &amp; köksmontering i Solna</h1>
-          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Fast pris, kort startsträcka från vårt kontor i Solna och montering av kök i alla varumärken.</p>
-          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Köksmontering Solna</li></ul></div>
-        </div>
-      </div></div>
+    <section class="cv-pagehero">
+    <div class="cv-container">
+      <ul class="cv-crumbs"><li><a href="/">Hem</a></li></ul>
+      <h1>Köksrenovering &amp; köksmontering i Solna</h1>
+      <p class="cv-pagehero__lead">Fast pris, kort startsträcka från vårt kontor i Solna och montering av kök i alla varumärken.</p>
+      <div class="cv-btn-row">
+        <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+        <a href="tel:+46852027977" class="cv-btn cv-btn--outline-light"><i class="fas fa-phone"></i> Ring 08-520 279 77</a>
+      </div>
+      <div class="cv-rating cv-rating--light"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span>4,9 på Google · 100+ omdömen</span></div>
     </div>
-  </div>
+  </section>
 
-  <div class="tp-service-details-area pt-100 pb-120" style="background:var(--nt-white);">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-8">
+  <ProofBar />
+
+
+    <section class="cv-section">
+    <div class="cv-container cv-layout">
+      <article class="cv-prose">
           <span class="nt-eyebrow">Solna</span>
           <h2 class="mb-25 fs-xl-40 fs-sm-36">Köksmontering utförd av grannar på Industrivägen</h2>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vårt kontor ligger på Industrivägen 19, mitt i Solna — så när du anlitar oss för köksmontering handlar det inte om ett företag som bara skriver att man "jobbar i området", utan om hantverkare som redan är dina grannar. Köksmontering innebär att vi monterar ett kök du redan har köpt — oavsett varumärke: köksstomme, luckor, bänkskiva och infästning, utan att vi river ut befintlig VVS och el eller gör en total ombyggnad.</p>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">I Solna märker vi tydligt av kommunens snabba utveckling. Många av våra uppdrag kommer från nyinflyttade i bostadsrätter i Arenastaden, Hagalund och Råsunda — kunder som köpt ett kök via mäklarens tillvalslista, ett byggherreavtal eller direkt från en kökshandlare, och som nu behöver få det monterat inför inflyttning. Andra vill helt enkelt byta ut en gammal köksstomme i en äldre lägenhet utan att göra en hel renovering. I båda fallen handlar köksmontering om att gå från kök i lådor och paket till ett färdigt, funktionellt kök — utan de kostnader och den tid som en total renovering med rivning, VVS och el annars kräver.</p>
+          <div class="cv-btn-row cv-midcta-row">
+            <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+          </div>
+
 
           <div class="nt-highlight mb-45">
             <h5><i class="fas fa-file-invoice-dollar" style="color:#1FA968;margin-right:8px;"></i>Fast pris, kort startsträcka</h5>
@@ -162,55 +173,21 @@ const seo = {
               <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
             </a>
           </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
-            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
-              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;">
-              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
-              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
-            </div>
-          </div>
-          <div class="nt-side-card">
-            <h5>Relaterat</h5>
-            <ul class="nt-side-nav">
-              <li><a href="/ikea-koksmontering-solna">IKEA-köksmontering Solna <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-          </div>
-          <div class="nt-side-card">
-            <h5>Fler områden</h5>
-            <ul class="nt-side-nav">
-              <li><a href="/koksmontering-sundbyberg">Köksmontering Sundbyberg <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksmontering-danderyd">Köksmontering Danderyd <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksmontering-bromma">Köksmontering Bromma <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksmontering-tacby">Köksmontering Täby <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksmontering-uppsala">Köksmontering Uppsala <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksmontering-lidingo">Köksmontering Lidingö <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/koksmontering-sodermalm">Köksmontering Södermalm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/solna">Alla tjänster i Solna <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/upplands-vasby">Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </article>
+      <aside>
+        <StickyOfferCard related={[]} relatedTitle="Fler jobb" />
+      </aside>
     </div>
-  </div>
+  </section>
 
-  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
-      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
-      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Dags att förverkliga ditt drömkök?</h2>
-      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
-      <div class="d-flex flex-wrap align-items-center gap-4">
-        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
-        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
-      </div>
-    </div></div></div>
-  </div>
+  <section class="cv-section cv-section--tint">
+    <div class="cv-container">
+      <h2 class="cv-h2">Det säger våra kunder</h2>
+      <ReviewStrip count={3} offset={3} job />
+    </div>
+  </section>
+
+
+    <FinalCta heading="Dags att förverkliga ditt drömkök?" />
+
 </BaseLayout>

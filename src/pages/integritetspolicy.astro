@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCta from '../components/FinalCta.astro';
 
 const seo = {
   "title": "Integritetspolicy | PRM Montage",
@@ -34,16 +35,13 @@ const seo = {
 
 <BaseLayout seo={seo}>
   <!-- =============== BREADCRUMB =============== -->
-  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container">
-      <div class="row"><div class="col-xl-8 col-lg-9">
-        <div class="tp-breadcrumb-content">
-          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Integritetspolicy</h1>
-          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Integritetspolicy</li></ul></div>
-        </div>
-      </div></div>
+    <section class="cv-pagehero">
+    <div class="cv-container">
+      <ul class="cv-crumbs"><li><a href="/">Hem</a></li></ul>
+      <h1>Integritetspolicy</h1>
     </div>
-  </div>
+  </section>
+
   <!-- =============== /BREADCRUMB =============== -->
 
   <div class="pt-100 pb-120" style="background:var(--nt-white);">
@@ -92,17 +90,8 @@ const seo = {
   </div>
 
   <!-- =============== CTA =============== -->
-  <div class="tp-cta-area nt-dark-band pt-100 pb-100" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
-      <span class="nt-eyebrow nt-eyebrow-light">Frågor om dina uppgifter?</span>
-      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Vi svarar gärna på dina frågor</h2>
-      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss om du har frågor kring vår hantering av personuppgifter.</p>
-      <div class="d-flex flex-wrap align-items-center gap-4">
-        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Kontakta oss</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
-        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
-      </div>
-    </div></div></div>
-  </div>
+    <FinalCta heading="Vi svarar gärna på dina frågor" />
+
   <!-- =============== /CTA =============== -->
 
   <!-- =============== FOOTER =============== -->

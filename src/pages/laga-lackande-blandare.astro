@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProofBar from '../components/ProofBar.astro';
+import ReviewStrip from '../components/ReviewStrip.astro';
+import FinalCta from '../components/FinalCta.astro';
+import StickyOfferCard from '../components/StickyOfferCard.astro';
 import { organization } from '../data/organization';
 
 const seo = {
@@ -110,33 +114,34 @@ const seo = {
 
 <BaseLayout seo={seo} activeNav="tjanster" defaultService="VVS & Badrum">
   <!-- =============== BREADCRUMB =============== -->
-  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container">
-      <div class="row"><div class="col-xl-8 col-lg-9">
-        <div class="tp-breadcrumb-content">
-          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Laga läckande blandare &amp; duschblandare</h1>
-          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li><a href="/tjanster">Tjänster</a></li><li class="dvdr">/</li><li>Laga läckande blandare</li></ul></div>
-        </div>
-      </div></div>
-    </div>
-  </div>
-
-  <div class="tp-service-details-thumb pt-80" style="background:var(--nt-white);">
-    <div class="container">
-      <div class="nt-media wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s" style="height:360px;">
-        <img src="assets/img/projekt/badrum-03.webp" width="1400" height="560" alt="Badrum med dusch renoverat av PRM Montage i Stockholm" style="width:100%;height:100%;object-fit:cover;">
+    <section class="cv-pagehero">
+    <div class="cv-container">
+      <ul class="cv-crumbs"><li><a href="/">Hem</a></li><li><a href="/tjanster">Tjänster</a></li></ul>
+      <h1>Laga läckande blandare &amp; duschblandare</h1>
+      <div class="cv-btn-row">
+        <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+        <a href="tel:+46852027977" class="cv-btn cv-btn--outline-light"><i class="fas fa-phone"></i> Ring 08-520 279 77</a>
       </div>
+      <div class="cv-rating cv-rating--light"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span>4,9 på Google · 100+ omdömen</span></div>
     </div>
-  </div>
+  </section>
 
-  <div class="tp-service-details-area pt-70 pb-120" style="background:var(--nt-white);">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-8">
+  <ProofBar />
+
+
+  
+
+    <section class="cv-section">
+    <div class="cv-container cv-layout">
+      <article class="cv-prose">
           <span class="nt-eyebrow">Tjänst</span>
           <h2 class="mb-25 fs-xl-40 fs-sm-36">Läckande blandare — vi lagar eller byter till fast pris</h2>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">En droppande blandare är sällan bara irriterande. En blandare som läcker kontinuerligt kan kosta flera hundra kronor om året i onödig vattenförbrukning, och en läcka bakom kaklet eller under handfatet kan ge fuktskador. PRM Montage lagar läckande blandare i kök, badrum och dusch i hela Stockholm.</p>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vi börjar med att lokalisera var läckaget kommer ifrån. Ofta räcker det att byta en packning, en keramisk insats eller en termostatpatron — då fungerar blandaren som ny. Är blandaren gammal eller sliten är det ofta mer ekonomiskt att <a href="/byta-blandare">byta blandaren</a> helt, och då säger vi det.</p>
+          <div class="cv-btn-row cv-midcta-row">
+            <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+          </div>
+
 
           <div class="row g-4 mt-10 mb-45">
             <div class="col-md-6">
@@ -163,28 +168,7 @@ const seo = {
             <li><i class="fas fa-check-circle"></i><span>Täthetsprovning efter åtgärd</span></li>
           </ul>
 
-          <div class="row g-4 mb-45">
-            <div class="col-md-6">
-              <div class="nt-quote">
-                <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"Helped us with installation of faucet. Very professional! The job was very well done! Can strongly recommend!"</p>
-                <div class="nt-quote__author">
-                  <div class="nt-quote__avatar">TD</div>
-                  <div><h6>Thomas Durrani</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="nt-quote">
-                <div class="nt-quote__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"Jag är mycket nöjd med installationen av blandaren i mitt badrum av en duktig och vänlig hantverkare."</p>
-                <div class="nt-quote__author">
-                  <div class="nt-quote__avatar">MC</div>
-                  <div><h6>Marie Chenik</h6><span class="nt-quote__source"><i class="fab fa-google"></i> Google-recension</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Packning, patron eller ny blandare?</h3>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Droppar det ur pipen räcker det ofta att byta en packning eller den keramiska insatsen. Läcker det från själva blandarens fot eller från väggen kan det vara slitna O-ringar eller en trasig patron. Är blandaren gammal eller kalkad är det ofta bättre att byta hela — se <a href="/byta-blandare">byta blandare</a>.</p>
@@ -231,66 +215,21 @@ const seo = {
               <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
             </a>
           </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
-            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
-              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;">
-              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
-              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
-            </div>
-          </div>
-          <div class="nt-side-card">
-            <h5>Varför PRM Montage?</h5>
-            <ul class="nt-check" style="margin:0;"><li><i class="fas fa-check"></i><span>Fast pris, alltid</span></li><li><i class="fas fa-check"></i><span>F-skatt &amp; försäkrade</span></li><li><i class="fas fa-check"></i><span>Egna hantverkare</span></li><li><i class="fas fa-check"></i><span>Garanti på arbetet</span></li></ul>
-          </div>
-          <div class="nt-side-card">
-            <h5>Alla tjänster</h5>
-            <ul class="nt-side-nav">
-              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
-              <li class="is-active"><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-          </div>
-          <div class="nt-side-card">
-            <h5>Fler jobb till fast pris</h5>
-            <ul class="nt-side-nav">
-              <li><a href="/byta-blandare">Byta blandare <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/installera-diskmaskin">Installera diskmaskin <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/byta-toalettstol">Byta toalettstol <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/installera-tvattmaskin">Installera tvättmaskin <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/eluttag-tvattmaskin-diskmaskin">Eluttag till tvätt- &amp; diskmaskin <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/eluttag-badrum">Eluttag i badrum <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/montera-duschvagg">Montera duschvägg <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/byta-handfat-kommod">Byta handfat &amp; kommod <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/montera-tv-pa-vagg">Montera TV på vägg <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/handyman-stockholm">Handyman Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/mobelmontering-stockholm">Möbelmontering <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/byta-las-cylinder">Byta lås &amp; låscylinder <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </article>
+      <aside>
+        <StickyOfferCard related={[{href:'/byta-blandare',label:'Byta blandare'},{href:'/installera-diskmaskin',label:'Installera diskmaskin'},{href:'/byta-toalettstol',label:'Byta toalettstol'},{href:'/installera-tvattmaskin',label:'Installera tvättmaskin'},{href:'/eluttag-tvattmaskin-diskmaskin',label:'Eluttag till tvätt- & diskmaskin'},{href:'/eluttag-badrum',label:'Eluttag i badrum'},{href:'/montera-duschvagg',label:'Montera duschvägg'},{href:'/byta-handfat-kommod',label:'Byta handfat & kommod'},{href:'/montera-tv-pa-vagg',label:'Montera TV på vägg'},{href:'/handyman-stockholm',label:'Handyman Stockholm'},{href:'/mobelmontering-stockholm',label:'Möbelmontering'},{href:'/byta-las-cylinder',label:'Byta lås & låscylinder'}]} relatedTitle="Fler jobb" />
+      </aside>
     </div>
-  </div>
+  </section>
 
-  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
-      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
-      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Droppar en blandare hemma?</h2>
-      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
-      <div class="d-flex flex-wrap align-items-center gap-4">
-        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
-        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
-      </div>
-    </div></div></div>
-  </div>
+  <section class="cv-section cv-section--tint">
+    <div class="cv-container">
+      <h2 class="cv-h2">Det säger våra kunder</h2>
+      <ReviewStrip count={3} offset={7} job />
+    </div>
+  </section>
+
+
+    <FinalCta heading="Droppar en blandare hemma?" />
+
 </BaseLayout>

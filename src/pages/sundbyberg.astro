@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProofBar from '../components/ProofBar.astro';
+import ReviewStrip from '../components/ReviewStrip.astro';
+import FinalCta from '../components/FinalCta.astro';
+import StickyOfferCard from '../components/StickyOfferCard.astro';
 import { organization } from '../data/organization';
 
 const seo = {
@@ -98,27 +102,34 @@ const seo = {
 
 <BaseLayout seo={seo} activeNav="omraden">
   <!-- =============== BREADCRUMB =============== -->
-  <div class="tp-breadcrumb-area tp-breadcrumb-spacing nt-dark-band pt-180 pb-90" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container">
-      <div class="row"><div class="col-xl-8 col-lg-9">
-        <div class="tp-breadcrumb-content">
-          <h1 class="tp-breadcrumb-title fw-600 fs-60 fs-xs-40 ls-m-3 tp-text-common-white lh-1 mb-20">Hantverkare i Sundbyberg</h1>
-          <p style="color:rgba(255,255,255,.78);font-size:1.02rem;max-width:620px;margin-bottom:18px;">Bygg, renovering, VVS och el — med fast pris och kort startsträcka från vårt kontor i grannkommunen Solna.</p>
-          <div class="tp-breadcrumb-dvdr"><ul><li><a href="/">Hem</a></li><li class="dvdr">/</li><li>Hantverkare i Sundbyberg</li></ul></div>
-        </div>
-      </div></div>
+    <section class="cv-pagehero">
+    <div class="cv-container">
+      <ul class="cv-crumbs"><li><a href="/">Hem</a></li></ul>
+      <h1>Hantverkare i Sundbyberg</h1>
+      <p class="cv-pagehero__lead">Bygg, renovering, VVS och el — med fast pris och kort startsträcka från vårt kontor i grannkommunen Solna.</p>
+      <div class="cv-btn-row">
+        <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+        <a href="tel:+46852027977" class="cv-btn cv-btn--outline-light"><i class="fas fa-phone"></i> Ring 08-520 279 77</a>
+      </div>
+      <div class="cv-rating cv-rating--light"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span>4,9 på Google · 100+ omdömen</span></div>
     </div>
-  </div>
+  </section>
 
-  <div class="tp-service-details-area pt-100 pb-120" style="background:var(--nt-white);">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-8">
+  <ProofBar />
+
+
+    <section class="cv-section">
+    <div class="cv-container cv-layout">
+      <article class="cv-prose">
           <span class="nt-eyebrow">Sundbyberg</span>
           <h2 class="mb-25 fs-xl-40 fs-sm-36">Hantverkare för både nytt och äldre i Sundbyberg</h2>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Sundbyberg gränsar direkt till Solna, och för oss på PRM Montage innebär det en kort startsträcka från vårt kontor på Industrivägen 19 till de flesta adresser i kommunen. Det är en av anledningarna till att vi regelbundet arbetar med uppdrag i Sundbyberg — geografin gör det naturligt snarare än att vi bara listar kommunen som ett upptagningsområde.</p>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Sundbyberg är en kommun med stor spännvidd i sitt fastighetsbestånd. I områden som Sundbybergs centrum, Rissne och Hallonbergen finns mycket relativt ny bebyggelse med bostadsrätter, medan andra delar av kommunen har ett äldre bestånd av flerbostadshus och villor med större renoveringsbehov. Den blandningen märks i de uppdrag vi får — från mindre anpassningar och uppdateringar i nyare lägenheter till mer omfattande renoveringar av kök, badrum och el i äldre fastigheter där rör och installationer ofta behöver bytas ut helt.</p>
           <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Oavsett var i Sundbyberg du bor arbetar vi på samma sätt: vi går igenom förutsättningarna på plats, lämnar ett fast pris innan vi sätter igång, och utför arbetet med egna hantverkare inom bygg, VVS och el — utan att lägga ut delar av jobbet på underentreprenörer.</p>
+          <div class="cv-btn-row cv-midcta-row">
+            <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+          </div>
+
 
           <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:22px;margin-top:10px;">Våra tjänster i Sundbyberg</h4>
           <div class="row g-4 mb-50">
@@ -232,58 +243,21 @@ const seo = {
               <span class="d-flex align-items-center justify-content-center"><span class="btn-text">Ring 08-520 279 77</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span>
             </a>
           </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="nt-side-card nt-side-card--navy" style="background:var(--nt-navy);">
-            <h4 style="color:#fff;font-weight:700;margin-bottom:24px;">Kontakta oss direkt</h4>
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone" style="color:#1FA968;"></i></span>
-              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">Ring oss</p><a href="tel:+46852027977" style="color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;">08-520 279 77</a></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px;">
-              <span style="width:44px;height:44px;border-radius:12px;background:rgba(31,169,104,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="color:#1FA968;"></i></span>
-              <div><p style="color:rgba(255,255,255,.6);font-size:.8rem;margin:0;">E-post</p><a href="mailto:info@pro-montage.se" style="color:#fff;font-weight:700;text-decoration:none;">info@pro-montage.se</a></div>
-            </div>
-          </div>
-          <div class="nt-side-card">
-            <h5>Våra tjänster</h5>
-            <ul class="nt-side-nav">
-              <li><a href="/koksrenovering-stockholm">Köksrenovering Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/bygg-renovering">Bygg &amp; renovering <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/vvs-badrum">VVS &amp; Badrum <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/elektriker-stockholm">Elektriker Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/altanbygge-i-stockholm">Altanbygge i Stockholm <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/jour">Jour — akut hjälp <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-          </div>
-          <div class="nt-side-card">
-            <h5>Fler områden</h5>
-            <ul class="nt-side-nav">
-              <li><a href="/solna">Solna <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/upplands-vasby">Upplands Väsby <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/danderyd">Danderyd <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/bromma">Bromma <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/tacby">Täby <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/uppsala">Uppsala <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/lidingo">Lidingö <i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="/sodermalm">Södermalm <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </article>
+      <aside>
+        <StickyOfferCard related={[]} relatedTitle="Fler jobb" />
+      </aside>
     </div>
-  </div>
+  </section>
 
-  <div class="tp-cta-area nt-dark-band pt-120 pb-120" style="background:linear-gradient(120deg,var(--nt-navy-dark) 0%,var(--nt-navy) 100%);">
-    <div class="container"><div class="row"><div class="col-xl-8 col-lg-10">
-      <span class="nt-eyebrow nt-eyebrow-light">Redo att börja?</span>
-      <h2 class="mb-15 fs-xl-40 fs-sm-36 tp-text-common-white">Hantverkare i Sundbyberg redo att hjälpa dig</h2>
-      <p class="mb-40" style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:620px;">Kontakta oss idag — fast pris, egna hantverkare, kostnadsfri offert.</p>
-      <div class="d-flex flex-wrap align-items-center gap-4">
-        <a href="/kontakt" class="tp-btn-xl hire-btn d-inline-block lh-0 tp-round-26 fs-16 tp-bg-theme-primary ls-0 tp-btn-switch-animation tp-text-common-white fw-500"><span class="d-flex align-items-center justify-content-center"><span class="btn-text">Begär offert</span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span><span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span></span></a>
-        <a href="tel:+46852027977" class="d-inline-flex align-items-center gap-3" style="text-decoration:none;"><span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1FA968;"></i></span><span><span style="display:block;color:rgba(255,255,255,0.6);font-size:.8rem;">Ring oss direkt</span><span style="display:block;color:#fff;font-weight:700;font-size:1.05rem;">08-520 279 77</span></span></a>
-      </div>
-    </div></div></div>
-  </div>
+  <section class="cv-section cv-section--tint">
+    <div class="cv-container">
+      <h2 class="cv-h2">Det säger våra kunder</h2>
+      <ReviewStrip count={3} offset={11} job />
+    </div>
+  </section>
+
+
+    <FinalCta heading="Hantverkare i Sundbyberg redo att hjälpa dig" />
+
 </BaseLayout>
