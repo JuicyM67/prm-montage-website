@@ -1,6 +1,6 @@
 // Centrerar korta stycken (tre rader eller mindre) i sektionerna; längre stycken lämnas vänsterjusterade.
 (function () {
-  var SEL = '.cv-prose > p, .cv-prose h3 + p, .cv-prose h4 + p, .tp-service-area .row > [class*="col-xl-8"] p';
+  var SEL = '.cv-prose > p, .cv-prose > h3 + p, .cv-prose > h4 + p, .tp-service-area .row > [class*="col-xl-8"] p';
   function run() {
     document.querySelectorAll(SEL).forEach(function (p) {
       p.classList.remove('is-short');
