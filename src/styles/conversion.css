@@ -292,3 +292,66 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 
 /* Rubrik i två rader: andra raden lite mindre */
 .cv-h1-sub { display: block; margin-top: 6px; font-size: .58em; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; color: var(--nt-navy); }
+
+/* ============================================================
+   Bento med bildkort (BentoServices.astro)
+   ============================================================ */
+.cv-tiles { display: grid; gap: 14px; }
+@media (min-width: 700px) { .cv-tiles { grid-template-columns: repeat(2, 1fr); } .cv-tiles .t-hero { grid-column: span 2; } }
+@media (min-width: 992px) {
+  .cv-tiles { grid-template-columns: repeat(12, 1fr); grid-auto-rows: 264px; gap: 16px; }
+  .cv-tiles .t-hero { grid-column: span 7; grid-row: span 2; }
+  .cv-tiles .t-vvs, .cv-tiles .t-ikea { grid-column: span 5; }
+  .cv-tiles .t-kok, .cv-tiles .t-lamp, .cv-tiles .t-jour { grid-column: span 4; }
+}
+.cv-tile { position: relative; overflow: hidden; border-radius: var(--cv-radius-lg); min-height: 260px; color: #fff; background: var(--nt-navy-dark); isolation: isolate; display: flex; align-items: flex-end; }
+.t-hero { min-height: 440px; }
+.cv-tile__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+.cv-tile:hover .cv-tile__img { transform: scale(1.06); }
+.cv-tile__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,30,26,0) 25%, rgba(10,30,26,.72) 100%); }
+.t-hero .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.05) 0%, rgba(10,30,26,.25) 40%, rgba(10,30,26,.82) 100%); }
+.cv-tile__shade--light { background: linear-gradient(180deg, rgba(10,30,26,0) 20%, rgba(10,30,26,.78) 100%); }
+.cv-tile__body { padding: 24px; width: 100%; }
+@media (min-width: 992px) { .cv-tile__body { padding: 28px; } .t-hero .cv-tile__body { padding: 36px; max-width: 560px; } }
+.cv-tile__eyebrow { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 8px; }
+.cv-tile h3 { color: #fff; font-size: 1.3rem; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; margin: 0 0 8px; }
+.t-hero h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.12; }
+.cv-tile p { color: rgba(255,255,255,.86); margin: 0; font-size: .96rem; line-height: 1.5; }
+.cv-tile__link { color: inherit; text-decoration: none; }
+.cv-tile__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.cv-tile__go { position: absolute; right: 18px; top: 18px; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.18); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.35); display: flex; align-items: center; justify-content: center; color: #fff; transition: transform .25s ease, background .25s ease; }
+.cv-tile:hover .cv-tile__go { background: var(--nt-orange); border-color: var(--nt-orange); transform: translateX(3px) rotate(-45deg); }
+
+/* Glas-chips med snabblänkar (ligger ovanpå stretched link) */
+.cv-glass-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; position: relative; z-index: 2; }
+.cv-glass-tags a { padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.16); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.3); color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; transition: background .2s, color .2s; }
+.cv-glass-tags a:hover { background: #fff; color: var(--nt-navy-dark); }
+
+/* Jobblista-widget i stora kortet */
+.cv-joblist { position: absolute; left: 20px; top: 20px; z-index: 1; width: 210px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,.94); color: var(--nt-navy-dark); box-shadow: 0 12px 34px rgba(0,0,0,.22); }
+.cv-joblist strong { display: block; font-size: .85rem; margin-bottom: 10px; }
+.cv-joblist ul { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 7px; }
+.cv-joblist li { display: flex; align-items: center; gap: 9px; font-size: .88rem; font-weight: 600; }
+.cv-joblist li i { width: 20px; height: 20px; border-radius: 6px; background: var(--nt-orange); color: #fff; font-size: .62rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cv-joblist span { display: block; padding-top: 10px; border-top: 1px solid #E5EEEA; font-size: .78rem; color: var(--nt-gray); font-weight: 600; }
+@media (max-width: 991px) { .cv-joblist { left: 14px; top: 14px; width: 190px; padding: 14px; } .t-hero { min-height: 580px; } }
+
+/* Minichecklista i köksmonteringskortet */
+.cv-steps-mini { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.cv-steps-mini span { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.94); color: var(--nt-navy-dark); font-size: .8rem; font-weight: 700; }
+.cv-steps-mini i { color: var(--nt-orange); font-size: .7rem; }
+
+/* Jourkort */
+.t-jour { background: radial-gradient(520px 260px at 90% 0%, rgba(31,169,104,.35), transparent 60%), linear-gradient(150deg, #163F37 0%, #0E2B25 100%); }
+.t-jour .cv-tile__body { position: relative; }
+.cv-live { display: inline-flex; align-items: center; gap: 10px; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.9); margin-bottom: 10px; }
+.cv-live .ping { position: relative; width: 10px; height: 10px; border-radius: 50%; background: #3DDC97; }
+.cv-live .ping::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid #3DDC97; opacity: 0; animation: cvPing 1.8s ease-out infinite; }
+@keyframes cvPing { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(1.4); opacity: 0; } }
+.cv-callbtn { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 20px; border-radius: 12px; background: #fff; color: var(--nt-navy-dark) !important; font-weight: 800; font-size: 1.05rem; text-decoration: none; }
+.cv-callbtn i { color: var(--nt-orange); }
+.cv-credit { margin: 14px 0 0; font-size: .75rem; color: #8A9A95; }
+@media (prefers-reduced-motion: reduce) { .cv-tile__img, .cv-tile__go { transition: none !important; } .cv-live .ping::after { animation: none; } }
+/* Ljusa bilder behöver kraftigare skugga för läsbar text */
+.t-ikea .cv-tile__shade, .t-vvs .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.28) 0%, rgba(10,30,26,.12) 30%, rgba(10,30,26,.84) 100%); }
+.t-kok .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.1) 0%, rgba(10,30,26,.8) 100%); }
