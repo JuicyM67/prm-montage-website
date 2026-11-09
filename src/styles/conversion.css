@@ -375,7 +375,7 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 .cv-reviews-trigger:focus-visible { outline: 3px solid var(--nt-orange); outline-offset: 3px; border-radius: 8px; }
 html.cv-noscroll { overflow: hidden; }
 
-dialog.cv-rmodal { padding: 0; border: 0; border-radius: 22px; width: min(720px, calc(100vw - 24px)); max-width: none; max-height: min(88vh, 860px); overflow: hidden; color: var(--nt-navy); background: #fff; box-shadow: 0 30px 80px rgba(10,30,26,.35); }
+dialog.cv-rmodal { position: fixed; inset: 0; margin: auto; padding: 0; border: 0; border-radius: 22px; width: min(720px, calc(100vw - 24px)); max-width: none; max-height: min(88vh, 860px); overflow: hidden; color: var(--nt-navy); background: #fff; box-shadow: 0 30px 80px rgba(10,30,26,.35); }
 dialog.cv-rmodal[open] { display: flex; flex-direction: column; animation: cvRmIn .22s ease-out; }
 dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 @keyframes cvRmIn { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
@@ -392,7 +392,7 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-rmodal__loading { color: var(--nt-gray); margin: 0; }
 .cv-rmodal__foot { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px 24px; border-top: 1px solid var(--cv-border); background: #fff; }
 @media (max-width: 600px) {
-  dialog.cv-rmodal { width: 100vw; max-height: 92vh; margin: auto 0 0; border-radius: 22px 22px 0 0; }
+  dialog.cv-rmodal { width: 100vw; max-height: 92vh; inset: auto 0 0 0; margin: 0; border-radius: 22px 22px 0 0; }
   .cv-rmodal__head, .cv-rmodal__body, .cv-rmodal__foot { padding-left: 16px; padding-right: 16px; }
   .cv-rmodal__foot .cv-btn { flex: 1 1 100%; }
 }
