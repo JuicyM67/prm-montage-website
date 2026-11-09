@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileCtaBar from '../components/MobileCtaBar.astro';
 import HireModal from '../components/HireModal.astro';
+import ReviewsModal from '../components/ReviewsModal.astro';
 import type { Props as SeoProps } from '../components/Seo.astro';
 import '../styles/site.css';
 import { createHash } from 'node:crypto';
@@ -59,6 +60,7 @@ const asset = (path: string) => {
   <slot name="before-modal" />
 
   <HireModal defaultService={defaultService} />
+  <ReviewsModal />
   <slot name="after-modal" />
 
   <script is:inline src="assets/js/vendor/jquery.js"></script>
@@ -75,6 +77,7 @@ const asset = (path: string) => {
   <script is:inline src={asset('assets/js/form-utils.js')}></script>
   <script is:inline src={asset('assets/js/contact-form.js')}></script>
   <script is:inline src={asset('assets/js/cookie-consent.js')}></script>
+  <script is:inline src={asset('assets/js/reviews-modal.js')}></script>
   <slot name="scripts" />
 </body>
 </html>

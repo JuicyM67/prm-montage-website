@@ -50,3 +50,37 @@ alter table leads add column if not exists page text;
 -- Första sidan besökaren landade på och varifrån de kom (google, direkt, annan sajt).
 alter table leads add column if not exists landing_page text;
 alter table leads add column if not exists source text;
+
+-- Kundomdömen (Google-recensioner). Visas i omdömesmodalen via /api/reviews; kan döljas utan att raderas.
+create table if not exists reviews (
+  id          serial primary key,
+  author      text not null,
+  body        text not null,
+  rating      smallint not null default 5 check (rating between 1 and 5),
+  source      text not null default 'google',
+  published   boolean not null default true,
+  sort_order  integer not null default 0,
+  created_at  timestamptz not null default now()
+);
+create index if not exists reviews_published_idx on reviews (published, sort_order, id);
+
+-- Startdata: de 15 recensioner som tidigare låg i src/data/reviews.ts. Körs bara om tabellen är tom.
+insert into reviews (author, body, sort_order)
+select v.author, v.body, v.sort_order from (values
+  ('Marie Chenik', 'Jag är mycket nöjd med installationen av blandaren i mitt badrum av en duktig och vänlig hantverkare.', 10),
+  ('Melina Sandström', 'Kom i tid. Gjorde ett mkt bra jobb.', 20),
+  ('Michael Bärlin', 'Great service!', 30),
+  ('Thomas Durrani', 'Helped us with installation of faucet. Very professional! The job was very well done! Can strongly recommend!', 40),
+  ('Gisela Fondberg', 'Verkligen bra service. Lyhörd och trevlig personal, snabba åtgärder och bra information. Montering av badrumsutrustning gjordes utomordentligt noggrant och med perfekt resultat.', 50),
+  ('Staffan Karlsson', 'Bra arbete av trevlig och hjälpsam installatör.', 60),
+  ('Daniel Hermansson', 'Ringde PRM Montage och fick snabb hjälp — proffsigt utfört arbete.', 70),
+  ('Magnus Påhlsson', 'Riktigt bra bemötande och kompetent hantverkare. Rekommenderas!', 80),
+  ('Fredrik Österholm', 'Snabbt, tydligt och prisvärt utfört. Mycket nöjd.', 90),
+  ('Margaretha Lindh', 'Professionellt bemötande — kom snabbt och gjorde ett bra jobb.', 100),
+  ('Johanna S', 'Bra kommunikation genom hela projektet. Rekommenderas!', 110),
+  ('Daniel Skötlund', 'Löste jobbet snabbt med ett väldigt trevligt bemötande.', 120),
+  ('Georgia B', 'Snabb och professionell installation, prydligt utfört.', 130),
+  ('Cecilia Lind', 'Riktigt bra hantverkare som höll vad de lovade.', 140),
+  ('Tomas Paulsson', 'Mycket bra installation, effektivt och prydligt.', 150)
+) as v(author, body, sort_order)
+where not exists (select 1 from reviews);

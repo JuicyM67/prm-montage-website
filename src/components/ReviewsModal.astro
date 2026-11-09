@@ -1,0 +1,21 @@
+---
+// Omdömesmodal: öppnas från alla betygs- och recensionskomponenter (public/assets/js/reviews-modal.js).
+// Listan hämtas från /api/reviews (databasen). Om den inte svarar visas samma lista som fallback (src/data/reviews.ts).
+import { reviews } from '../data/reviews';
+---
+<dialog class="cv-rmodal" id="cv-reviews-modal" aria-labelledby="cv-rmodal-title">
+  <div class="cv-rmodal__head">
+    <div>
+      <h2 id="cv-rmodal-title">Omdömen från våra kunder</h2>
+      <div class="cv-rmodal__rating"><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><strong>4,9</strong><span>på Google · 100+ omdömen</span></div>
+      <p>Ett urval av recensionerna vi fått.</p>
+    </div>
+    <button type="button" class="cv-rmodal__close" data-reviews-close aria-label="Stäng"><i class="fas fa-xmark"></i></button>
+  </div>
+  <div class="cv-rmodal__body" id="cv-rmodal-list" aria-live="polite"></div>
+  <div class="cv-rmodal__foot">
+    <a href="/kontakt" class="cv-btn cv-btn--primary hire-btn">Begär kostnadsfri offert</a>
+    <a href="tel:+46852027977" class="cv-btn cv-btn--ghost"><i class="fas fa-phone"></i> 08-520 279 77</a>
+  </div>
+  <script type="application/json" id="cv-reviews-fallback" is:inline set:html={JSON.stringify(reviews)} />
+</dialog>

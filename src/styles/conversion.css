@@ -365,3 +365,35 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 .t-lamp .cv-tile__shade--light { background: linear-gradient(180deg, rgba(6,40,44,0) 45%, rgba(6,40,44,.5) 100%); }
 .t-lamp .cv-tile__body { max-width: 56%; }
 @media (max-width: 991px) { .t-lamp .cv-tile__body { max-width: 52%; } }
+
+/* ============================================================
+   Omdömesmodal (ReviewsModal.astro, public/assets/js/reviews-modal.js)
+   ============================================================ */
+.cv-reviews-more { margin-top: 24px; text-align: center; }
+.cv-reviews-trigger { cursor: pointer; }
+.cv-rating.cv-reviews-trigger:hover span:last-child, .cv-stat.cv-reviews-trigger:hover dd { text-decoration: underline; text-underline-offset: 3px; }
+.cv-reviews-trigger:focus-visible { outline: 3px solid var(--nt-orange); outline-offset: 3px; border-radius: 8px; }
+html.cv-noscroll { overflow: hidden; }
+
+dialog.cv-rmodal { padding: 0; border: 0; border-radius: 22px; width: min(720px, calc(100vw - 24px)); max-width: none; max-height: min(88vh, 860px); overflow: hidden; color: var(--nt-navy); background: #fff; box-shadow: 0 30px 80px rgba(10,30,26,.35); }
+dialog.cv-rmodal[open] { display: flex; flex-direction: column; animation: cvRmIn .22s ease-out; }
+dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
+@keyframes cvRmIn { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+.cv-rmodal__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px 24px 18px; border-bottom: 1px solid var(--cv-border); }
+.cv-rmodal__head h2 { margin: 0 0 8px; font-size: 1.4rem; font-weight: 700; color: var(--nt-navy); }
+.cv-rmodal__head p { margin: 8px 0 0; color: var(--nt-gray); font-size: .92rem; }
+.cv-rmodal__rating { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: .92rem; color: var(--nt-gray); }
+.cv-rmodal__rating .stars { color: #F5B301; letter-spacing: 1px; }
+.cv-rmodal__rating strong { color: var(--nt-navy-dark); }
+.cv-rmodal__close { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--cv-border); background: #fff; color: var(--nt-navy); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background-color .15s ease; }
+.cv-rmodal__close:hover { background: var(--cv-tint); }
+.cv-rmodal__body { flex: 1 1 auto; overflow-y: auto; padding: 18px 24px; display: grid; gap: 12px; align-content: start; background: var(--cv-tint); overscroll-behavior: contain; }
+.cv-rmodal__body .cv-review { margin: 0; }
+.cv-rmodal__loading { color: var(--nt-gray); margin: 0; }
+.cv-rmodal__foot { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px 24px; border-top: 1px solid var(--cv-border); background: #fff; }
+@media (max-width: 600px) {
+  dialog.cv-rmodal { width: 100vw; max-height: 92vh; margin: auto 0 0; border-radius: 22px 22px 0 0; }
+  .cv-rmodal__head, .cv-rmodal__body, .cv-rmodal__foot { padding-left: 16px; padding-right: 16px; }
+  .cv-rmodal__foot .cv-btn { flex: 1 1 100%; }
+}
+@media (prefers-reduced-motion: reduce) { dialog.cv-rmodal[open] { animation: none; } }
