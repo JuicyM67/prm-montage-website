@@ -304,10 +304,10 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
   .cv-tiles .t-vvs, .cv-tiles .t-ikea { grid-column: span 5; }
   .cv-tiles .t-kok, .cv-tiles .t-lamp, .cv-tiles .t-jour { grid-column: span 4; }
 }
-.cv-tile { position: relative; overflow: hidden; border-radius: var(--cv-radius-lg); min-height: 260px; color: #fff; background: var(--nt-navy-dark); isolation: isolate; display: flex; align-items: flex-end; }
+.cv-tile { position: relative; overflow: hidden; border-radius: var(--cv-radius-lg); min-height: 260px; color: #fff; background: var(--nt-navy-dark); isolation: isolate; display: flex; align-items: flex-end; transform: translateZ(0); }
 .t-hero { min-height: 440px; }
-.cv-tile__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .8s cubic-bezier(.2,.8,.2,1); }
-.cv-tile:hover .cv-tile__img { transform: scale(1.06); }
+.cv-tile__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transform: translateZ(0); will-change: transform; backface-visibility: hidden; transition: transform .45s ease-out; }
+.cv-tile:hover .cv-tile__img { transform: scale(1.04) translateZ(0); }
 .cv-tile__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,30,26,0) 25%, rgba(10,30,26,.72) 100%); }
 .t-hero .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.05) 0%, rgba(10,30,26,.25) 40%, rgba(10,30,26,.82) 100%); }
 .cv-tile__shade--light { background: linear-gradient(180deg, rgba(10,30,26,0) 20%, rgba(10,30,26,.78) 100%); }
@@ -319,13 +319,13 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 .cv-tile p { color: rgba(255,255,255,.86); margin: 0; font-size: .96rem; line-height: 1.5; }
 .cv-tile__link { color: inherit; text-decoration: none; }
 .cv-tile__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
-.cv-tile__go { position: absolute; right: 18px; top: 18px; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.18); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.35); display: flex; align-items: center; justify-content: center; color: #fff; transition: transform .25s ease, background .25s ease; }
-.cv-tile:hover .cv-tile__go { background: var(--nt-orange); border-color: var(--nt-orange); transform: translateX(3px) rotate(-45deg); }
+.cv-tile__go { position: absolute; right: 18px; top: 18px; width: 42px; height: 42px; border-radius: 50%; background: rgba(10,30,26,.45); border: 1px solid rgba(255,255,255,.55); display: flex; align-items: center; justify-content: center; color: #fff; transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }
+.cv-tile:hover .cv-tile__go { background: #fff; border-color: #fff; color: var(--nt-navy-dark); transform: translateX(2px); }
 
 /* Glas-chips med snabblänkar (ligger ovanpå stretched link) */
 .cv-glass-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; position: relative; z-index: 2; }
-.cv-glass-tags a { padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.16); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.3); color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; transition: background .2s, color .2s; }
-.cv-glass-tags a:hover { background: #fff; color: var(--nt-navy-dark); }
+.cv-glass-tags a { padding: 8px 14px; border-radius: 999px; background: rgba(10,30,26,.42); border: 1px solid rgba(255,255,255,.4); color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; transition: background-color .15s ease, color .15s ease; }
+.cv-glass-tags a:hover { background: #fff; border-color: #fff; color: var(--nt-navy-dark); }
 
 /* Jobblista-widget i stora kortet */
 .cv-joblist { position: absolute; left: 20px; top: 20px; z-index: 1; width: 210px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,.94); color: var(--nt-navy-dark); box-shadow: 0 12px 34px rgba(0,0,0,.22); }
@@ -351,7 +351,7 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 .cv-callbtn { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 20px; border-radius: 12px; background: #fff; color: var(--nt-navy-dark) !important; font-weight: 800; font-size: 1.05rem; text-decoration: none; }
 .cv-callbtn i { color: var(--nt-orange); }
 .cv-credit { margin: 14px 0 0; font-size: .75rem; color: #8A9A95; }
-@media (prefers-reduced-motion: reduce) { .cv-tile__img, .cv-tile__go { transition: none !important; } .cv-live .ping::after { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .cv-tile__img, .cv-tile__go, .cv-glass-tags a { transition: none !important; } .cv-live .ping::after { animation: none; } }
 /* Ljusa bilder behöver kraftigare skugga för läsbar text */
 .t-ikea .cv-tile__shade, .t-vvs .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.28) 0%, rgba(10,30,26,.12) 30%, rgba(10,30,26,.84) 100%); }
 .t-kok .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.1) 0%, rgba(10,30,26,.8) 100%); }
