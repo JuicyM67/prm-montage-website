@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { organization } from '../data/organization';
 
 const seo = {
-  "title": "Byta blandare Stockholm — Montering fast pris | PRM Montage",
-  "description": "Byta eller montera blandare i kök och badrum? Montering av blandare i Stockholm till fast pris av behöriga VVS-montörer. Kostnadsfri offert.",
+  "title": "Byta blandare Stockholm — Kök, dusch & tvättställ | PRM Montage",
+  "description": "Byta blandare i Stockholm? Vi byter köksblandare, duschblandare och tvättställsblandare av behöriga VVS-montörer. Fast pris — kostnadsfri offert.",
   "canonical": "https://prmmontage.se/byta-blandare",
   "ogDescription": "Byte och montering av blandare i kök och badrum i Stockholm — till fast pris av behöriga VVS-montörer.",
   "ogImage": "https://prmmontage.se/assets/img/projekt/badrum-07.webp",
@@ -75,6 +75,30 @@ const seo = {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Arbetskostnaden vid byte av blandare ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår ROT-avdragssida."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan jag byta blandare själv i en bostadsrätt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det beror på föreningens regler — många kräver att arbete på vatteninstallationer görs av behörig hantverkare eller anmäls till styrelsen. Kontrollera stadgarna eller fråga styrelsen innan du börjar. Vi byter blandaren åt dig och kontrollerar att anslutningarna är täta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad är skillnaden på att byta kran och att byta blandare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "I vardagligt tal menar man oftast samma sak: kranen du tar vatten ur är en blandare som blandar varmt och kallt vatten. Vi byter alla typer — köksblandare, tvättställsblandare, duschblandare och termostatblandare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan ni montera en blandare som jag har köpt själv?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, vi monterar gärna en blandare du redan har köpt. Behöver du hjälp att välja modell som passar diskbänken eller handfatet tipsar vi gärna."
             }
           }
         ]
@@ -166,6 +190,19 @@ const seo = {
             </div>
           </div>
 
+          <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vilken blandare ska bytas?</h3>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;"><strong>Köksblandare.</strong> Köksblandaren används mest och slits först. Vi byter både vanliga blandare och modeller med utdragbar slang eller avstängning för diskmaskin, och tittar samtidigt på slangar och kopplingar under diskbänken.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;"><strong>Duschblandare och termostatblandare.</strong> Vid byte av duschblandare kontrollerar vi anslutningarna i väggen och att duschen blir tät och håller jämn temperatur.</p>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;"><strong>Tvättställsblandare.</strong> Blandaren på handfatet går snabbast att byta och kan ofta kombineras med nytt vattenlås eller nya anslutningsslangar vid samma besök.</p>
+
+          <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Byta blandare själv eller anlita en VVS-montör?</h3>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Det går ofta bra att byta blandare själv när avstängningsventilerna fungerar och anslutningarna är i gott skick. Det som brukar krångla är ventiler som inte stänger, kopplingar som fastnat av kalk och anslutningar som sitter bakom diskbänken eller inne i väggen — och ett litet misstag kan ge ett läckage som syns först långt senare. Bor du i bostadsrätt har många föreningar dessutom egna regler för arbete på vatteninstallationer, så kolla med föreningen först.</p>
+
+          <h3 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Så går ett blandarbyte till</h3>
+          <p class="mb-25" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">1. Du beskriver blandaren och var den sitter, gärna med ett foto, i offertformuläret. 2. Vi bekräftar jobbet och bokar tid. 3. Vi stänger av vattnet, demonterar den gamla blandaren och monterar den nya. 4. Vi tätprovar, kontrollerar flöde och temperatur och forslar bort den gamla blandaren.</p>
+
+<p class="mb-45" style="color:var(--nt-gray);line-height:1.85;font-size:1.02rem;">Vi kommer till Stockholm med omnejd — bland annat <a href="/solna">Solna</a>, <a href="/sundbyberg">Sundbyberg</a>, <a href="/bromma">Bromma</a>, <a href="/danderyd">Danderyd</a>, <a href="/tacby">Täby</a> och <a href="/lidingo">Lidingö</a>.</p>
+
           <h4 style="color:var(--nt-navy);font-weight:700;margin-bottom:18px;">Vanliga frågor om att byta blandare</h4>
           <div class="accordion nt-accordion mb-45" id="faqBlandare">
             <div class="accordion-item">
@@ -183,6 +220,18 @@ const seo = {
             <div class="accordion-item">
               <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBlandare4">Ger byte av blandare rätt till ROT-avdrag?</button></h2>
               <div id="faqBlandare4" class="accordion-collapse collapse" data-bs-parent="#faqBlandare"><div class="accordion-body">Arbetskostnaden vid byte av blandare ger normalt rätt till ROT-avdrag, medan material inte gör det. Läs mer på vår <a href="/rut-rot">ROT-avdragssida</a>.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBlandare5">Kan jag byta blandare själv i en bostadsrätt?</button></h2>
+              <div id="faqBlandare5" class="accordion-collapse collapse" data-bs-parent="#faqBlandare"><div class="accordion-body">Det beror på föreningens regler — många kräver att arbete på vatteninstallationer görs av behörig hantverkare eller anmäls till styrelsen. Kontrollera stadgarna eller fråga styrelsen innan du börjar. Vi byter blandaren åt dig och kontrollerar att anslutningarna är täta.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBlandare6">Vad är skillnaden på att byta kran och att byta blandare?</button></h2>
+              <div id="faqBlandare6" class="accordion-collapse collapse" data-bs-parent="#faqBlandare"><div class="accordion-body">I vardagligt tal menar man oftast samma sak: kranen du tar vatten ur är en blandare som blandar varmt och kallt vatten. Vi byter alla typer — köksblandare, tvättställsblandare, duschblandare och termostatblandare.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqBlandare7">Kan ni montera en blandare som jag har köpt själv?</button></h2>
+              <div id="faqBlandare7" class="accordion-collapse collapse" data-bs-parent="#faqBlandare"><div class="accordion-body">Ja, vi monterar gärna en blandare du redan har köpt. Behöver du hjälp att välja modell som passar diskbänken eller handfatet tipsar vi gärna.</div></div>
             </div>
           </div>
 
