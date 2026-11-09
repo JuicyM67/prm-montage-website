@@ -355,3 +355,14 @@ a.cv-bcard:hover { border-color: var(--nt-orange); box-shadow: var(--cv-shadow);
 /* Ljusa bilder behöver kraftigare skugga för läsbar text */
 .t-ikea .cv-tile__shade, .t-vvs .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.28) 0%, rgba(10,30,26,.12) 30%, rgba(10,30,26,.84) 100%); }
 .t-kok .cv-tile__shade { background: linear-gradient(180deg, rgba(10,30,26,.1) 0%, rgba(10,30,26,.8) 100%); }
+
+/* Titlar på bildkort ska alltid vara vita, även vid hover/fokus */
+.cv-tile h3, .cv-tile h3 a, .cv-tile h3 a:hover, .cv-tile h3 a:focus, .cv-tile h3 a:focus-visible { color: #fff !important; }
+.cv-tile:focus-within { outline: 3px solid var(--nt-orange); outline-offset: 2px; }
+
+/* Lampkortet: fotot ligger i högra delen med mjuk kant, rubriken ligger på ren väggyta till vänster */
+.t-lamp { background: linear-gradient(180deg, #0e4449 0%, #2c7b86 100%); }
+.t-lamp .cv-tile__img { left: 38%; width: 62%; object-position: 20% 50%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+.t-lamp .cv-tile__shade--light { background: linear-gradient(180deg, rgba(6,40,44,0) 45%, rgba(6,40,44,.5) 100%); }
+.t-lamp .cv-tile__body { max-width: 56%; }
+@media (max-width: 991px) { .t-lamp .cv-tile__body { max-width: 52%; } }
