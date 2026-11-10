@@ -635,3 +635,8 @@ dialog.cv-rmodal::backdrop { background: rgba(10,30,26,.55); }
 .cv-prose .nt-highlight h3 i { display: inline-flex; align-items: center; justify-content: center; margin: 0 !important; font-size: 1.25rem; flex-shrink: 0; }
 .nt-highlight h3 { color: var(--nt-navy); font-weight: 700; margin-bottom: 8px; font-size: 1.1rem; }
 .nt-step h2, .nt-step h3 { color: var(--nt-navy); font-weight: 700; font-size: 1.1rem; margin: 14px 0 10px; }
+
+/* Listor: samma smala kolumn, centrerad på sidan, men texten läses från vänster (tydlig kant för bockar och siffror) */
+.cv-prose .cv-checks, .cv-prose ol { width: 100%; max-width: 640px; margin-left: auto; margin-right: auto; }
+.cv-prose .cv-checks { margin-bottom: 24px; }
+.cv-prose > ul.cv-checks + p, .cv-prose > ol + p { margin-top: 28px; }
