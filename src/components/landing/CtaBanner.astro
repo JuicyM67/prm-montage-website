@@ -1,12 +1,14 @@
 ---
 // Slutlig CTA som rundat kort i sidans bredd (SaaS-stil).
+import { aggregate } from '../../data/db-reviews';
+const rating = aggregate.ratingValue.replace('.', ',');
 interface Props { heading?: string; text?: string }
 const { heading = 'Redo när du är det', text = 'Beskriv jobbet så återkommer vi med ett fast pris. Kostnadsfritt och utan förpliktelser.' } = Astro.props;
 ---
 <section class="cv-ctawrap">
   <div class="cv-container">
     <div class="cv-ctabanner">
-      <div class="cv-ctastars" role="button" title="Se alla omdömen" aria-label="5 av 5 stjärnor, 100+ omdömen på Google"><span class="stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span class="txt">(100+ omdömen) på Google</span></div>
+      <div class="cv-ctastars" role="button" title="Se alla omdömen" aria-label={`Betyg ${rating} av 5 på Google, ${aggregate.reviewCount} omdömen`}><span class="stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span><span class="txt">{rating} av 5 på Google · {aggregate.reviewCount} omdömen</span></div>
       <h2 set:html={heading} />
       <p>{text}</p>
       <div class="cv-btn-row">
