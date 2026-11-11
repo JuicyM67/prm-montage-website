@@ -63,6 +63,18 @@ export const PUT = guarded(async (request, me) => {
   return json({ ok: true });
 }, { role: 'admin' });
 
+// Ändra roll (administratör eller medlem). Man kan inte ändra sin egen roll, så att det alltid finns en administratör kvar.
+export const PATCH = guarded(async (request, me) => {
+  const { id, role } = await request.json().catch(() => ({}));
+  if (!id || typeof id !== 'string') return json({ error: 'id saknas.' }, 400);
+  if (!ROLES.includes(role)) return json({ error: 'Ogiltig roll.' }, 400);
+  if (id === me.id) return json({ error: 'Du kan inte ändra din egen roll.' }, 400);
+  const { rows } = await query('update "user" set role = $2, "updatedAt" = now() where id = $1 returning name, email', [id, role]);
+  if (!rows.length) return json({ error: 'Hittade inte användaren.' }, 404);
+  await logActivity({ userId: me.id, action: 'user.role', subject: rows[0].name, meta: { email: rows[0].email, role } });
+  return json({ ok: true });
+}, { role: 'admin' });
+
 export const DELETE = guarded(async (request, me) => {
   const id = new URL(request.url).searchParams.get('id');
   if (!id) return json({ error: 'id saknas.' }, 400);

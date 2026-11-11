@@ -40,6 +40,7 @@ export function describeActivity(a: { action: string; subject: string | null; us
     case 'lead.status': return `${who} markerade ${subject} som ${(LEAD_STATUS[a.meta?.status] || a.meta?.status || '').toLowerCase()}`;
     case 'user.invited': return `${who} bjöd in ${subject}`;
     case 'user.reinvited': return `${who} skickade om inbjudan till ${subject}`;
+    case 'user.role': return `${who} gjorde ${subject} till ${a.meta?.role === 'admin' ? 'administratör' : 'medlem'}`;
     case 'user.removed': return `${who} tog bort ${subject}`;
     default: return `${who}: ${a.action}${subject ? ' – ' + subject : ''}`;
   }

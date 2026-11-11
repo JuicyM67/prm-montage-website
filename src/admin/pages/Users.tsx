@@ -62,7 +62,25 @@ export default function Users({ me }: { me: AdminUser }) {
                   <div className="adm-cell-main">{u.name}{u.id === me.id ? ' (du)' : ''}</div>
                   <div className="adm-cell-sub">{u.email}</div>
                 </td>
-                <td>{u.role === 'admin' ? 'Administratör' : 'Medlem'}</td>
+                <td>
+                  {isAdmin && u.id !== me.id ? (
+                    <select
+                      className="adm-input"
+                      style={{ width: 'auto', padding: '6px 10px' }}
+                      aria-label={`Roll för ${u.name}`}
+                      value={u.role === 'admin' ? 'admin' : 'member'}
+                      onChange={(e) => {
+                        const role = e.target.value;
+                        if (window.confirm(`Göra ${u.name} till ${role === 'admin' ? 'administratör' : 'medlem'}?`)) {
+                          act(() => api('/api/admin/users', { method: 'PATCH', json: { id: u.id, role } }), `${u.name} är nu ${role === 'admin' ? 'administratör' : 'medlem'}.`);
+                        }
+                      }}
+                    >
+                      <option value="admin">Administratör</option>
+                      <option value="member">Medlem</option>
+                    </select>
+                  ) : (u.role === 'admin' ? 'Administratör' : 'Medlem')}
+                </td>
                 <td>
                   {u.banned ? <span className="adm-pill warn">Avstängd</span>
                     : u.last_login ? <span className="adm-pill ny">Aktiv</span>
