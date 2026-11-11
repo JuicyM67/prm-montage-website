@@ -23,7 +23,7 @@ interface Conversions {
   trackingSince: string | null;
 }
 
-const COLORS = { phone: '#14502A', forms: '#009828', email: '#9FDDBF' };
+const COLORS = { phone: '#101712', forms: '#009828', email: '#8FD9A0' };
 const PLACEMENT_LABELS: Record<string, string> = {
   header: 'Sidhuvud',
   footer: 'Sidfot',

@@ -1,19 +1,19 @@
 /* Admin: mörk sidebar + ljus, rundad innehållspanel. Färgerna följer sajtens varumärke
-   (skogsgrön #14502A, logotypens gröna #009828) men sidebaren är mörkare än sajtens navy. */
+   (svart + logotypens gröna #009828, som i logotypen). */
 :root {
-  --adm-side: #0A2412;
+  --adm-side: #0C100D;
   --adm-side-hover: rgba(255, 255, 255, 0.06);
   --adm-side-active: rgba(255, 255, 255, 0.1);
   --adm-side-text: rgba(255, 255, 255, 0.72);
-  --adm-panel: #F3F8F4;
+  --adm-panel: #F4F6F4;
   --adm-card: #ffffff;
-  --adm-ink: #0D2616;
-  --adm-primary: #14502A;
+  --adm-ink: #101612;
+  --adm-primary: #101712;
   --adm-accent: #009828;
   --adm-accent-dark: #00791F;
   --adm-accent-soft: #E4F5E8;
   --adm-muted: #5F6F64;
-  --adm-line: #E1EAE3;
+  --adm-line: #E3E8E4;
   --adm-warn: #B45309;
   --adm-warn-soft: #FEF3E2;
   --adm-danger: #B42318;
@@ -213,7 +213,7 @@ textarea.adm-input { min-height: 96px; resize: vertical; }
 /* ---------- Login ---------- */
 .adm-login { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: 20px; }
 .adm-login-card { width: min(420px, 100%); background: var(--adm-panel); border-radius: 24px; padding: 36px 32px; }
-.adm-login-card img { height: 40px; width: auto; display: block; margin-bottom: 28px; }
+.adm-login-card img { height: 72px; width: auto; display: block; margin-bottom: 28px; }
 .adm-login-card .adm-h1 { font-size: 26px; }
 .adm-login-card .adm-sub { margin-bottom: 24px; }
 .adm-login-card .adm-btn { width: 100%; }

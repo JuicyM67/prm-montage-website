@@ -1,7 +1,7 @@
 import { Delta } from '../pages/shared';
 import { number } from '../format';
 
-const COLORS = ['#14502A', '#009828', '#7ED7A8', '#B9E7D0', '#D5DEDC'];
+const COLORS = ['#101712', '#009828', '#6FD08A', '#B7E8C2', '#D5DEDC'];
 
 interface Item { label: string; value: number; prev?: number }
 

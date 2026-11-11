@@ -1,7 +1,7 @@
 import { number } from '../format';
 
 interface Bucket { id: string; label: string; count: number }
-const COLORS: Record<string, string> = { top3: '#14502A', top10: '#009828', top20: '#9FDDBF', rest: '#D5DEDC' };
+const COLORS: Record<string, string> = { top3: '#101712', top10: '#009828', top20: '#8FD9A0', rest: '#D5DEDC' };
 
 // Hur många sökord som rankar var: topp 3, 4–10, 11–20, 21+ (med förändring mot föregående period).
 export function DistributionBar({ current, previous }: { current: Bucket[]; previous: Bucket[] | null }) {
