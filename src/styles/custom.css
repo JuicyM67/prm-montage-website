@@ -1,22 +1,22 @@
 /* ============================================
    PRM MONTAGE — Custom CSS
-   Färger: Petrolgrön #1F5C50 | Emeraldgrön #1FA968
+   Färger: Petrolgrön #14502A | Emeraldgrön #009828
    (klassnamnen har prefixet "nt-" kvar från ursprungsmallen —
    rent internt/osynligt, ingen anledning att döpa om alla filer)
    ============================================ */
 
 /* --- CSS Variables / Brand Colors --- */
 :root {
-  --nt-navy:        #1F5C50;
-  --nt-navy-dark:   #163F37;
-  --nt-navy-light:  #2C7A6A;
-  --nt-orange:      #1FA968;
-  --nt-orange-dark: #178552;
-  --nt-orange-light:#5EE6A0;
+  --nt-navy:        #14502A;
+  --nt-navy-dark:   #0D3A1C;
+  --nt-navy-light:  #1F6B38;
+  --nt-orange:      #009828;
+  --nt-orange-dark: #00791F;
+  --nt-orange-light:#4FE07C;
   --nt-white:       #ffffff;
-  --nt-gray-light:  #F3F7F6;
-  --nt-gray:        #63706D;
-  --nt-text:        #1F5C50;
+  --nt-gray-light:  #F3F8F4;
+  --nt-gray:        #5F6F64;
+  --nt-text:        #14502A;
 }
 
 /* Bootstrap rows with large gutters (`g-5`) are wider than their container by half
@@ -64,7 +64,7 @@ html, body {
   background-color: var(--nt-orange-dark) !important;
   border-color: var(--nt-orange-dark) !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(31,169,104,0.30);
+  box-shadow: 0 10px 24px rgba(0, 152, 40,0.30);
 }
 
 /* Secondary / outline button */
@@ -338,7 +338,7 @@ html, body {
 }
 .tpservice:hover {
   border-color: var(--nt-orange);
-  box-shadow: 0 8px 30px rgba(31,169,104,0.15);
+  box-shadow: 0 8px 30px rgba(0, 152, 40,0.15);
   transform: translateY(-4px);
 }
 .tpservice__icon i {
@@ -389,7 +389,7 @@ html, body {
 .nt-usp-icon {
   width: 48px;
   height: 48px;
-  background: rgba(31,169,104,0.15);
+  background: rgba(0, 152, 40,0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -600,13 +600,13 @@ html, body {
 
 /* ============================================================
    BUDGETO THEME REMAP
-   main.css ships budgeto's demo palette (teal #1F3130 /
+   main.css ships budgeto's demo palette (teal #14281B /
    peach #F8D0B3) as CSS variables. Re-point those variables at
    the Next Team brand so every budgeto component class picks up
    our colours without per-element overrides.
    ============================================================ */
 :root {
-  --tp-theme-primary:   #1F5C50;   /* was #1f3130 teal   -> PRM petrolgrön */
+  --tp-theme-primary:   #14502A;   /* was #14281B teal   -> PRM petrolgrön */
   --tp-theme-secondary: #DCF6E9;   /* was #f8d0b3 peach  -> PRM mint-tint */
   --tp-grey-1: #6c757d;
   --tp-grey-2: #4a5568;
@@ -726,7 +726,7 @@ h2.tp-text-common-white .text-italic { color: var(--nt-orange-light); }
 .nt-icon-card__icon {
   width: 58px; height: 58px;
   border-radius: 14px;
-  background: rgba(31,169,104,0.12);
+  background: rgba(0, 152, 40,0.12);
   color: var(--nt-orange);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem;
@@ -768,7 +768,7 @@ h2.tp-text-common-white .text-italic { color: var(--nt-orange-light); }
   background: var(--nt-orange); color: var(--nt-white);
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 1.05rem;
-  box-shadow: 0 8px 20px rgba(31,169,104,0.35);
+  box-shadow: 0 8px 20px rgba(0, 152, 40,0.35);
 }
 .nt-step h4 { color: var(--nt-navy); font-weight: 700; font-size: 1.1rem; margin: 14px 0 10px; }
 .nt-step p { color: var(--nt-gray); font-size: .93rem; margin: 0; }
@@ -933,14 +933,14 @@ a:hover { color: var(--nt-orange-dark); }
   padding-top: 170px;
   padding-bottom: 90px;
   background:
-    linear-gradient(100deg, rgba(15,45,39,.94) 0%, rgba(15,45,39,.86) 42%, rgba(15,45,39,.55) 75%, rgba(15,45,39,.4) 100%),
+    linear-gradient(100deg, rgba(10, 36, 18,.94) 0%, rgba(10, 36, 18,.86) 42%, rgba(10, 36, 18,.55) 75%, rgba(10, 36, 18,.4) 100%),
     url('/assets/img/hero/hero-home-mobile.webp') center/cover no-repeat;
   overflow: hidden;
 }
 @media (min-width: 768px) {
   .nt-hero-static {
     background:
-      linear-gradient(100deg, rgba(15,45,39,.94) 0%, rgba(15,45,39,.86) 42%, rgba(15,45,39,.55) 75%, rgba(15,45,39,.4) 100%),
+      linear-gradient(100deg, rgba(10, 36, 18,.94) 0%, rgba(10, 36, 18,.86) 42%, rgba(10, 36, 18,.55) 75%, rgba(10, 36, 18,.4) 100%),
       url('/assets/img/hero/hero-home.webp') center/cover no-repeat;
   }
 }
@@ -1122,7 +1122,7 @@ a:hover { color: var(--nt-orange-dark); }
 .nt-gallery-item:hover img { transform: scale(1.07); }
 .nt-gallery-item::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(22,63,55,0.75) 100%);
+  background: linear-gradient(180deg, transparent 55%, rgba(13, 58, 28,0.75) 100%);
   opacity: 0; transition: opacity .3s ease;
 }
 .nt-gallery-item:hover::after { opacity: 1; }
@@ -1150,7 +1150,7 @@ a:hover { color: var(--nt-orange-dark); }
   display: none;
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 998;
   background: var(--nt-white);
-  box-shadow: 0 -8px 30px rgba(22,63,55,0.18);
+  box-shadow: 0 -8px 30px rgba(13, 58, 28,0.18);
   padding: 10px 14px;
   gap: 10px;
 }
@@ -1214,7 +1214,7 @@ a:hover { color: var(--nt-orange-dark); }
   height: 58px !important;
   line-height: normal !important;
   border-radius: 14px !important;
-  background: rgba(31, 169, 104, 0.12) !important;
+  background: rgba(0, 152, 40, 0.12) !important;
   color: var(--nt-orange) !important;
   display: flex !important;
   align-items: center;
@@ -1229,7 +1229,7 @@ a:hover { color: var(--nt-orange-dark); }
 .nt-lightbox-overlay {
   display: none;
   position: fixed; inset: 0; z-index: 10000;
-  background: rgba(11, 26, 23, 0.92);
+  background: rgba(8, 24, 12, 0.92);
   align-items: center; justify-content: center;
   padding: 40px 20px;
 }
@@ -1459,7 +1459,7 @@ a:hover { color: var(--nt-orange-dark); }
 @media (max-width: 991.98px) {
   .tpheader > .container-fluid { padding: 10px 16px !important; }
   .tpheader .tplogo a { display: flex; align-items: center; }
-  .tpheader .tplogo img { height: 38px !important; width: auto; }
+  .tpheader .tplogo img { height: 44px !important; width: auto; }
   .tpheader .tp-offcanvas-open-btn {
     width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px;
     background: var(--nt-gray-light);
@@ -1480,14 +1480,14 @@ body.nt-menu-open .back-to-top-wrapper { opacity: 0 !important; visibility: hidd
 /* --- Menyn som bottenpanel på mobil --- */
 @media (max-width: 767.98px) {
   /* Över cookie-bannern (99999) så att menyns knappar aldrig döljs bakom den */
-  .body-overlay { z-index: 99990; background-color: rgba(22, 63, 55, 0.62); }
+  .body-overlay { z-index: 99990; background-color: rgba(13, 58, 28, 0.62); }
   .tpoffcanvas {
     top: auto; left: 0; right: 0; bottom: 0; width: 100%;
     max-height: 88vh; max-height: 88dvh;
     z-index: 100000;
     padding: 8px 24px calc(28px + env(safe-area-inset-bottom));
     border-radius: 22px 22px 0 0;
-    box-shadow: 0 -14px 44px rgba(22, 63, 55, 0.28);
+    box-shadow: 0 -14px 44px rgba(13, 58, 28, 0.28);
     opacity: 1;
     visibility: hidden;
     transform: translateY(100%);

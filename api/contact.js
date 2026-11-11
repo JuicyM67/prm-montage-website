@@ -196,7 +196,7 @@ function confirmationHtml({ name, service, type }) {
     ? 'Vi har tagit emot din jourförfrågan och ringer upp dig så snart vi kan.'
     : 'Tack för din förfrågan! Vi har tagit emot den och går igenom den så snart vi kan. Därefter hör vi av oss till dig med återkoppling.';
   return `
-    <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#12332C;line-height:1.55;">
+    <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#0D2616;line-height:1.55;">
       <h2 style="margin:0 0 16px;">Hej ${escapeHtml(first)}!</h2>
       <p>${lead}</p>
       ${service ? `<p><strong>Gäller:</strong> ${escapeHtml(service)}</p>` : ''}

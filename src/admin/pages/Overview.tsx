@@ -23,7 +23,7 @@ interface Conversions {
   trackingSince: string | null;
 }
 
-const COLORS = { phone: '#1F5C50', forms: '#1FA968', email: '#9FDDBF' };
+const COLORS = { phone: '#14502A', forms: '#009828', email: '#9FDDBF' };
 const PLACEMENT_LABELS: Record<string, string> = {
   header: 'Sidhuvud',
   footer: 'Sidfot',
@@ -197,8 +197,8 @@ function Chart({ daily }: { daily: Conversions['daily'] }) {
   return (
     <figure style={{ margin: 0 }}>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Leads per dag: samtal, mejl och formulär" style={{ display: 'block' }}>
-        <line x1="0" x2={W} y1={H - 0.5} y2={H - 0.5} stroke="#E1E9E7" />
-        <line x1="0" x2={W} y1={0.5} y2={0.5} stroke="#E1E9E7" strokeDasharray="3 4" />
+        <line x1="0" x2={W} y1={H - 0.5} y2={H - 0.5} stroke="#E1EAE3" />
+        <line x1="0" x2={W} y1={0.5} y2={0.5} stroke="#E1EAE3" strokeDasharray="3 4" />
         {daily.map((d, i) => {
           const x = i * slot + (slot - bar) / 2;
           let y = H;

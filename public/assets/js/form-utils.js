@@ -129,7 +129,7 @@ window.PRMForm = {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
     return '<div class="nt-success" role="status" tabindex="-1">' +
-      '<svg viewBox="0 0 52 52" width="72" height="72" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="#1FA968" stroke-width="3"/><path fill="none" stroke="#1FA968" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M15 27l8 8 14-16"/></svg>' +
+      '<svg viewBox="0 0 52 52" width="72" height="72" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="#009828" stroke-width="3"/><path fill="none" stroke="#009828" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M15 27l8 8 14-16"/></svg>' +
       '<h4>Tack för din förfrågan!</h4>' +
       '<p>Vi har tagit emot den och återkommer så snart vi kan.</p>' +
       (safe ? '<p>En bekräftelse är skickad till <strong>' + safe + '</strong>.</p>' : '') +
