@@ -1,5 +1,6 @@
 ---
 import '../styles/fonts.css';
+import { asset } from '../lib/asset';
 import '../admin/admin.css';
 
 interface Props {
@@ -15,13 +16,13 @@ const { title } = Astro.props;
   <title>{title} – PRM Montage admin</title>
   <!-- Adminytan ska aldrig indexeras (även X-Robots-Tag sätts i vercel.json). -->
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" type="image/png" href="/assets/img/logo/favicon-192.png">
-  <link rel="shortcut icon" href="/assets/img/logo/favicon.ico">
+  <link rel="icon" type="image/png" href={asset('/assets/img/logo/favicon-192.png')}>
+  <link rel="shortcut icon" href={asset('/assets/img/logo/favicon.ico')}>
   <link rel="preload" href="/assets/fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body class="adm-body">
   <div id="adm-splash" class="adm-splash" role="status" aria-label="Laddar">
-    <img src="/assets/img/logo/logo-white.webp" alt="PRM Montage" height="60">
+    <img src={asset('/assets/img/logo/logo-white.webp')} alt="PRM Montage" height="60">
     <div class="adm-splash-bar" aria-hidden="true"><span></span></div>
   </div>
   <slot />

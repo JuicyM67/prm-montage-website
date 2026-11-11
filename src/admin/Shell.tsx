@@ -131,7 +131,7 @@ export default function Shell({ page }: { page: PageId }) {
     <div className={`adm-shell${collapsed ? ' is-collapsed' : ''}${open ? ' is-open' : ''}`}>
       <aside className="adm-side" aria-label="Huvudmeny">
         <a className="adm-brand" href="/admin" aria-label="PRM Montage admin">
-          <img src="/assets/img/logo/logo-white.webp" alt="PRM Montage" height={48} />
+          <img src="/assets/img/logo/logo-white.webp?v=20261111" alt="PRM Montage" height={48} />
           <span className="adm-brand-mark" aria-hidden="true">P</span>
         </a>
         <nav className="adm-nav">

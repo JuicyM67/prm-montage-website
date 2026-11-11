@@ -40,7 +40,7 @@ export default function Login() {
   return (
     <div className="adm-login">
       <div className="adm-login-card">
-        <img src="/assets/img/logo/logo-color.webp" alt="PRM Montage" height={64} />
+        <img src="/assets/img/logo/logo-color.webp?v=20261111" alt="PRM Montage" height={64} />
         {state === 'sent' ? (
           <>
             <h1 className="adm-h1">Kolla din e-post</h1>
